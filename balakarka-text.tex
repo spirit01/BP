@@ -1,0 +1,157 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% I, the copyright holder of this work, release this work into the
+%% public domain. This applies worldwide. In some countries this may
+%% not be legally possible; if so: I grant anyone the right to use
+%% this work for any purpose, without any conditions, unless such
+%% conditions are required by law.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[
+  digital, %% This option enables the default options for the
+           %% digital version of a document. Replace with `printed`
+           %% to enable the default options for the printed version
+           %% of a document.
+  table,   %% Causes the coloring of tables. Replace with `notable`
+           %% to restore plain tables.
+  lof,     %% Prints the List of Figures. Replace with `nolof` to
+           %% hide the List of Figures.
+  lot,     %% Prints the List of Tables. Replace with `nolot` to
+           %% hide the List of Tables.
+  %% More options are listed in the user guide at
+  %% <http://mirrors.ctan.org/macros/latex/contrib/fithesis/guide/mu/sci.pdf>.
+]{fithesis3}
+%% The following section sets up the locales used in the thesis.
+\usepackage[resetfonts]{cmap} %% We need to load the T2A font encoding
+\usepackage[T1,T2A]{fontenc}  %% to use the Cyrillic fonts with Russian texts.
+\usepackage[
+  main=czech, %% By using `czech` or `slovak` as the main locale
+                %% instead of `english`, you can typeset the thesis
+                %% in either Czech or Slovak, respectively.
+  german, russian, czech, slovak %% The additional keys allow
+]{babel}        %% foreign texts to be typeset as follows:
+%%
+%%   \begin{otherlanguage}{german}  ... \end{otherlanguage}
+%%   \begin{otherlanguage}{russian} ... \end{otherlanguage}
+%%   \begin{otherlanguage}{czech}   ... \end{otherlanguage}
+%%   \begin{otherlanguage}{slovak}  ... \end{otherlanguage}
+%%
+%% For non-Latin scripts, it may be necessary to load additional
+%% fonts:
+\usepackage{paratype}
+\def\textrussian#1{{\usefont{T2A}{PTSerif-TLF}{m}{rm}#1}}
+%%
+%% The following section sets up the metadata of the thesis.
+\thesissetup{
+    date          = \the\year/\the\month/\the\day,
+    university    = mu,
+    faculty       = sci,
+    department    = Ústav chemie,
+    departmentEn  = Department of Mathematics and
+                    Statistics,
+    programme     = Chemie,
+    programmeEn   = Chemistry,
+    field         = Fyzikální chemie,
+    fieldEn       = Physical chemistry,
+    type          = bc,
+    author        = Petra Hrozková,
+    gender        = f,
+    advisor       = doc. Mgr. M. Munzarová Dr. rer. nat ,
+    title         = Studium vlivu koordinačního prostředí atomů Si a P na tvorbu SiO6 center metodami EHT a DFT,
+    TeXtitle      = Studium vlivu koordinačního prostředí atomů Si a P na tvorbu SiO6 center metodami EHT a~DFT,
+    titleEn       = A combined EHT/DFT study of Si and P coordination environment influence on the creation of SiO6 centers,
+    TeXtitleEn    = The Principles of the Typesetting of
+                    Mathematics in \TeX: the Program,
+    keywords      = {klíčové slovo 1, klíčové slovo 2, ...},
+    TeXkeywords   = {klíčové slovo 1, klíčové slovo 2, \ldots},
+    keywordsEn    = {keyword1, keyword2, ...},
+    TeXkeywordsEn = {keyword1, keyword2, \ldots},
+}
+\thesislong{abstract}{
+    This is the abstract of my thesis, which can
+
+    span multiple paragraphs.
+}
+\thesislong{abstractEn}{
+    This is the English abstract of my thesis, which can
+
+    span multiple paragraphs.
+}
+\thesislong{thanks}{
+    This is the acknowledgement for my thesis, which can
+
+    span multiple paragraphs.
+}
+%% The following section sets up the bibliography.
+\usepackage{csquotes}
+\usepackage[              %% When typesetting the bibliography, the
+  backend=biber,          %% `numeric` style will be used for the
+  style=numeric,          %% entries and the `numeric-comp` style
+  citestyle=numeric-comp, %% for the references to the entries. The
+  sorting=none,           %% entries will be sorted in cite order.
+  sortlocale=auto         %% For more unformation about the available
+]{biblatex}               %% `style`s and `citestyles`, see:
+%% <http://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf>.
+\addbibresource{example.bib} %% The bibliograpic database within
+                          %% the file `example.bib` will be used.
+\usepackage{makeidx}      %% The `makeidx` package contains
+\makeindex                %% helper commands for index typesetting.
+%% These additional packages are used within the document:
+\usepackage{paralist}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{url}
+\usepackage{menukeys}
+\begin{document}
+\chapter{Úvod}
+Theses are rumoured to be the capstones of education, so I decided
+to write one of my own. If all goes well, I will soon have a
+diploma under my belt. Wish me luck!
+
+\begin{otherlanguage}{czech}
+Říká se, že závěrečné práce jsou vyvrcholením studia a tak jsem se
+rozhodl jednu také napsat. Pokud vše půjde podle plánu, odnesu si
+na konci semestru diplom. Držte mi palce!
+\end{otherlanguage}
+
+
+
+\chapter{Teoretická část}
+Znalosti o chemické vazbě jsou klíčovou znalostí pro každý experiment. S touto znalostí je možno předpokládat průběh experimentu a částečně i strukturu. Tato znalost v historii nebyla samozřejmostí. S chemickou vazbou jsou neoddělitelně spojeny atomy. Počátky atomové teorie datujeme v letech 430-310 př.n.l v Řecku. Autorem je Démokritos, který předpokládal, že hmota je stvořena z malých, dále nedělitelných částí. Počátky molekulové struktury jsou v 18.století, kdy John Dalton použil atomovou teorii k vysvětlení chemických reakcí. Zároveň formuloval zákon stálých poměrl slučovacích a zákon stálých poměrů násobných. V roce 1852 se objevuje myšlenka valence elektronů, která ovšem není kompletní do objevení elektronu 1897 Thomsonem. \\
+Lewis jako první nahlížel na chemickou vazbu jako sdílení elektronů. \cite{Munzarova1996thesis} \\
+
+Molekulové orbitaly - přechod od atomů k molekule je kvalitativní změna, kdy elektrony jsou vystaveny působení více jader a dochází ke ztrátě kulové symetrie.  \cite{polak2000obecna}
+
+\section{Hybridizace atomových orbitalů}
+Hybridizace je myšlenkový postup,  který usnadňuje pochopení struktury atomů. 
+\section{Hypervalence}
+\section{Teorie molekulových orbitalů}
+
+\section{Chemické výpočetní metody}
+Metody výpočetní chemie lze ve stručnosti shrnutou na \textit{Ab inito} metody, semi-empirické metody a DFT metody.
+
+\section{Density Functional Theorem - DFT}
+DFT metody jsou založeny na vztahu mezi elektronovou hustotou a celkovou energii systému, teorie funkcionální hustoty.  Tento výpočetní model byl objeven už v roce 1920, pro chemii začal mít význam až v 60. letech 20. století. Výpočetně porobně náročná jako HF, ale přesnější, obsahují korelční energii.\cite{lechamolecularmodeling}
+V roce 1964 uveřejnili Koch a Hohenberg dva teorémy.
+\subsection{První Hohenberg- Kohn teorém}
+
+\subsection{Druhý Hohenberg-Kohn teorém}
+Druhý teorém je postaven na variačním principu.
+\cite{koch2000chemist} 
+
+\chapter{Praktická část}
+
+
+{\csname captions\languagename\endcsname %% Temporarily override
+%% the BibLaTeX localization with the original babel definitions.
+\makeatletter %% Use the correct localization of the quotations.
+  \thesis@selectLocale{\thesis@locale}\makeatother
+\printbibliography[heading=bibintoc]} %% Print the bibliography.
+\appendix %% Start the appendices.
+\chapter{An appendix}
+Here you can insert the appendices of your thesis.
+
+
+
+
+\end{document}
