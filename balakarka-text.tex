@@ -296,8 +296,10 @@ Předchůdci Aproximace lokální hustoty LDA a GGA funkcionály. B3LYP \footnot
 
 
 \section{Báze v \textit{ab inito} výpočtech }\label{kapitola_baze}
-Množina funkcí, ze kterých jsou skládány orbitaly, se nazývá bazí atomových orbitalů. Mezi základní typy bazí pro atomové orbitaly jsou orbitaly vodíkové typu, orbitaly Slaterova typu (STOs) a gaussovské funkce. \cite{dftshrnutivysledky}
-Orbitaly vodíkového mají nevýhodu ve své složitosti a často je nutné použít numerické řešení problému. STO orbitaly nemají radiální uzly a pro některé integrály nerxistuje analytické řešení.
+Množina funkcí, ze kterých jsou skládány orbitaly, se nazývá bazí atomových orbitalů. Pro výběr funkcí platí dvě základní pravidla. Příslušné bázové funkce musí dostatečně dobře popsat vlnovou funkci, aby získané výsledky měly chemický význam. Zároveň integrály $F_{ij}$ a $S_{ij}$ musí být řešitelné v rozumně dlouhém časem. \cite{lowe2011quantum}
+Mezi základní typy bazí pro atomové orbitaly jsou orbitaly vodíkové typu, orbitaly Slaterova typu (STOs) a gaussovské funkce. \cite{dftshrnutivysledky}
+Orbitaly vodíkového typu mají radiální a angulární část. Orbitaly vodíkového mají nevýhodu ve své složitosti a často je nutné použít numerické řešení problému. STO orbitaly nemají radiální uzly a pro některé integrály neexistuje analytické řešení. Především přidáváním bázových funkcí STO typu enormně narůstá výpočetní čas. Alternativou jsou funkce gaussovského typu. Výhodou gaussovských funkcí je to, že jejich součin je stále gaussovská funkce a hledání $F_{ij}$je výpočetně nenáročné. Na rozdíl od ostatních funkcí nemají správné chování na jádře. Z tohoto důvodu je báze STO orbitalů nahrazena několika gaussovskými funkcemi.\cite{lowe2011quantum} \\
+
 
 
 \chapter{Výpočetní část}
