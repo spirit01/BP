@@ -297,8 +297,18 @@ Předchůdci Aproximace lokální hustoty LDA a GGA funkcionály. B3LYP \footnot
 
 \section{Báze v \textit{ab inito} výpočtech }\label{kapitola_baze}
 Množina funkcí, ze kterých jsou skládány orbitaly, se nazývá bazí atomových orbitalů. Pro výběr funkcí platí dvě základní pravidla. Příslušné bázové funkce musí dostatečně dobře popsat vlnovou funkci, aby získané výsledky měly chemický význam. Zároveň integrály $F_{ij}$ a $S_{ij}$ musí být řešitelné v rozumně dlouhém časem. \cite{lowe2011quantum}
-Mezi základní typy bazí pro atomové orbitaly jsou orbitaly vodíkové typu, orbitaly Slaterova typu (STOs) a gaussovské funkce. \cite{dftshrnutivysledky}
-Orbitaly vodíkového typu mají radiální a angulární část. Orbitaly vodíkového mají nevýhodu ve své složitosti a často je nutné použít numerické řešení problému. STO orbitaly nemají radiální uzly a pro některé integrály neexistuje analytické řešení. Především přidáváním bázových funkcí STO typu enormně narůstá výpočetní čas. Alternativou jsou funkce gaussovského typu. Výhodou gaussovských funkcí je to, že jejich součin je stále gaussovská funkce a hledání $F_{ij}$je výpočetně nenáročné. Na rozdíl od ostatních funkcí nemají správné chování na jádře. Z tohoto důvodu je báze STO orbitalů nahrazena několika gaussovskými funkcemi.\cite{lowe2011quantum} \\
+Pro popis atomu lze použít minimální nebo rozšířené báze. Minimální báze obsahuje pouze funkce, které popisují orbitaly obsazené v základním stavu daného atomu. Rozšířená báze obsahuje například polarizační funkce nebo difuzní funkce. Mezi základní typy bazí pro atomové orbitaly jsou orbitaly vodíkové typu, orbitaly Slaterova typu (STOs) a gaussovské funkce. \cite{dftshrnutivysledky}
+Orbitaly vodíkového typu mají radiální a angulární část. Orbitaly vodíkového mají nevýhodu ve své složitosti a často je nutné použít numerické řešení problému. STO orbitaly nemají radiální uzly a pro některé integrály neexistuje analytické řešení. STO orbitaly jsou ve tvaru \ref{STO_orbital}.\cite{jensen2007introduction}
+\begin{equation}
+\chi_{\zeta, n, l, m}(r, \theta, \varphi) = NY_{l,m} (\theta, \varphi) r^{n-1} e^{-\zeta r}
+\label{STO_orbital} 
+\end{equation}
+$N$ jr normalizační faktor, $Y_{l,m}$ sféricky harmonická funkce, exponent závisí na vzdálenosti od jádra. Radiální část je tvořena jako lineární kombinace STO. Především přidáváním bázových funkcí STO typu enormně narůstá výpočetní čas. Alternativou jsou funkce gaussovského typu.
+\begin{equation}
+\chi(r) = Nr^n e^{-a(r-r_A)^2}
+\end{equation}
+ Výhodou gaussovských funkcí je to, že jejich součin je stále gaussovská funkce a hledání $F_{ij}$je výpočetně nenáročné. Na rozdíl od ostatních funkcí nemají správné chování na jádře. Z tohoto důvodu je báze STO orbitalů nahrazena několika gaussovskými funkcemi.\cite{lowe2011quantum}. Základem jsou primitivní gaussiány, jejichž lineární kombinací je možné získat "contracted gaussian function". \\
+ V současné době existuje obrovské množství bazí, které lépe či hůře popisuje zvolený problém. Mezi základní báze jsou uváděny DZP, STO-3G a různé druhy 6-31G. DZP je double-zeta gassovská báze s polarizací, STO-3G jsou Slaterovy orbitaly zjednodušeny jako lineární kombinace tří primitivních gaussiánů. Báze 6-31G je už složitější. Každý vnitřní orbital je popsán sumou šesti gaussiánů a každá valenční šlupka, rozdělená na vnitřní a vnější část, je popsána jedním a třemi gaussiány. Popis báze 6-31*G je podobný, jenom přidává do popisu i d-orbitaly, aby mohlo dojít k polarizaci. Báze 6-31**G je obdobná jako 6-31*G , jenom přidává pro popis vodíku p-orbitaly.   
 
 
 
