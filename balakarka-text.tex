@@ -56,8 +56,8 @@
     author        = Petra Hrozková,
     gender        = f,
     advisor       = doc. Mgr. M. Munzarová Dr. rer. nat ,
-    title         = Studium vlivu koordinačního prostředí atomů Si a P na tvorbu SiO6 center metodami EHT a DFT,
-    TeXtitle      = Studium vlivu koordinačního prostředí atomů Si a P na tvorbu SiO6 center metodami EHT a~DFT,
+    title         = Studium vlivu koordinačního prostředí atomů Si a P na tvorbu SiO$_6$ center metodami EHT a DFT,
+    TeXtitle      = Studium vlivu koordinačního prostředí atomů Si a P na tvorbu SiO$_6$ center metodami EHT a~DFT,
     titleEn       = A combined EHT/DFT study of Si and P coordination environment influence on the creation of SiO6 centers,
     TeXtitleEn    = The Principles of the Typesetting of
                     Mathematics in \TeX: the Program,
@@ -102,6 +102,8 @@
 \usepackage{amsfonts}
 \usepackage{url}
 \usepackage{menukeys}
+\usepackage[version=3]{mhchem}
+\usepackage{braket}
 \begin{document}
 \chapter{Úvod}
 
@@ -298,23 +300,297 @@ Předchůdci Aproximace lokální hustoty LDA a GGA funkcionály. B3LYP \footnot
 \section{Báze v \textit{ab inito} výpočtech }\label{kapitola_baze}
 Množina funkcí, ze kterých jsou skládány orbitaly, se nazývá bazí atomových orbitalů. Pro výběr funkcí platí dvě základní pravidla. Příslušné bázové funkce musí dostatečně dobře popsat vlnovou funkci, aby získané výsledky měly chemický význam. Zároveň integrály $F_{ij}$ a $S_{ij}$ musí být řešitelné v rozumně dlouhém časem. \cite{lowe2011quantum}
 Pro popis atomu lze použít minimální nebo rozšířené báze. Minimální báze obsahuje pouze funkce, které popisují orbitaly obsazené v základním stavu daného atomu. Rozšířená báze obsahuje například polarizační funkce nebo difuzní funkce. Mezi základní typy bazí pro atomové orbitaly jsou orbitaly vodíkové typu, orbitaly Slaterova typu (STOs) a gaussovské funkce. \cite{dftshrnutivysledky}
-Orbitaly vodíkového typu mají radiální a angulární část. Orbitaly vodíkového mají nevýhodu ve své složitosti a často je nutné použít numerické řešení problému. STO orbitaly nemají radiální uzly a pro některé integrály neexistuje analytické řešení. STO orbitaly jsou ve tvaru \ref{STO_orbital}.\cite{jensen2007introduction}
+Orbitaly vodíkového typu mají radiální a angulární část. Orbitaly vodíkového mají nevýhodu ve své složitosti a často je nutné použít numerické řešení problému. STO orbitaly nemají radiální uzly a pro některé integrály neexistuje analytické řešení. STO orbitaly jsou ve tvaru polynomu souřadnic a exponenciály\ref{STO_orbital}.\cite{jensen2007introduction}
 \begin{equation}
 \chi_{\zeta, n, l, m}(r, \theta, \varphi) = NY_{l,m} (\theta, \varphi) r^{n-1} e^{-\zeta r}
 \label{STO_orbital} 
 \end{equation}
-$N$ jr normalizační faktor, $Y_{l,m}$ sféricky harmonická funkce, exponent závisí na vzdálenosti od jádra. Radiální část je tvořena jako lineární kombinace STO. Především přidáváním bázových funkcí STO typu enormně narůstá výpočetní čas. Alternativou jsou funkce gaussovského typu.
+$N$ jr normalizační faktor, $Y_{l,m}$ sféricky harmonická funkce, exponent závisí na vzdálenosti od jádra. Radiální část je tvořena jako lineární kombinace STO. Především přidáváním bázových funkcí STO typu enormně narůstá výpočetní čas. Alternativou jsou Gaussovské orbitaly (Gausian type orbitals, GTO).
 \begin{equation}
 \chi(r) = Nr^n e^{-a(r-r_A)^2}
 \end{equation}
- Výhodou gaussovských funkcí je to, že jejich součin je stále gaussovská funkce a hledání $F_{ij}$je výpočetně nenáročné. Na rozdíl od ostatních funkcí nemají správné chování na jádře. Z tohoto důvodu je báze STO orbitalů nahrazena několika gaussovskými funkcemi.\cite{lowe2011quantum}. Základem jsou primitivní gaussiány, jejichž lineární kombinací je možné získat "contracted gaussian function". \\
- V současné době existuje obrovské množství bazí, které lépe či hůře popisuje zvolený problém. Mezi základní báze jsou uváděny DZP, STO-3G a různé druhy 6-31G. DZP je double-zeta gassovská báze s polarizací, STO-3G jsou Slaterovy orbitaly zjednodušeny jako lineární kombinace tří primitivních gaussiánů. Báze 6-31G je už složitější. Každý vnitřní orbital je popsán sumou šesti gaussiánů a každá valenční šlupka, rozdělená na vnitřní a vnější část, je popsána jedním a třemi gaussiány. Popis báze 6-31*G je podobný, jenom přidává do popisu i d-orbitaly, aby mohlo dojít k polarizaci. Báze 6-31**G je obdobná jako 6-31*G , jenom přidává pro popis vodíku p-orbitaly.   
+ Výhodou GTO je to, že jejich součin je stále GTO a hledání $F_{ij}$je výpočetně nenáročné. Na rozdíl od ostatních funkcí nemají správné chování na jádře. Z tohoto důvodu je báze STO orbitalů tvořena několika GTO, které jsou označovány jako primitivní Gaussovské funkce.Největší přínos GTO je rozdíl v druhé mocnině vzdálenosti v exponenciálním členu.\cite{lowe2011quantum}. 
+ V současné době existuje obrovské množství bazí, které lépe či hůře popisuje zvolený problém. Mezi základní báze jsou uváděny DZP, STO-3G a různé druhy 6-31G. DZP je double-zeta gassovská báze s polarizací, STO-3G jsou Slaterovy orbitaly zjednodušeny jako lineární kombinace tří primitivních gaussiánů, odpovídá minimální bázi. 3-21G jsou označovány jako \uv{split valence basics sets}. Vnitřní elektrony jsou popisovány tří primitivními gaussiány, valenční orbitaly  do dvou primitivních gaussiánů a jednoho jednoduchého gaussiánu. Pro bázi 6-31G je vnitřní oblast tvořena šesti primitivními gaussiány, ostatní je obdobné jako pro 3-21G. Báze 6-21*G je v základu obdobná, * označuje polarizační funkci. Přidává p orbital pro vodíky a d orbitaly pro těžší atomy. Symbol ** označuje přidání d orbitalů pro vodík.(zdroj je 3 pdf soubory z hodiny Metody kvantové chemie) 
 
 
 
 \chapter{Výpočetní část}
-Cílem praktické výpočetní části bylo zkoumat struktury fosfokřemičitanů metodou EHT a DFT. 
+Cílem praktické výpočetní části bylo zkoumat struktury fosfokřemičitanů metodou EHT a DFT. Pro metodu EHT byly vybrány menší struktury, metodou DFT byly zkoumány větší struktury.
 \section{Struktury získané metodou EHT}
+Pro popis EHT metodou byly zvoleny tři čtyř koordinované sloučeniny křemíku \ce{H4SiO4}, \ce{Si(OH)3CH3} a \ce{Si(OH)3P(OH)2} a jedna šestikoordinovaná sloučenina \ce{H6SiO6}.
+%H4SIO4
+% --------------------------------------------------------------------------
+\subsection{Molekula H$_4$SiO$_4$}
+Základní molekula pro čtyřkoordinovaný křemík je \ce{H4SiO4}, kde Si je koordinován čtyřmi kyslíky. Před výpočtem metodou EHT byla struktura optimalizována. \ref{obr_h4sio4_opt_struktura}
+
+\begin{figure}[h!]
+\caption{Optimalizovaná struktura \ce{H4SiO4}. }
+  \center
+  \includegraphics[width=5cm]{h4sio4_obr.png}
+  \label{obr_h4sio4_opt_struktura}
+  \end{figure}
+
+\begin{table}[htbp]
+\caption{Výsledné mísení orbitalů pro \ce{H4SiO4}}
+\begin{center}
+\begin{tabular}{|r|r|r|r|r|r|}
+\hline 
+\multicolumn{2}{|c|}{$\bra{20}\ket{24}$, $\bra{16}\ket{24}$} & \multicolumn{2}{|c|}{$\bra{11}\ket{21}$, $\bra{19}\ket{21}$}& \multicolumn{2}{|c|}{$\bra{15}\ket{22}$, $\bra{18}\ket{22}$} \\
+\hline \hline
+\multicolumn{1}{|l|}{MO} & \multicolumn{1}{r|}{W} & \multicolumn{1}{l|}{MO} & \multicolumn{1}{r|}{W} & MO & \multicolumn{1}{r|}{W} \\ \hline
+1 & 84\% & 4 & 67\% & 2 & 65\% \\ \hline
+20 & 91\% & 16 & 79\% & 19 & 97\% \\ \hline
+24 & 99\% & 21 & 100\% &  22& 100\% \\ \hline
+\end{tabular}
+\end{center}
+\label{tab_h4sio4_vysledky}
+\end{table}
+    Pro fragmentové orbitaly $\bra{22}\ket{26}$, $\bra{7}\ket{26}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_h4sio4_MO_s1_1}, \ref{obr_h4sio4_MO_s1_20} a \ref{obr_h4sio4_MO_s1_24} .
+  
+  \begin{figure}[h]
+\caption{MO 1 pro $\bra{22}\ket{26}$, $\bra{7}\ket{26}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
+  \center
+  \includegraphics[width=5cm]{h4sio4_obrazky/s1_1.eps}
+  \label{obr_h4sio4_MO_s1_1}
+  \end{figure}
+
+\begin{figure}[h]
+\caption{MO 20 pro $\bra{22}\ket{26}$, $\bra{7}\ket{26}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
+  \center
+  \includegraphics[width=5cm]{h4sio4_obrazky/s1_20.eps}
+  \label{obr_h4sio4_MO_s1_20}
+  \end{figure}
+
+\begin{figure}[h]
+\caption{MO 24 pro $\bra{22}\ket{26}$, $\bra{7}\ket{26}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
+  \center
+  \includegraphics[width=5cm]{h4sio4_obrazky/s1_24.eps}
+  \label{obr_h4sio4_MO_s1_24}
+  \end{figure}
+  
+  Pro fragmentové orbitaly $\bra{11}\ket{21}$, $\bra{19}\ket{21}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_h4sio4_MO_s2_4}, \ref{obr_h4sio4_MO_s2_16} a \ref{obr_h4sio4_MO_s2_21} .
+  
+  \begin{figure}[h]
+\caption{MO 4 pro $\bra{11}\ket{21}$, $\bra{19}\ket{21}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
+  \center
+  \includegraphics[width=5cm]{h4sio4_obrazky/s2_4.eps}
+  \label{obr_h4sio4_MO_s2_4}
+  \end{figure}
+
+\begin{figure}[h]
+\caption{MO 16 pro $\bra{11}\ket{21}$, $\bra{19}\ket{21}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
+  \center
+  \includegraphics[width=5cm]{h4sio4_obrazky/s2_16.eps}
+  \label{obr_h4sio4_MO_s2_16}
+  \end{figure}
+
+\begin{figure}[h]
+\caption{MO 21 pro $\bra{11}\ket{21}$, $\bra{19}\ket{21}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
+  \center
+  \includegraphics[width=5cm]{h4sio4_obrazky/s2_16.eps}
+  \label{obr_h4sio4_MO_s2_21}
+  \end{figure}
+  
+  Pro fragmentové orbitaly $\bra{15}\ket{22}$, $\bra{18}\ket{22}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_h4sio4_MO_s3_2}, \ref{obr_h4sio4_MO_s3_19} a \ref{obr_h4sio4_MO_s3_22}.
+  
+  \begin{figure}[h]
+\caption{MO 2 pro $\bra{15}\ket{22}$, $\bra{18}\ket{22}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
+  \center
+  \includegraphics[width=5cm]{h4sio4_obrazky/s3__2.eps}
+  \label{obr_h4sio4_MO_s3_2}
+  \end{figure}
+
+\begin{figure}[h]
+\caption{MO 19 pro $\bra{15}\ket{22}$, $\bra{18}\ket{22}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
+  \center
+  \includegraphics[width=5cm]{h4sio4_obrazky/s3__19.eps}
+  \label{obr_h4sio4_MO_s3_19}
+  \end{figure}
+
+\begin{figure}[h]
+\caption{MO 22 pro $\bra{15}\ket{22}$, $\bra{18}\ket{22}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
+  \center
+  \includegraphics[width=5cm]{h4sio4_obrazky/s3__22.eps}
+  \label{obr_h4sio4_MO_s3_22}
+  \end{figure}
+  
+%-------------------------------------------------------------------------------------
+\subsection{Molekula Si(OH)$_3$CH$_3$}
+\begin{figure}[h!]
+\caption{Optimalizovaná struktura \ce{Si(OH)3CH3}. }
+  \center
+  \includegraphics[width=5cm]{si(oh)3ch3_obr.png}
+  \label{obr_sioh3ch3_opt_struktura}
+  \end{figure}
+  
+\begin{table}[htbp]
+\caption{Výsledné mísení orbitalů pro \ce{Si(OH)3CH3}}
+\begin{center}
+\begin{tabular}{|r|r|r|r|r|r|r|r|}
+\hline
+\multicolumn{2}{|c|}{$\bra{22}\ket{26}$, $\bra{7}\ket{26}$} & \multicolumn{2}{|c|}{$\bra{7}\ket{25}$}& \multicolumn{2}{|c|}{$\bra{21}\ket{23}$} &\multicolumn{2}{|c|}{$\bra{20}\ket{24}$} \\
+\hline
+\hline
+\multicolumn{1}{|l|}{MO} & \multicolumn{1}{r|}{W} & \multicolumn{1}{l|}{MO} & \multicolumn{1}{r|}{W} & MO & \multicolumn{1}{r|}{W}& MO & \multicolumn{1}{r|}{W} \\ \hline
+3 & 46\% & 11 & 79\% &25 & 100\%& 24 & 100 \% \\ \hline
+11 & 71\% & 5 & 40\% & 2 & 34\% &4 & 58\% \\ \hline
+26 & 98\% & - & - &  -& - &-&- \\ \hline
+\end{tabular}
+\end{center}
+\label{tab_sioh3ch3_vysledky}
+\end{table}
+
+ Pro fragmentové orbitaly $\bra{22}\ket{26}$, $\bra{7}\ket{26}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_sioh3ch3_MO_s1_3}, \ref{obr_sioh3ch3_MO_s1_11} a \ref{obr_sioh3ch3_MO_s1_26}.
+  
+  \begin{figure}[h]
+\caption{MO 3 pro $\bra{22}\ket{26}$, $\bra{7}\ket{26}$ z tabulky \ref{tab_sioh3ch3_vysledky}}
+  \center
+  \includegraphics[width=5cm]{sioh3ch3_obrazky/s1_3.eps}
+  \label{obr_sioh3ch3_MO_s1_3}
+  \end{figure}
+
+\begin{figure}[h]
+\caption{MO 11 pro $\bra{22}\ket{26}$, $\bra{7}\ket{26}$ z tabulky \ref{tab_sioh3ch3_vysledky}.  }
+  \center
+  \includegraphics[width=5cm]{sioh3ch3_obrazky/s1_11.eps}
+  \label{obr_sioh3ch3_MO_s1_11}
+  \end{figure}
+
+\begin{figure}[h]
+\caption{MO 26 pro $\bra{22}\ket{26}$, $\bra{7}\ket{26}$ z tabulky \ref{tab_sioh3ch3_vysledky}.  }
+  \center
+  \includegraphics[width=5cm]{sioh3ch3_obrazky/s1_26.eps}
+  \label{obr_sioh3ch3_MO_s1_26}
+  \end{figure}
+  
+Pro fragmentové orbitaly $\bra{7}\ket{25}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_sioh3ch3_MO_s2_11} a \ref{obr_sioh3ch3_MO_s2_5}.
+  
+  \begin{figure}[h]
+\caption{MO 11 pro $\bra{7}\ket{25}$ z tabulky \ref{tab_sioh3ch3_vysledky}}
+  \center
+  \includegraphics[width=5cm]{sioh3ch3_obrazky/s2_11.eps}
+  \label{obr_sioh3ch3_MO_s2_11}
+  \end{figure}
+
+\begin{figure}[h]
+\caption{MO 5 pro $\bra{7}\ket{25}$ z tabulky \ref{tab_sioh3ch3_vysledky}.  }
+  \center
+  \includegraphics[width=5cm]{sioh3ch3_obrazky/s2_5.eps}
+  \label{obr_sioh3ch3_MO_s2_5}
+  \end{figure}
+
+ \clearpage
+ 
+  Pro fragmentové orbitaly $\bra{21}\ket{23}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_sioh3ch3_MO_s3_2} a \ref{obr_sioh3ch3_MO_s3_25}.
+  
+  \begin{figure}[h]
+\caption{MO 2 pro $\bra{21}\ket{23}$ z tabulky \ref{tab_sioh3ch3_vysledky}}
+  \center
+  \includegraphics[width=5cm]{sioh3ch3_obrazky/s3_2.eps}
+  \label{obr_sioh3ch3_MO_s3_2}
+  \end{figure}
+
+\begin{figure}[h]
+\caption{MO 25 pro $\bra{21}\ket{23}$ z tabulky \ref{tab_sioh3ch3_vysledky}.  }
+  \center
+  \includegraphics[width=5cm]{sioh3ch3_obrazky/s3_25.eps}
+  \label{obr_sioh3ch3_MO_s3_25}
+  \end{figure}
+  
+   Pro fragmentové orbitaly $\bra{20}\ket{24}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_sioh3ch3_MO_s4_4} a \ref{obr_sioh3ch3_MO_s4_24}.
+  
+  \begin{figure}[h]
+\caption{MO 4 pro $\bra{20}\ket{24}$ z tabulky \ref{tab_sioh3ch3_vysledky}}
+  \center
+  \includegraphics[width=5cm]{sioh3ch3_obrazky/s4_4.eps}
+  \label{obr_sioh3ch3_MO_s4_4}
+  \end{figure}
+
+\begin{figure}[h]
+\caption{MO 24 pro $\bra{20}\ket{24}$ z tabulky \ref{tab_sioh3ch3_vysledky}.  }
+  \center
+  \includegraphics[width=5cm]{sioh3ch3_obrazky/s4_24.eps}
+  \label{obr_sioh3ch3_MO_s4_24}
+  \end{figure}
+ %-------------------------------------------------------------------------------------------- 
+  \subsection{Molekula H$_6$Si0$_6$}
+ 
+  \begin{table}[htbp]
+\caption{Výsledné mísení orbitalů pro \ce{H6SiO6}}
+\begin{center}
+\begin{tabular}{|r|r|r|r|r|r|}
+\hline
+\multicolumn{2}{|c}{$\bra{30}\ket{34}$, $\bra{24}\ket{34}$} & \multicolumn{2}{|c|}{$\bra{21}\ket{32}$, $\bra{28}\ket{32}$}& \multicolumn{2}{|c|}{$\bra{22}\ket{33}$} \\
+\hline \hline
+\multicolumn{1}{|l|}{MO} & \multicolumn{1}{r|}{W} & \multicolumn{1}{l|}{MO} & \multicolumn{1}{r|}{W} & MO & \multicolumn{1}{r|}{W} \\ \hline
+1 & 96\% & 3 & 86\% &2 & 65\% \\ \hline
+28 & 84\% & 26 & 97\% & - & - \\ \hline
+34 & 100\% & 32 & 99\% &  -& - \\ \hline
+\end{tabular}
+\end{center}
+\label{tab_h6sio6_vysledky}
+\end{table}
+
+Pro fragmentové orbitaly $\bra{30}\ket{34}$, $\bra{24}\ket{34}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_h6sio6_MO_s1_1}, \ref{obr_h6sio6_MO_s1_28} a \ref{obr_h6sio6_MO_s1_34} .
+  
+  \begin{figure}[h]
+\caption{MO 1 pro $\bra{30}\ket{34}$, $\bra{24}\ket{34}$  z tabulky \ref{tab_h6sio6_vysledky}}
+  \center
+  \includegraphics[width=5cm]{h6sio6_obrazky/s1_1.eps}
+  \label{obr_h6sio6_MO_s1_1}
+  \end{figure}
+ 
+ \begin{figure}[h]
+\caption{MO 28 pro $\bra{30}\ket{34}$, $\bra{24}\ket{34}$  z tabulky \ref{tab_h6sio6_vysledky}}
+  \center
+  \includegraphics[width=5cm]{h6sio6_obrazky/s1_28.eps}
+  \label{obr_h6sio6_MO_s1_28}
+  \end{figure}
+
+\begin{figure}[h]
+\caption{MO 34 pro $\bra{30}\ket{34}$, $\bra{24}\ket{34}$  z tabulky \ref{tab_h6sio6_vysledky}}
+  \center
+  \includegraphics[width=5cm]{h6sio6_obrazky/s1_34.eps}
+  \label{obr_h6sio6_MO_s1_34}
+  \end{figure}
+  
+
+Pro fragmentové orbitaly $\bra{21}\ket{32}$, $\bra{28}\ket{32}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_h6sio6_MO_s2_3}, \ref{obr_h6sio6_MO_s2_26} a \ref{obr_h6sio6_MO_s2_32} .
+  
+  \begin{figure}[h]
+\caption{MO 3 pro $\bra{21}\ket{32}$, $\bra{28}\ket{32}$  z tabulky \ref{tab_h6sio6_vysledky}}
+  \center
+  \includegraphics[width=5cm]{h6sio6_obrazky/s2_3.eps}
+  \label{obr_h6sio6_MO_s2_3}
+  \end{figure}
+ 
+ \begin{figure}[h]
+\caption{MO 26 pro $\bra{21}\ket{32}$, $\bra{28}\ket{32}$ z tabulky \ref{tab_h6sio6_vysledky}}
+  \center
+  \includegraphics[width=5cm]{h6sio6_obrazky/s2_26.eps}
+  \label{obr_h6sio6_MO_s2_26}
+  \end{figure}
+
+\begin{figure}[h]
+\caption{MO 32 pro $\bra{21}\ket{32}$, $\bra{28}\ket{32}$  z tabulky \ref{tab_h6sio6_vysledky}}
+  \center
+  \includegraphics[width=5cm]{h6sio6_obrazky/s2_32.eps}
+  \label{obr_h6sio6_MO_s2_32}
+  \end{figure}
+
+Pro fragmentové orbitaly $\bra{22}\ket{33}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_h6sio6_MO_s3_2}.
+  
+  \begin{figure}[h]
+\caption{MO 2 pro $\bra{22}\ket{33}$  z tabulky \ref{tab_h6sio6_vysledky}}
+  \center
+  \includegraphics[width=5cm]{h6sio6_obrazky/s3_2.eps}
+  \label{obr_h6sio6_MO_s3_2}
+  \end{figure}
+%----------------------------------------------------------------------------------------
+ 
+
+
+
 
 {\csname captions\languagename\endcsname %% Temporarily override
 %% the BibLaTeX localization with the original babel definitions.
