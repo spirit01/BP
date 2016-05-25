@@ -106,19 +106,34 @@
 \usepackage{braket}
 \begin{document}
 \chapter{Úvod}
-
+Fosfosilikátové sloučeniny mají široké využití jako pokročilé technologické materiály. Jejich stabilní Brönstedovská kyselost za zvýšené teploty je klíčovou vlastností pro využití v palivových článcích a v heterogenní katalýze.\cite{korotcenkov2013handbook}\cite{Fougret2001295} V roce 2015 byla A. Stýskalíkem a spoluautory publikována originální syntéza mezoporózních  nanokrystalických  fosfosilikátů a hybridních anorganicko-organických materiálů pomocí nehydrolytických kondenzačních reakcí založených na esterové eliminaci.\cite{1306716} Jako prekurzory sloužily v případě fosfosilikátů octan křemičitý a tris(trimethylsilyl)ester kyseliny fosforečné. Zatímco posledně jmenované prekurzory poskytly mikroporózní gely se strukturními jednotkami \ce{SiO6}, zavedení organických skupin ve formě různých alkyl/arylacetoxysilanů indukovaly strukturní  a stavební změny vedoucí k neporózní, hybridním silikofosfátovým sklům.\cite{1316862} Tyto drastické změny vlastností byly připsány snížení zesíťovací kapacity křemíku. Organo-substituovaná křemíková centra navíc prokazovala zřejmě nedostatečnou Lewisovskou kyselost k získání hexakoordinace, neboť sterické překážky nehrály ve vzniku \ce{SiO6} center významnější roli.  Dále bylo pozorováno, že přítomnost skupin \ce{SiO6} je spojená s přítomností mikropórů, zatímco pokud tyto skupiny absentují, tak jsou vzorky mesoporézní.
+Vzhledem k těmto pozorováním, jakož i obecné zajímavosti problému aktivace křemíku k tvorbě hypervalentních struktur,\cite{rendler2005hypervalent} se jeví jako užitečné studovat vliv prekurzorů na schopnost tvorby center \ce{SiO6} také teoreticky, konkrétně metodami kvantové chemie. Ty totiž poskytují detailní charakterizaci strukturně-elektronových parametrů prekurzorů i výsledných systémů, která by mohla interpretovat tendenci k hypervalenci křemíku v konkrétním systému. Jako téma této bakalářské práce byl zvoleno studium nejjednodušších možných fosfátových prekurzorů využitých v minulosti k syntéze silikofosfátů, konkrétně molekul \ce{POCl3}, \ce{PO(OH)3}, a \ce{PO(OCH3)3}. Elektronová struktura těchto systémů byla studována pomocí Rozšířené Hückelovy metody v implementaci programu C.A.C.A.O.\cite{cacao}. Práce se zaměřuje na porovnání vazebných charakteristik jednotlivých sloučenin z této trojice z hlediska orbitálních interakcí, přičemž nejdůležitějšími zkoumanými semikvantitativními parametry je  vzdálenost energií nejvyššího obsazeného a nejnižšího neobsazeného molekulového orbitalu (tzv. HOMO-LUMO mezera) a velikost energie odpovídající středu tohoto intervalu. Zmíněné parametry jsou totiž v rámci teorie HSAB (\uv{Hard and Soft Acids and Bases}) spojovány s charakterizací tvrdosti a měkkosti Lewisovských kyselin a bazí a jejich reaktivitou.[odkaz] Naším cílem bylo, prostřednictvím porovnání nejjednodušších možných fosfátových prekurzorů, navrhnout strategii pro porozumění elektronové struktuře složitějších prekurzorů využívaných v konkrétních syntézách, např. tris(trimethylsilyl)fosfátu využívaného v syntéze A. Stýskalíka. Z pohledu křemičitanových prekurzorů se podobnému úkolu věnuje bakalářská práce Petry Hrozkové. [odkaz]
 \begin{otherlanguage}{czech}
-Motivace experimentální prací Mgr. Aleše Stýskalíka PhD. 
 
-
-
- \begin{figure}[h!]
+\begin{figure}[h!]
 \caption{Silikofosfátová síť. \cite{Styskalik2015thesis} }
   \center
-  \includegraphics[width=15cm]{si_polymer_cely.png}
+  \includegraphics[width=10cm]{si_polymer_cely.png}
   \label{si_polymer_cely}
   \end{figure}
 
+
+\begin{figure}
+\centering
+\begin{minipage}{.45\linewidth}
+  \includegraphics[width=\linewidth]{si_koordinovane_6_P.png}
+  \caption{Prostředí kolem Si. \cite{Styskalik2015thesis}}
+  \label{img1}
+\end{minipage}
+\hspace{.05\linewidth}
+\begin{minipage}{.45\linewidth}
+  \includegraphics[width=\linewidth]{si_koordinovany_6_C.png}
+  \caption{Prostředí kolem Si. \cite{Styskalik2015thesis}}
+  \label{img2}
+\end{minipage}
+\end{figure}
+
+\iffalse
 \begin{figure}[h!]
 \caption{Prostředí kolem Si. \cite{Styskalik2015thesis} }
   \center
@@ -132,18 +147,24 @@ Motivace experimentální prací Mgr. Aleše Stýskalíka PhD.
   \includegraphics[width=10cm]{si_koordinovany_6_C.png}
   \label{si_koordinovany_6_C}
   \end{figure}
+  \fi
 \end{otherlanguage}
 
 
 
 \chapter{Teoretická část}
-Znalosti o chemické vazbě jsou klíčovou schopností pro každý experiment. S touto znalostí je možno předpokládat průběh experimentu a částečně i strukturu. S chemickou vazbou jsou neoddělitelně spojeny atomy. Počátky atomové teorie datujeme v letech 430-310 př.n.l v Řecku. Autorem je Démokritos, který předpokládal, že hmota je stvořena z malých, dále nedělitelných částí. Počátky molekulové struktury jsou v 18.století, kdy John Dalton použil atomovou teorii k vysvětlení chemických reakcí. Zároveň formuloval zákon stálých poměr slučovacích a zákon stálých poměrů násobných. V roce 1852 se objevuje myšlenka valence elektronů, která ovšem není kompletní do objevení elektronu 1897 Thomsonem. \\
-Lewis jako první nahlížel na chemickou vazbu jako párování elektronů. \cite{Munzarova1996thesis} \\
-Asi největší přínos do teorie chemické vazby měl zrod kvantové mechaniky. Zpočátku se jednalo pouze o popis elektronů v atomu vodíku. S pokrokem v matematice, výpočetní technice a fyzice se z toho časem široké spektrum metod, které více či méně dobře popisují chemickou vazbu.\\
-První kvantověmechanický popis zavedl Heitler a London ve své teorii valenčních vazeb (Valence Bond Theory, VB). Teorie navazuje na myšlenku sdílení elektronových páru od Lewise. Ústřední myšlenkou jsou vazebné orbitaly, kdy největší elektronová hustota je na spojnici dvou sousedních atomů. Spojením dvou atomových orbitalů vzniká vazebný orbital. Tomuto popisu se vymyká například uhlík, proto byl vymyšlen koncept hybridizace. Hlavní myšlenkou je, že dojde k spojení orbitalů, které jsou si blízké v energii. Vzniknou tak rovnocenné hybridní orbitaly. \cite{Munzarova1996thesis} \\
-Nedostatky VB teorie se pokusila řešit teorie molekulových orbitalů, MO. Ta nahlíží na molekulu podobně jako na atom, vytváří koncept molekulových orbitalů. Elektronová hustota je delokalizována přes všechny atomy.\cite{Munzarova1996thesis} \\
+Porozumění chemické vazbě mezi atomy daného systému je předpokladem pro vyčerpávající interpretaci získaných experimentálních dat. Na základě znalosti elektronové struktury je často možné také předpovědět spektroskopické vlastnosti a reaktivitu dané molekuly. Pojem chemické vazby je založen na pojmu atom. Počátky tzv. atomové teorie datujeme do období $430-310$ př. n. l. Autorem atomové hypotézy byl řecký filozof Démokritos, který předpokládal, že hmota je stvořena z malých, dále nedělitelných částí. Tato myšlenka byla v pozdějším období alchymie potlačena. Renesance atomové teorie se datuje až do 18.století. John Dalton použil atomovou teorii k popsání průběhu chemických reakcí. Zároveň formuloval zákon stálých poměr slučovacích a zákon stálých poměrů násobných. Od poloviny 19.století se objevují první myšlenky pojmu valence prvků. Německému chemikovi F. A. Kekulému je přisuzováno prvenství předpokladu o čtyřvaznosti uhlíku. Samotné porozumění pojmu valence však bylo možné až po objevení elektronu v roce 1897 J. J. Thomsonem. Toto období může být označeno jako předkvantové období. V roce 1905 bylo publikováno vysvětlení záření černého tělesa, což odstartovalo kvantový popis atomů a molekul.Lewis jako první nahlížel na chemickou vazbu jako na párování elektronů. \cite{Munzarova1996thesis} \\
+Kvantový popis atomů a molekul lze obecně rozdělit na lokalizovaný a delokalizovaný. Myšlenka lokalizovaného popisu elektronů ve vazbě je starší a odpovídá představě, že mezi dvěma jádry existuje přímá spojnice, pružina. Autorem popisu chemické vazby s pomocí valenčních vazeb (Valence Bond Theory, VB) je Heitler a London. VB navazuje na myšlenku sdílení elektronových páru od Lewise. Ústřední myšlenkou jsou vazebné orbitaly, kdy největší elektronová hustota je na spojnici dvou jader sousedních atomů. Spojením dvou atomových orbitalů vzniká vazebný orbital. Tomuto popisu se vymyká například uhlík, proto byl vymyšlen koncept hybridizace. Hlavní myšlenkou je, že dojde k spojení orbitalů, které jsou si blízké v energii. Vzniknou tak rovnocenné hybridní orbitaly. \cite{Munzarova1996thesis} \\
+Současně s VB se objevovala teorie molekulových orbitalů (Molecular orbital, MO). Elektronová hustota je delokalizována přes všechny atomy a představa chemické vazby jako pružinky neexistuje.\cite{Munzarova1996thesis} \\
+Opuštění VB jako popisu chemické vazby bylo zpočátku dáno především vyšší výpočetní náročnosti VB, dále se ukázaly také kvantitativní nedostatky při popisu složitějších molekul. \cite{lowe2011quantum} 
+
 \section{Vlnová funkce a Schrödingerova rovnice}
-Vlastnosti chemických molekul určují především elektrony. Ve 20. století již bylo známo, že elektrony se svým chováním vymykají představám klasické mechaniky. Na počátku 20. století bylo popsáno chování černého tělesa, fotoeletkrického jevu a představám, že svět není spojitý. Myšlenka, že svět je tvořen z diskrétních částí vedla k vzniku kvantové mechaniky. U jejího zrodu stál třeba W. Heisenberg, E. Schrödinger a P. A. M. Dirac. V běžné mechanice je systém možné přesně popsat polohou a hybnosti, díky těmto veličinám lze předvídat i pohyb budoucí. V kvantové mechanice je základem Schrödingerova rovnice \ref{SCH_rce_kratka}, diferenciální rovnice druhého řádu, která v sobě obsahuje veškerou informaci o systému.\cite{polak2000obecna}
+Chemické vlastnosti molekul určuje jejich geometrická a elektronová struktura. Ve 20. století již bylo známo, že elektrony se svým chováním vymykají představám klasické mechaniky. Na počátku 20. století bylo popsáno chování černého tělesa, fotoeletkrického jevu a atomová spektra. Myšlenka, že svět je tvořen z diskrétních částí, kvant, vedla k vzniku kvantové mechaniky. Zlomovou myšlenkou bylo teoretické popsání záření černého tělesa, které vysvětlit Max Planck \ref{eq_Plack}. Předpokládal, že energie se nepředává spojitě ale po přesně daných částech. Na tomto základě Albert Einstein vysvětlil podstatu fotoelektrického jevu, kdy předpokládal, že světlo je složeno z částí a ty nazval fotony. Elektromagnetické vlnění začalo mít částicovou povahu.
+\begin{equation}
+E = \hbar \nu
+\label{eq_Plack}
+\end{equation}
+U jejího zrodu stál třeba W. Heisenberg, E. Schrödinger a P. A. M. Dirac. V běžné mechanice je systém možné přesně popsat polohou a hybnosti, díky těmto veličinám lze předvídat i pohyb budoucí. V kvantové mechanice je základem Schrödingerova rovnice \ref{SCH_rce_kratka}, diferenciální rovnice druhého řádu, která v sobě obsahuje veškerou informaci o systému.\cite{polak2000obecna}
 \begin{equation}
 \widehat{H} \Psi = E \Psi
 \label{SCH_rce_kratka}
@@ -351,21 +372,21 @@ Základní molekula pro čtyřkoordinovaný křemík je \ce{H4SiO4}, kde Si je k
     Pro fragmentové orbitaly $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_h4sio4_MO_s1_1}, \ref{obr_h4sio4_MO_s1_20} a \ref{obr_h4sio4_MO_s1_24} .
   
   \begin{figure}[h]
-\caption{MO 1 pro $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
+\caption{MO 1 po interakci $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
   \center
   \includegraphics[width=5cm]{h4sio4_obrazky/s1_1.eps}
   \label{obr_h4sio4_MO_s1_1}
   \end{figure}
 
 \begin{figure}[h]
-\caption{MO 20 pro $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
+\caption{MO 20 po interakci $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
   \center
   \includegraphics[width=5cm]{h4sio4_obrazky/s1_20.eps}
   \label{obr_h4sio4_MO_s1_20}
   \end{figure}
 
 \begin{figure}[h]
-\caption{MO 24 pro $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
+\caption{MO 24 po interakci $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
   \center
   \includegraphics[width=5cm]{h4sio4_obrazky/s1_24.eps}
   \label{obr_h4sio4_MO_s1_24}
@@ -374,21 +395,21 @@ Základní molekula pro čtyřkoordinovaný křemík je \ce{H4SiO4}, kde Si je k
   Pro fragmentové orbitaly $\bra{11}{\hat{H}}\ket{21}$, $\bra{19}{\hat{H}}\ket{21}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_h4sio4_MO_s2_4}, \ref{obr_h4sio4_MO_s2_16} a \ref{obr_h4sio4_MO_s2_21} .
   
   \begin{figure}[h]
-\caption{MO 4 pro $\bra{11}{\hat{H}}\ket{21}$, $\bra{19}{\hat{H}}\ket{21}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
+\caption{MO 4 po interakci $\bra{11}{\hat{H}}\ket{21}$, $\bra{19}{\hat{H}}\ket{21}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
   \center
   \includegraphics[width=5cm]{h4sio4_obrazky/s2_4.eps}
   \label{obr_h4sio4_MO_s2_4}
   \end{figure}
 
 \begin{figure}[h]
-\caption{MO 16 pro $\bra{11}{\hat{H}}\ket{21}$, $\bra{19}{\hat{H}}\ket{21}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
+\caption{MO 16 po interakci $\bra{11}{\hat{H}}\ket{21}$, $\bra{19}{\hat{H}}\ket{21}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
   \center
   \includegraphics[width=5cm]{h4sio4_obrazky/s2_16.eps}
   \label{obr_h4sio4_MO_s2_16}
   \end{figure}
 
 \begin{figure}[h]
-\caption{MO 21 pro $\bra{11}{\hat{H}}\ket{21}$, $\bra{19}{\hat{H}}\ket{21}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
+\caption{MO 21 po interakci $\bra{11}{\hat{H}}\ket{21}$, $\bra{19}{\hat{H}}\ket{21}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
   \center
   \includegraphics[width=5cm]{h4sio4_obrazky/s2_16.eps}
   \label{obr_h4sio4_MO_s2_21}
@@ -397,21 +418,21 @@ Základní molekula pro čtyřkoordinovaný křemík je \ce{H4SiO4}, kde Si je k
   Pro fragmentové orbitaly $\bra{15}{\hat{H}}\ket{22}$, $\bra{18}{\hat{H}}\ket{22}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_h4sio4_MO_s3_2}, \ref{obr_h4sio4_MO_s3_19} a \ref{obr_h4sio4_MO_s3_22}.
   
   \begin{figure}[h]
-\caption{MO 2 pro $\bra{15}{\hat{H}}\ket{22}$, $\bra{18}{\hat{H}}\ket{22}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
+\caption{MO 2 po interakci $\bra{15}{\hat{H}}\ket{22}$, $\bra{18}{\hat{H}}\ket{22}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
   \center
   \includegraphics[width=5cm]{h4sio4_obrazky/s3__2.eps}
   \label{obr_h4sio4_MO_s3_2}
   \end{figure}
 
 \begin{figure}[h]
-\caption{MO 19 pro $\bra{15}{\hat{H}}\ket{22}$, $\bra{18}{\hat{H}}\ket{22}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
+\caption{MO 19 po interakci $\bra{15}{\hat{H}}\ket{22}$, $\bra{18}{\hat{H}}\ket{22}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
   \center
   \includegraphics[width=5cm]{h4sio4_obrazky/s3__19.eps}
   \label{obr_h4sio4_MO_s3_19}
   \end{figure}
 
 \begin{figure}[h]
-\caption{MO 22 pro $\bra{15}{\hat{H}}\ket{22}$, $\bra{18}{\hat{H}}\ket{22}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
+\caption{MO 22 po interakci $\bra{15}{\hat{H}}\ket{22}$, $\bra{18}{\hat{H}}\ket{22}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
   \center
   \includegraphics[width=5cm]{h4sio4_obrazky/s3__22.eps}
   \label{obr_h4sio4_MO_s3_22}
@@ -446,21 +467,21 @@ Základní molekula pro čtyřkoordinovaný křemík je \ce{H4SiO4}, kde Si je k
  Pro fragmentové orbitaly $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_sioh3ch3_MO_s1_3}, \ref{obr_sioh3ch3_MO_s1_11} a \ref{obr_sioh3ch3_MO_s1_26}.
   
   \begin{figure}[h]
-\caption{MO 3 pro $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ z tabulky \ref{tab_sioh3ch3_vysledky}}
+\caption{MO 3 po interakci $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ z tabulky \ref{tab_sioh3ch3_vysledky}}
   \center
   \includegraphics[width=5cm]{sioh3ch3_obrazky/s1_3.eps}
   \label{obr_sioh3ch3_MO_s1_3}
   \end{figure}
 
 \begin{figure}[h]
-\caption{MO 11 pro $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ z tabulky \ref{tab_sioh3ch3_vysledky}.  }
+\caption{MO 11 po interakci $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ z tabulky \ref{tab_sioh3ch3_vysledky}.  }
   \center
   \includegraphics[width=5cm]{sioh3ch3_obrazky/s1_11.eps}
   \label{obr_sioh3ch3_MO_s1_11}
   \end{figure}
 
 \begin{figure}[h]
-\caption{MO 26 pro $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ z tabulky \ref{tab_sioh3ch3_vysledky}.  }
+\caption{MO 26 po interakci $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ z tabulky \ref{tab_sioh3ch3_vysledky}.  }
   \center
   \includegraphics[width=5cm]{sioh3ch3_obrazky/s1_26.eps}
   \label{obr_sioh3ch3_MO_s1_26}
@@ -469,14 +490,14 @@ Základní molekula pro čtyřkoordinovaný křemík je \ce{H4SiO4}, kde Si je k
 Pro fragmentové orbitaly $\bra{7}{\hat{H}}\ket{25}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_sioh3ch3_MO_s2_11} a \ref{obr_sioh3ch3_MO_s2_5}.
   
   \begin{figure}[h]
-\caption{MO 11 pro $\bra{7}{\hat{H}}\ket{25}$ z tabulky \ref{tab_sioh3ch3_vysledky}}
+\caption{MO 11 po interakci $\bra{7}{\hat{H}}\ket{25}$ z tabulky \ref{tab_sioh3ch3_vysledky}}
   \center
   \includegraphics[width=5cm]{sioh3ch3_obrazky/s2_11.eps}
   \label{obr_sioh3ch3_MO_s2_11}
   \end{figure}
 
 \begin{figure}[h]
-\caption{MO 5 pro $\bra{7}{\hat{H}}\ket{25}$ z tabulky \ref{tab_sioh3ch3_vysledky}.  }
+\caption{MO 5 po interakci $\bra{7}{\hat{H}}\ket{25}$ z tabulky \ref{tab_sioh3ch3_vysledky}.  }
   \center
   \includegraphics[width=5cm]{sioh3ch3_obrazky/s2_5.eps}
   \label{obr_sioh3ch3_MO_s2_5}
@@ -487,14 +508,14 @@ Pro fragmentové orbitaly $\bra{7}{\hat{H}}\ket{25}$ byly nalezeny příslušné
   Pro fragmentové orbitaly $\bra{21}{\hat{H}}\ket{23}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_sioh3ch3_MO_s3_2} a \ref{obr_sioh3ch3_MO_s3_25}.
   
   \begin{figure}[h]
-\caption{MO 2 pro $\bra{21}{\hat{H}}\ket{23}$ z tabulky \ref{tab_sioh3ch3_vysledky}}
+\caption{MO 2 po interakci $\bra{21}{\hat{H}}\ket{23}$ z tabulky \ref{tab_sioh3ch3_vysledky}}
   \center
   \includegraphics[width=5cm]{sioh3ch3_obrazky/s3_2.eps}
   \label{obr_sioh3ch3_MO_s3_2}
   \end{figure}
 
 \begin{figure}[h]
-\caption{MO 25 pro $\bra{21}{\hat{H}}\ket{23}$ z tabulky \ref{tab_sioh3ch3_vysledky}.  }
+\caption{MO 25 po interakci $\bra{21}{\hat{H}}\ket{23}$ z tabulky \ref{tab_sioh3ch3_vysledky}.  }
   \center
   \includegraphics[width=5cm]{sioh3ch3_obrazky/s3_25.eps}
   \label{obr_sioh3ch3_MO_s3_25}
@@ -503,14 +524,14 @@ Pro fragmentové orbitaly $\bra{7}{\hat{H}}\ket{25}$ byly nalezeny příslušné
    Pro fragmentové orbitaly $\bra{20}{\hat{H}}\ket{24}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_sioh3ch3_MO_s4_4} a \ref{obr_sioh3ch3_MO_s4_24}.
   
   \begin{figure}[h]
-\caption{MO 4 pro $\bra{20}{\hat{H}}\ket{24}$ z tabulky \ref{tab_sioh3ch3_vysledky}}
+\caption{MO 4 po interakci $\bra{20}{\hat{H}}\ket{24}$ z tabulky \ref{tab_sioh3ch3_vysledky}}
   \center
   \includegraphics[width=5cm]{sioh3ch3_obrazky/s4_4.eps}
   \label{obr_sioh3ch3_MO_s4_4}
   \end{figure}
 
 \begin{figure}[h]
-\caption{MO 24 pro $\bra{20}{\hat{H}}\ket{24}$ z tabulky \ref{tab_sioh3ch3_vysledky}.  }
+\caption{MO 24 po interakci $\bra{20}{\hat{H}}\ket{24}$ z tabulky \ref{tab_sioh3ch3_vysledky}.  }
   \center
   \includegraphics[width=5cm]{sioh3ch3_obrazky/s4_24.eps}
   \label{obr_sioh3ch3_MO_s4_24}
@@ -537,21 +558,21 @@ Pro fragmentové orbitaly $\bra{7}{\hat{H}}\ket{25}$ byly nalezeny příslušné
 Pro fragmentové orbitaly $\bra{30}{\hat{H}}\ket{34}$, $\bra{24}{\hat{H}}\ket{34}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_h6sio6_MO_s1_1}, \ref{obr_h6sio6_MO_s1_28} a \ref{obr_h6sio6_MO_s1_34} .
   
   \begin{figure}[h]
-\caption{MO 1 pro $\bra{30}{\hat{H}}\ket{34}$, $\bra{24}{\hat{H}}\ket{34}$  z tabulky \ref{tab_h6sio6_vysledky}}
+\caption{MO 1 po interakci $\bra{30}{\hat{H}}\ket{34}$, $\bra{24}{\hat{H}}\ket{34}$  z tabulky \ref{tab_h6sio6_vysledky}}
   \center
   \includegraphics[width=5cm]{h6sio6_obrazky/s1_1.eps}
   \label{obr_h6sio6_MO_s1_1}
   \end{figure}
  
  \begin{figure}[h]
-\caption{MO 28 pro $\bra{30}{\hat{H}}\ket{34}$, $\bra{24}{\hat{H}}\ket{34}$  z tabulky \ref{tab_h6sio6_vysledky}}
+\caption{MO 28 po interakci $\bra{30}{\hat{H}}\ket{34}$, $\bra{24}{\hat{H}}\ket{34}$  z tabulky \ref{tab_h6sio6_vysledky}}
   \center
   \includegraphics[width=5cm]{h6sio6_obrazky/s1_28.eps}
   \label{obr_h6sio6_MO_s1_28}
   \end{figure}
 
 \begin{figure}[h]
-\caption{MO 34 pro $\bra{30}{\hat{H}}\ket{34}$, $\bra{24}{\hat{H}}\ket{34}$  z tabulky \ref{tab_h6sio6_vysledky}}
+\caption{MO 34 po interakci $\bra{30}{\hat{H}}\ket{34}$, $\bra{24}{\hat{H}}\ket{34}$  z tabulky \ref{tab_h6sio6_vysledky}}
   \center
   \includegraphics[width=5cm]{h6sio6_obrazky/s1_34.eps}
   \label{obr_h6sio6_MO_s1_34}
@@ -561,21 +582,21 @@ Pro fragmentové orbitaly $\bra{30}{\hat{H}}\ket{34}$, $\bra{24}{\hat{H}}\ket{34
 Pro fragmentové orbitaly $\bra{21}{\hat{H}}\ket{32}$, $\bra{28}{\hat{H}}\ket{32}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_h6sio6_MO_s2_3}, \ref{obr_h6sio6_MO_s2_26} a \ref{obr_h6sio6_MO_s2_32} .
   
   \begin{figure}[h]
-\caption{MO 3 pro $\bra{21}{\hat{H}}\ket{32}$, $\bra{28}{\hat{H}}\ket{32}$  z tabulky \ref{tab_h6sio6_vysledky}}
+\caption{MO 3 po interakci $\bra{21}{\hat{H}}\ket{32}$, $\bra{28}{\hat{H}}\ket{32}$  z tabulky \ref{tab_h6sio6_vysledky}}
   \center
   \includegraphics[width=5cm]{h6sio6_obrazky/s2_3.eps}
   \label{obr_h6sio6_MO_s2_3}
   \end{figure}
  
  \begin{figure}[h]
-\caption{MO 26 pro $\bra{21}{\hat{H}}\ket{32}$, $\bra{28}{\hat{H}}\ket{32}$ z tabulky \ref{tab_h6sio6_vysledky}}
+\caption{MO 26 po interakci $\bra{21}{\hat{H}}\ket{32}$, $\bra{28}{\hat{H}}\ket{32}$ z tabulky \ref{tab_h6sio6_vysledky}}
   \center
   \includegraphics[width=5cm]{h6sio6_obrazky/s2_26.eps}
   \label{obr_h6sio6_MO_s2_26}
   \end{figure}
 
 \begin{figure}[h]
-\caption{MO 32 pro $\bra{21}{\hat{H}}\ket{32}$, $\bra{28}{\hat{H}}\ket{32}$  z tabulky \ref{tab_h6sio6_vysledky}}
+\caption{MO 32 po interakci $\bra{21}{\hat{H}}\ket{32}$, $\bra{28}{\hat{H}}\ket{32}$  z tabulky \ref{tab_h6sio6_vysledky}}
   \center
   \includegraphics[width=5cm]{h6sio6_obrazky/s2_32.eps}
   \label{obr_h6sio6_MO_s2_32}
@@ -584,7 +605,7 @@ Pro fragmentové orbitaly $\bra{21}{\hat{H}}\ket{32}$, $\bra{28}{\hat{H}}\ket{32
 Pro fragmentové orbitaly $\bra{22}{\hat{H}}\ket{33}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_h6sio6_MO_s3_2}.
   
   \begin{figure}[h]
-\caption{MO 2 pro $\bra{22}{\hat{H}}\ket{33}$  z tabulky \ref{tab_h6sio6_vysledky}}
+\caption{MO 2 po interakci $\bra{22}{\hat{H}}\ket{33}$  z tabulky \ref{tab_h6sio6_vysledky}}
   \center
   \includegraphics[width=5cm]{h6sio6_obrazky/s3_2.eps}
   \label{obr_h6sio6_MO_s3_2}
@@ -612,41 +633,42 @@ Pro fragmentové orbitaly $\bra{22}{\hat{H}}\ket{33}$ byly nalezeny příslušn�
 \end{table}
 
 \begin{figure}[h]
-\caption{MO 4 pro $\bra{19}{\hat{H}}\ket{29}$, $\bra{15}{\hat{H}}\ket{29}$,$\bra{7}{\hat{H}}\ket{29}$, $\bra{22}{\hat{H}}\ket{29}$ z tabulky \ref{tab_sio3_vysledky}}
+\caption{MO 4 po interakci $\bra{19}{\hat{H}}\ket{29}$, $\bra{15}{\hat{H}}\ket{29}$,$\bra{7}{\hat{H}}\ket{29}$, $\bra{22}{\hat{H}}\ket{29}$ z tabulky \ref{tab_sio3_vysledky}}
   \center
   \includegraphics[width=5cm]{sio3p_obrazky/mo_4.eps}
   \label{obr_sio3_MO_4}
   \end{figure}
 
 \begin{figure}[h]
-\caption{MO 14 pro $\bra{19}{\hat{H}}\ket{29}$, $\bra{15}{\hat{H}}\ket{29}$,$\bra{7}{\hat{H}}\ket{29}$, $\bra{22}{\hat{H}}\ket{29}$ z tabulky \ref{tab_sio3_vysledky}}
+\caption{MO 14 po interakci $\bra{19}{\hat{H}}\ket{29}$, $\bra{15}{\hat{H}}\ket{29}$,$\bra{7}{\hat{H}}\ket{29}$, $\bra{22}{\hat{H}}\ket{29}$ z tabulky \ref{tab_sio3_vysledky}}
   \center
   \includegraphics[width=5cm]{sio3p_obrazky/mo_14.eps}
   \label{obr_sio3_MO_14}
   \end{figure}
 
 \begin{figure}[h]
-\caption{MO 30 pro $\bra{19}{\hat{H}}\ket{29}$, $\bra{15}{\hat{H}}\ket{29}$,$\bra{7}{\hat{H}}\ket{29}$, $\bra{22}{\hat{H}}\ket{29}$ z tabulky \ref{tab_sio3_vysledky}}
+\caption{MO 30 po interakci $\bra{19}{\hat{H}}\ket{29}$, $\bra{15}{\hat{H}}\ket{29}$,$\bra{7}{\hat{H}}\ket{29}$, $\bra{22}{\hat{H}}\ket{29}$ z tabulky \ref{tab_sio3_vysledky}}
   \center
   \includegraphics[width=5cm]{sio3p_obrazky/mo_30.eps}
   \label{obr_sio3_MO_30}
   \end{figure}
 
 \begin{figure}[h]
-\caption{MO 35 pro $\bra{19}{\hat{H}}\ket{29}$, $\bra{15}{\hat{H}}\ket{29}$,$\bra{7}{\hat{H}}\ket{29}$, $\bra{22}{\hat{H}}\ket{29}$ z tabulky \ref{tab_sio3_vysledky}}
+\caption{MO 35 po interakci $\bra{19}{\hat{H}}\ket{29}$, $\bra{15}{\hat{H}}\ket{29}$,$\bra{7}{\hat{H}}\ket{29}$, $\bra{22}{\hat{H}}\ket{29}$ z tabulky \ref{tab_sio3_vysledky}}
   \center
   \includegraphics[width=5cm]{sio3p_obrazky/mo_35.eps}
   \label{obr_sio3_MO_35}
   \end{figure}  
   
 \begin{figure}[h]
-\caption{MO 41 pro $\bra{19}{\hat{H}}\ket{29}$, $\bra{15}{\hat{H}}\ket{29}$,$\bra{7}{\hat{H}}\ket{29}$, $\bra{22}{\hat{H}}\ket{29}$ z tabulky \ref{tab_sio3_vysledky}}
+\caption{MO 41 po interakci $\bra{19}{\hat{H}}\ket{29}$, $\bra{15}{\hat{H}}\ket{29}$,$\bra{7}{\hat{H}}\ket{29}$, $\bra{22}{\hat{H}}\ket{29}$ z tabulky \ref{tab_sio3_vysledky}}
   \center
   \includegraphics[width=5cm]{sio3p_obrazky/mo_41.eps}
   \label{obr_sio3_MO_41}
   \end{figure}  
   
-  
+\section{DFT výpočet} 
+Pro DFT výpočty byly zvoleny molekuly, kde byl Si koordinován šesti kyslíky. 
   
   
 {\csname captions\languagename\endcsname %% Temporarily override
