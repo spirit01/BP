@@ -104,6 +104,7 @@
 \usepackage{menukeys}
 \usepackage[version=3]{mhchem}
 \usepackage{braket}
+\usepackage{subfigure}
 \begin{document}
 \chapter{Úvod}
 Fosfosilikátové sloučeniny mají široké využití jako pokročilé technologické materiály. Jejich stabilní Brönstedovská kyselost za zvýšené teploty je klíčovou vlastností pro využití v palivových článcích a v heterogenní katalýze.\cite{korotcenkov2013handbook}\cite{Fougret2001295} V roce 2015 byla A. Stýskalíkem a spoluautory publikována originální syntéza mezoporózních  nanokrystalických  fosfosilikátů a hybridních anorganicko-organických materiálů pomocí nehydrolytických kondenzačních reakcí založených na esterové eliminaci.\cite{1306716} Jako prekurzory sloužily v případě fosfosilikátů octan křemičitý a tris(trimethylsilyl)ester kyseliny fosforečné. Zatímco posledně jmenované prekurzory poskytly mikroporózní gely se strukturními jednotkami \ce{SiO6}, zavedení organických skupin ve formě různých alkyl/arylacetoxysilanů indukovaly strukturní  a stavební změny vedoucí k neporózní, hybridním silikofosfátovým sklům.\cite{1316862} Tyto drastické změny vlastností byly připsány snížení zesíťovací kapacity křemíku. Organo-substituovaná křemíková centra navíc prokazovala zřejmě nedostatečnou Lewisovskou kyselost k získání hexakoordinace, neboť sterické překážky nehrály ve vzniku \ce{SiO6} center významnější roli.  Dále bylo pozorováno, že přítomnost skupin \ce{SiO6} je spojená s přítomností mikropórů, zatímco pokud tyto skupiny absentují, tak jsou vzorky mesoporézní.
@@ -159,53 +160,59 @@ Současně s VB se objevovala teorie molekulových orbitalů (Molecular orbital,
 Opuštění VB jako popisu chemické vazby bylo zpočátku dáno především vyšší výpočetní náročnosti VB, dále se ukázaly také kvantitativní nedostatky při popisu složitějších molekul. \cite{lowe2011quantum} 
 
 \section{Vlnová funkce a Schrödingerova rovnice}
-Chemické vlastnosti molekul určuje jejich geometrická a elektronová struktura. Ve 20. století již bylo známo, že elektrony se svým chováním vymykají představám klasické mechaniky. Na počátku 20. století bylo popsáno chování černého tělesa, fotoeletkrického jevu a atomová spektra. Myšlenka, že svět je tvořen z diskrétních částí, kvant, vedla k vzniku kvantové mechaniky. Zlomovou myšlenkou bylo teoretické popsání záření černého tělesa, které vysvětlit Max Planck \ref{eq_Plack}. Předpokládal, že energie se nepředává spojitě ale po přesně daných částech. Na tomto základě Albert Einstein vysvětlil podstatu fotoelektrického jevu, kdy předpokládal, že světlo je složeno z částí a ty nazval fotony. Elektromagnetické vlnění začalo mít částicovou povahu.
+Chemické vlastnosti molekul určuje jejich geometrická a elektronová struktura. Ve 20. století již bylo známo, že elektrony se svým chováním vymykají představám klasické mechaniky. Na počátku 20. století bylo popsáno chování černého tělesa, fotoelektrického jevu a atomová spektra. Myšlenka, že svět je tvořen z diskrétních částí, kvant, vedla k vzniku kvantové mechaniky. Zlomovou myšlenkou bylo teoretické popsání záření černého tělesa, které vysvětlit Max Planck \ref{eq_Plack}. Předpokládal, že energie se nepředává spojitě ale po přesně daných částech. Na tomto základě Albert Einstein vysvětlil podstatu fotoelektrického jevu, kdy předpokládal, že světlo je složeno z částí a ty nazval fotony. Elektromagnetické vlnění začalo mít částicovou povahu.
 \begin{equation}
-E = \hbar \nu
+E = h \nu
 \label{eq_Plack}
 \end{equation}
-U jejího zrodu stál třeba W. Heisenberg, E. Schrödinger a P. A. M. Dirac. V běžné mechanice je systém možné přesně popsat polohou a hybnosti, díky těmto veličinám lze předvídat i pohyb budoucí. V kvantové mechanice je základem Schrödingerova rovnice \ref{SCH_rce_kratka}, diferenciální rovnice druhého řádu, která v sobě obsahuje veškerou informaci o systému.\cite{polak2000obecna}
+$E$ je energie, $h$  je Planckova konstanta\footnote{6, 626 070 040  $\cdot 10^{-34} ~ J \cdot s$ \href{http://physics.nist.gov/cgi-bin/cuu/Value?h}{ Physical Measurement Laboratory of NIST}  }, $\nu$ je frekvence. Na tuto představu navázal Louis de Broglie a navrhl, když vlny mohou mít vlastnosti částic, mohou mít částice vlnové vlastnosti a navrhl rovnici vlny \ref{rce_rovnice_vlny}.
 \begin{equation}
-\widehat{H} \Psi = E \Psi
-\label{SCH_rce_kratka}
+\lambda = \frac{h}{mv}
+\label{rce_rovnice_vlny}
 \end{equation}
-$\widehat{H}$ je Hamiltonián, operátor, který reprezentuje energii systému. $E$ je energie, vlastní hodnota Hamiltoniánu. $\Psi$ je vlnová funkce, která v sobě ukrývá celou informaci o systému. Hamiltonián se skládá ze dvou částí, operátoru kinetické a potenciální energie.
+$\lambda$ je vlnová délka, $m$ je hmotnosti částice a $v$ je rychlost částice. Částice a vlny mají podle rovnic \ref{rce_rovnice_vlny} a \ref{eq_Plack} duální charakter. Navazující práce se týkala objasnění atomových čárových spekter, kdy atom poskytoval vždy čárová a dokonale reprodukovatelná spektra. I zde byly pomocí myšlenky kvantování později objeveny čáry i mimo viditelnou oblast. Na tyto práce později navázal E. Schrödinger, W. Heisenberg nebo P. A. M. Dirac. a kvantová teorie se začala rozvíjet. \cite{celyprincipy}\\
+V běžné mechanice je systém možné přesně popsat polohou a hybnosti, díky těmto veličinám lze předvídat i pohyb budoucí. V kvantové mechanice je veškerá interpretace pravděpodobnostní. Vždy lze říci, že se daná částice bude v nějakém prostoru v daném čase vyskytovat pouze s určitou pravděpodobností. Informaci o částici v sobě nese Schrödingerova rovnice \ref{SCH_time_dependent}, diferenciální rovnice druhého řádu.\cite{polak2000obecna}
+\begin{equation}
+i \hbar \frac{\delta}{\delta t} \Psi (\vec{r},t)=\widehat{H} \Psi(\vec{r},t)
+\label{SCH_time_dependent}
+\end{equation}
+$\widehat{H}$ je Hamiltonián, operátor, který reprezentuje kvantově mechanickou cestu k výpočtu energie systému, $E$ je energie, vlastní hodnota Hamiltoniánu, $\Psi$ je vlnová funkce, která v sobě ukrývá celou informaci o systému, $\hbar$ je redukovaná Planckova konstanta. Hamiltonián se skládá ze dvou částí, operátoru kinetické a potenciální energie.
 \begin{equation}
 \widehat{H} = \widehat{T} + \widehat{V}
 \end{equation}
-$\widehat{T}$ reprezentuje kinetickou enregii, $\widehat{V}$ je potenciální energie.
-Výraz pro kinetickou energii $\widehat{T}$, který v sobě zahrnuje všechny částice systému. 
+$\widehat{T}$ reprezentuje kinetickou enregii, $\widehat{V}$ je potenciální energie. Kvantově mechanický výraz pro kinetickou energii $\widehat{T}$ je sumou jednočásticových operátorů. 
 \begin{equation}
-\widehat{T} = - \frac{h^2}{8 \pi ^2} \sum \frac{1}{m_i} \left( \frac{\delta^2}{\delta x_i^2} +\frac{\delta^2}{\delta y_i^2} +\frac{\delta^2}{\delta z_i^2} \right)
+\widehat{T_i} = - \frac{h^2}{8 \pi ^2} \sum \frac{1}{m_i} \left( \frac{\delta^2}{\delta x_i^2} +\frac{\delta^2}{\delta y_i^2} +\frac{\delta^2}{\delta z_i^2} \right)
 \end{equation}
-$\hbar$  je Planckova konstanta\footnote{6, 626  $\cdot 10^{-34} ~ J \cdot s$}, $m_i$ je hmotnost i-té částice. Výraz pro potenciální energii $\widehat{V}$ je coulombovská interakce mezi částicemi.
+$m_i$ je hmotnost $i-té$ částice. Kvantově mechanický výraz pro potenciální energii $\widehat{V}$ je coulombovská interakce mezi částicemi.
 \begin{equation}
 \widehat{V} = \sum_{i<j}\sum \left( \frac{e_i e_j}{r_{i,j}}\right)
 \end{equation}
- Pro chemické účely postačí stacionární Schrodingerova rovnice, která v sobě nezahrnuje čas.
-\begin{equation}
--\frac{\hbar^2}{2m_i} \frac{d^2 \psi}{d\vec{r} ^2} + V(\vec{r}) \psi = E \psi
+ Pro účely této práce postačí stacionární Schrödingerova rovnice, která v sobě nezahrnuje čas \ref{schrodingerova_rovnice}.\\
+ \begin{equation}
+\widehat{H}\Psi = E \Psi
 \label{schrodingerova_rovnice}
 \end{equation}
-Vlnovou funkci lze získat řešením Schrödingerovy rovnice \ref{schrodingerova_rovnice}. Přesto exaktní řešení existuje pouze pro atom vodíku a další exotické atomy, které mají jeden elektron a jeden proton. Základním přístupem je separace pohybu elektronů od pohybu jader kvůli velkým rozdílům v hmotnosti těchto částic. Rozložení elektronů je tak závislé pouze na poloze elektronu, nikoli na rychlosti. Separace problému na dva samostatně řešitelné přístupy se nazývá Born-Oppenheimerova aproximace nebo adiabatická aproximace. \cite{warren1986ab}
-Řešením rovnice \ref{schrodingerova_rovnice} pro atom vodíku získáme energii a orbitaly, jednoelektronovou funkci. Orbital je matematický prostor, kde se elektron vyskytuje s nejvyšší pravděpodobností. Fyzikální význam má pouze $|\Psi|^{2}$. V atomech se nachází atomové orbitaly. \\
-Přidáním elektronů do vícelektronového atomu se v rovnici objeví vzájemné působení elektronů a rovnice se stává analyticky neřešitelnou. Zde přichází na řadu numerické a přibližné metody. První způsob řešení elektronů v atomech je model neinteragujících elektronů, které se pohybují nezávisle na sobě. Tato aproximace pochopitelně nemá pro chemii význam, lze ji použít v ojedinělých případech pro ionty. Pro popis atomů s více elektrony lze použít již zmíněné atomové orbitaly. Příslušnou vlnovou funkci pro atom s více elektrony lze zapsat součin jednoelektronových funkcí. Vyjádření víceelektronové vlnové funkce jako součin jednoelektronových funkcí navrhl Hartree. Základ jeho metody je přístup, že elektron interaguje s průměrným polem ostatních elektronů. V základu je navrhnuta hrubá vlnová funkce, která je pomocí variačního počtu vylepšována, až je nalezena vlnová funkce, která poskytuje nejnižší energii.
+Vlnovou funkci $\Psi$ lze získat řešením Schrödingerovy rovnice \ref{schrodingerova_rovnice}. Fyzikální význam má pouze $|\Psi|^2$, což vyjadřuje hustotu pravděpodobnosti výskytu elektronu. Tento matematický prostor se nazývá orbital. Exaktní řešení \ref{schrodingerova_rovnice} existuje pouze pro atom vodíku a další exotické atomy, které mají jeden elektron a jeden proton. Při rozšíření atomu byť i jeden elektron se \ref{schrodingerova_rovnice} stává analyticky neřešitelnou. Na řádu přichází numerické přístupy a aproximace. Pro atom s více elektrony lze k problému přistoupit tak, že elektrony nebudou vzájemně interagovat. Toto řešení pro chemii prakticky nemá význam, lze s tím řešit pouze speciální případy iontů. Hartree přišel na způsob řešení, kdy se elektron pohybuje časové průměrném poli ostatních jader. \cite{warren1986ab}
+Příslušnou vlnovou funkci pro atom s více elektrony \ref{eq_MO} lze zapsat součin jednoelektronových funkcí \ref{eq_AO}.  V základu je navrhnuta hrubá vlnová funkce, která poskytuje energii vyšší než je energie základního stavu. Tato funkce \ref{eq_MO} je variačním přístupem upravována, dokud není nalezena nejnižší energie.  
 \begin{equation}
 \psi_{AO} = 1s(1)
+\label{eq_AO}
 \end{equation}
 \begin{equation}
 \psi_{MO} = 1s(1) \cdot 2s(1)
+\label{eq_MO}
 \end{equation} 
-Všechny orbitaly musí být vzájemně orthogonální a normalizované.
+Zároveň musí platit, že všechny orbitaly musí být vzájemně orthogonální a normalizované.
 \begin{equation}
 S_{ii} = \int \psi_i * \psi_i dx dy dz = 1 ~ \bigwedge ~ S_{ij} = \int \psi_i * \psi_j dx dy dz = 0
 \end{equation}
-V tomto přístupu jsou ovšem elektrony číslovány a není dodržena antisymetrii vlnové funkce (Pauliho princip). \cite{warren1986ab}
+V tomto přístupu jsou ovšem není dodržena antisymetrii vlnové funkce (Pauliho princip). \cite{warren1986ab}
 \begin{equation}
 \Psi (1,2) = - \Psi (2,1)
 \label{Paulliho_princip}
 \end{equation}
- Každá jednoelektronová funkce má prostorou a spinovou část, tzv. spinoorbital. Pro mnohaelektronové atomy už je nutno spin vzít v úvahu. Antisymetrii a spin lze do výsledné vlnové funkce zahrnout s pomocí Slaterova determinantu, SD, který má obecný tvar \ref{Slateruv_determinant}. SD zaručuje antisymetrii vlnové funkce vůči výměně polohových nebo spinových souřadnic. $\psi_i$ je jednoelektronová vlnová funkce, $s_j$ jsou elektrony, $\sqrt{N!}$ je normalizační faktor.
+ Každá jednoelektronová funkce má prostorou a spinovou část, tzv.~spinoorbital. Pro mnohaelektronové atomy už je pro správný výpočet energie vzít spin v úvahu.  Antisymetrii a spin do Hartreeho metody zavedl Vladimir Aleksandrovič Fock a John Slater. Výsledkem byla Hartree-Fockova metoda self-konzistentního pole(HF-SCF), kde se funkce s nejnižší energii hledá iterativním způsobem za pomoc variačního počtu. Vlnová funkce se zapisuje pomocí Slaterova determinantu, SD, který má obecný tvar \ref{Slateruv_determinant}. SD zaručuje antisymetrii vlnové funkce vůči výměně polohových a spinových souřadnic. $\psi_i$ je jednoelektronová vlnová funkce, $s_j$ jsou elektrony, $\sqrt{N!}$ je normalizační faktor.
 \begin{equation}
 \psi =  \frac{1}{\sqrt{N!}}\begin{vmatrix}
 \psi_1(1)\alpha(1) & \psi_1(1) \beta (1) & \psi_2(1)\alpha(1) & \dots & \psi_{n/2}(1)\beta(1) \\
@@ -215,7 +222,7 @@ V tomto přístupu jsou ovšem elektrony číslovány a není dodržena antisyme
 \end{vmatrix}
 \label{Slateruv_determinant}
 \end{equation}
-Jednoelektronové funkce, ze kterých je tvořena mnohaelektronová funkce, tvoří prostor úplných bazí. Základní typem jsou Slaterovy báze a gaussovské báze. (více v kapitole \ref{kapitola_baze})
+U atomů s více  elektrony chemie začíná, hlavním cílem je získat znalosti o molekulách. V tomto systému se nově objevuje více než jedno jádro a systém se stává opět příliš složitý pro matematické řešení. Ve skutečnosti je proton přibližně $1800 \times$ těžší než elektron, tudíž je rychlost mnohem menší, než rychlost elektronu. Situace lze zjednodušit oddělením pohybu elektronů od pohybu jader a řešit tak problémy odděleně. Přístup byl navržen jako Born$-$Oppenheimerova aproximace.
 
 
 
@@ -368,76 +375,44 @@ Základní molekula pro čtyřkoordinovaný křemík je \ce{H4SiO4}, kde Si je k
 \label{tab_h4sio4_vysledky}
 \end{minipage}
 \end{table}
+  %  Pro fragmentové orbitaly $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_h4sio4_MO_s1_1}, \ref{obr_h4sio4_MO_s1_20} a \ref{obr_h4sio4_MO_s1_24} .
+    Fragmentové orbitaly 7, 22 a 26 se navzájem mísí za vzniku MO číslo 1, 20 a 24, znázorněných na obrázku \ref{obr_h4sio4_vysledky_I}.
+ %-------------
+\begin{figure}
+\begin{center}
+\subfigure[MO 1]{\includegraphics[width=5cm]{h4sio4_obrazky/s1_1.eps} \label{obr_h4sio4_MO_s1_1}}
+\subfigure[MO 20]{\includegraphics[width=5cm]{h4sio4_obrazky/s1_20.eps}\label{obr_h4sio4_MO_s1_20}}
+\subfigure[MO 24]{\includegraphics[width=5cm]{h4sio4_obrazky/s1_24.eps}\label{obr_h4sio4_MO_s1_24}}
+\caption{Interakce $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ z tabulky \ref{tab_h4sio4_vysledky}.}
 
-    Pro fragmentové orbitaly $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_h4sio4_MO_s1_1}, \ref{obr_h4sio4_MO_s1_20} a \ref{obr_h4sio4_MO_s1_24} .
-  
-  \begin{figure}[h]
-\caption{MO 1 po interakci $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
-  \center
-  \includegraphics[width=5cm]{h4sio4_obrazky/s1_1.eps}
-  \label{obr_h4sio4_MO_s1_1}
-  \end{figure}
+\label{obr_h4sio4_vysledky_I}
+\end{center}
+\end{figure}
 
-\begin{figure}[h]
-\caption{MO 20 po interakci $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
-  \center
-  \includegraphics[width=5cm]{h4sio4_obrazky/s1_20.eps}
-  \label{obr_h4sio4_MO_s1_20}
-  \end{figure}
 
-\begin{figure}[h]
-\caption{MO 24 po interakci $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
-  \center
-  \includegraphics[width=5cm]{h4sio4_obrazky/s1_24.eps}
-  \label{obr_h4sio4_MO_s1_24}
-  \end{figure}
-  
-  Pro fragmentové orbitaly $\bra{11}{\hat{H}}\ket{21}$, $\bra{19}{\hat{H}}\ket{21}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_h4sio4_MO_s2_4}, \ref{obr_h4sio4_MO_s2_16} a \ref{obr_h4sio4_MO_s2_21} .
-  
-  \begin{figure}[h]
-\caption{MO 4 po interakci $\bra{11}{\hat{H}}\ket{21}$, $\bra{19}{\hat{H}}\ket{21}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
-  \center
-  \includegraphics[width=5cm]{h4sio4_obrazky/s2_4.eps}
-  \label{obr_h4sio4_MO_s2_4}
-  \end{figure}
+%------------    
+Fragmentové orbitaly  11, 19 a 21 se navzájem mísí za vzniku MO číslo 4, 16 a 21, znázorněných na obrázku \ref{obr_h4sio4_vysledky_II}.   
+\begin{figure}
+\begin{center}
+\subfigure[MO 4]{\includegraphics[width=5cm]{h4sio4_obrazky/s2_4.eps} \label{obr_h4sio4_MO_s2_4}}
+\subfigure[MO 16]{\includegraphics[width=5cm]{h4sio4_obrazky/s2_16.eps}\label{obr_h4sio4_MO_s2_16}}
+\subfigure[MO 21]{\includegraphics[width=5cm]{h4sio4_obrazky/s2_21.eps}\label{obr_h4sio4_MO_s2_21}}
+\caption{Interakce $\bra{11}{\hat{H}}\ket{21}$, $\bra{19}{\hat{H}}\ket{21}$ z tabulky \ref{tab_h4sio4_vysledky}.}
 
-\begin{figure}[h]
-\caption{MO 16 po interakci $\bra{11}{\hat{H}}\ket{21}$, $\bra{19}{\hat{H}}\ket{21}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
-  \center
-  \includegraphics[width=5cm]{h4sio4_obrazky/s2_16.eps}
-  \label{obr_h4sio4_MO_s2_16}
-  \end{figure}
+\label{obr_h4sio4_vysledky_II}\end{center}
+\end{figure}
 
-\begin{figure}[h]
-\caption{MO 21 po interakci $\bra{11}{\hat{H}}\ket{21}$, $\bra{19}{\hat{H}}\ket{21}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
-  \center
-  \includegraphics[width=5cm]{h4sio4_obrazky/s2_16.eps}
-  \label{obr_h4sio4_MO_s2_21}
-  \end{figure}
-  
-  Pro fragmentové orbitaly $\bra{15}{\hat{H}}\ket{22}$, $\bra{18}{\hat{H}}\ket{22}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_h4sio4_MO_s3_2}, \ref{obr_h4sio4_MO_s3_19} a \ref{obr_h4sio4_MO_s3_22}.
-  
-  \begin{figure}[h]
-\caption{MO 2 po interakci $\bra{15}{\hat{H}}\ket{22}$, $\bra{18}{\hat{H}}\ket{22}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
-  \center
-  \includegraphics[width=5cm]{h4sio4_obrazky/s3__2.eps}
-  \label{obr_h4sio4_MO_s3_2}
-  \end{figure}
-
-\begin{figure}[h]
-\caption{MO 19 po interakci $\bra{15}{\hat{H}}\ket{22}$, $\bra{18}{\hat{H}}\ket{22}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
-  \center
-  \includegraphics[width=5cm]{h4sio4_obrazky/s3__19.eps}
-  \label{obr_h4sio4_MO_s3_19}
-  \end{figure}
-
-\begin{figure}[h]
-\caption{MO 22 po interakci $\bra{15}{\hat{H}}\ket{22}$, $\bra{18}{\hat{H}}\ket{22}$ z tabulky \ref{tab_h4sio4_vysledky}.  }
-  \center
-  \includegraphics[width=5cm]{h4sio4_obrazky/s3__22.eps}
-  \label{obr_h4sio4_MO_s3_22}
-  \end{figure}
-  
+%------------    
+Fragmentové orbitaly  15, 18 a 22 se navzájem mísí za vzniku MO číslo 2, 19 a 22, znázorněných na obrázku \ref{obr_h4sio4_vysledky_III}.   
+\begin{figure}
+\begin{center}
+\subfigure[MO 2]{\includegraphics[width=5cm]{h4sio4_obrazky/s3__2.eps} \label{obr_h4sio4_MO_s3_2}}
+\subfigure[MO 19]{\includegraphics[width=5cm]{h4sio4_obrazky/s3__19.eps}\label{obr_h4sio4_MO_s3_19}}
+\subfigure[MO 22]{\includegraphics[width=5cm]{h4sio4_obrazky/s3__22.eps}\label{obr_h4sio4_MO_s2_21}}
+\caption{Interakce $\bra{15}{\hat{H}}\ket{22}$, $\bra{18}{\hat{H}}\ket{22}$ z tabulky \ref{tab_h4sio4_vysledky}.}
+\label{obr_h4sio4_vysledky_III}
+\end{center}
+\end{figure} 
 %-------------------------------------------------------------------------------------
 \subsection{Molekula Si(OH)$_3$CH$_3$}
 \begin{figure}[h!]
@@ -464,83 +439,53 @@ Základní molekula pro čtyřkoordinovaný křemík je \ce{H4SiO4}, kde Si je k
 \label{tab_sioh3ch3_vysledky}
 \end{table}
 
- Pro fragmentové orbitaly $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_sioh3ch3_MO_s1_3}, \ref{obr_sioh3ch3_MO_s1_11} a \ref{obr_sioh3ch3_MO_s1_26}.
-  
-  \begin{figure}[h]
-\caption{MO 3 po interakci $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ z tabulky \ref{tab_sioh3ch3_vysledky}}
-  \center
-  \includegraphics[width=5cm]{sioh3ch3_obrazky/s1_3.eps}
-  \label{obr_sioh3ch3_MO_s1_3}
-  \end{figure}
+Fragmentové orbitaly  7, 22 a 26 se navzájem mísí za vzniku MO číslo 3, 11 a 26, znázorněných na obrázku \ref{obr_sioh3ch3_vysledky_I}.   
+\begin{figure}
+\begin{center}
+\subfigure[MO 3]{\includegraphics[width=5cm]{sioh3ch3_obrazky/s1_3.eps} \label{obr_sioh3ch3_MO_s1_3}}
+\subfigure[MO 11]{\includegraphics[width=5cm]{sioh3ch3_obrazky/s1_11.eps}\label{obr_sioh3ch3_MO_s1_11}}
+\subfigure[MO 26]{\includegraphics[width=5cm]{sioh3ch3_obrazky/s1_26.eps}\label{obr_sioh3ch3_MO_s1_26}}
+\caption{Interakce $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$  z tabulky \ref{tab_sioh3ch3_vysledky}.}
 
-\begin{figure}[h]
-\caption{MO 11 po interakci $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ z tabulky \ref{tab_sioh3ch3_vysledky}.  }
-  \center
-  \includegraphics[width=5cm]{sioh3ch3_obrazky/s1_11.eps}
-  \label{obr_sioh3ch3_MO_s1_11}
-  \end{figure}
+\label{obr_sioh3ch3_vysledky_I}\end{center}
+\end{figure} 
 
-\begin{figure}[h]
-\caption{MO 26 po interakci $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ z tabulky \ref{tab_sioh3ch3_vysledky}.  }
-  \center
-  \includegraphics[width=5cm]{sioh3ch3_obrazky/s1_26.eps}
-  \label{obr_sioh3ch3_MO_s1_26}
-  \end{figure}
-  
-Pro fragmentové orbitaly $\bra{7}{\hat{H}}\ket{25}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_sioh3ch3_MO_s2_11} a \ref{obr_sioh3ch3_MO_s2_5}.
-  
-  \begin{figure}[h]
-\caption{MO 11 po interakci $\bra{7}{\hat{H}}\ket{25}$ z tabulky \ref{tab_sioh3ch3_vysledky}}
-  \center
-  \includegraphics[width=5cm]{sioh3ch3_obrazky/s2_11.eps}
-  \label{obr_sioh3ch3_MO_s2_11}
-  \end{figure}
+Fragmentové orbitaly  7 a 25 se navzájem mísí za vzniku MO číslo 5 a 11, znázorněných na obrázku \ref{obr_sioh3ch3_vysledky_II}.   
+\begin{figure}
+\begin{center}
+\subfigure[MO 5]{\includegraphics[width=5cm]{sioh3ch3_obrazky/s2_5.eps} \label{obr_sioh3ch3_MO_s2_5}}
+\subfigure[MO 11]{\includegraphics[width=5cm]{sioh3ch3_obrazky/s2_11.eps}\label{obr_sioh3ch3_MO_s2_11}}
+\caption{Interakce $\bra{7}{\hat{H}}\ket{25}$ z tabulky \ref{tab_sioh3ch3_vysledky}.}
 
-\begin{figure}[h]
-\caption{MO 5 po interakci $\bra{7}{\hat{H}}\ket{25}$ z tabulky \ref{tab_sioh3ch3_vysledky}.  }
-  \center
-  \includegraphics[width=5cm]{sioh3ch3_obrazky/s2_5.eps}
-  \label{obr_sioh3ch3_MO_s2_5}
-  \end{figure}
+\label{obr_sioh3ch3_vysledky_II}\end{center}
+\end{figure} 
 
  \clearpage
- 
-  Pro fragmentové orbitaly $\bra{21}{\hat{H}}\ket{23}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_sioh3ch3_MO_s3_2} a \ref{obr_sioh3ch3_MO_s3_25}.
-  
-  \begin{figure}[h]
-\caption{MO 2 po interakci $\bra{21}{\hat{H}}\ket{23}$ z tabulky \ref{tab_sioh3ch3_vysledky}}
-  \center
-  \includegraphics[width=5cm]{sioh3ch3_obrazky/s3_2.eps}
-  \label{obr_sioh3ch3_MO_s3_2}
-  \end{figure}
+   
+Fragmentové orbitaly  21 a 23 se navzájem mísí za vzniku MO číslo 2 a 25, znázorněných na obrázku \ref{obr_sioh3ch3_vysledky_III}.   
+\begin{figure}
+\begin{center}
+\subfigure[MO 5]{\includegraphics[width=5cm]{sioh3ch3_obrazky/s3_2.eps} \label{obr_sioh3ch3_MO_s3_2}}
+\subfigure[MO 11]{\includegraphics[width=5cm]{sioh3ch3_obrazky/s3_2.eps}\label{obr_sioh3ch3_MO_s3_25}}
+\caption{Interakce $\bra{21}{\hat{H}}\ket{23}$  z tabulky \ref{tab_sioh3ch3_vysledky}.}
 
-\begin{figure}[h]
-\caption{MO 25 po interakci $\bra{21}{\hat{H}}\ket{23}$ z tabulky \ref{tab_sioh3ch3_vysledky}.  }
-  \center
-  \includegraphics[width=5cm]{sioh3ch3_obrazky/s3_25.eps}
-  \label{obr_sioh3ch3_MO_s3_25}
-  \end{figure}
-  
-   Pro fragmentové orbitaly $\bra{20}{\hat{H}}\ket{24}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_sioh3ch3_MO_s4_4} a \ref{obr_sioh3ch3_MO_s4_24}.
-  
-  \begin{figure}[h]
-\caption{MO 4 po interakci $\bra{20}{\hat{H}}\ket{24}$ z tabulky \ref{tab_sioh3ch3_vysledky}}
-  \center
-  \includegraphics[width=5cm]{sioh3ch3_obrazky/s4_4.eps}
-  \label{obr_sioh3ch3_MO_s4_4}
-  \end{figure}
+\label{obr_sioh3ch3_vysledky_III}\end{center}
+\end{figure} 
+   
+Fragmentové orbitaly  20 a 24 se navzájem mísí za vzniku MO číslo 4 a 24, znázorněných na obrázku \ref{obr_sioh3ch3_vysledky_IV}.   
+\begin{figure}
+\begin{center}
+\subfigure[MO 5]{\includegraphics[width=5cm]{sioh3ch3_obrazky/s4_4.eps} \label{obr_sioh3ch3_MO_s4_4}}
+\subfigure[MO 11]{\includegraphics[width=5cm]{sioh3ch3_obrazky/s4_24.eps}\label{obr_sioh3ch3_MO_s4_24}}
+\caption{Interakce $\bra{20}{\hat{H}}\ket{24}$  z tabulky \ref{tab_sioh3ch3_vysledky}.}
 
-\begin{figure}[h]
-\caption{MO 24 po interakci $\bra{20}{\hat{H}}\ket{24}$ z tabulky \ref{tab_sioh3ch3_vysledky}.  }
-  \center
-  \includegraphics[width=5cm]{sioh3ch3_obrazky/s4_24.eps}
-  \label{obr_sioh3ch3_MO_s4_24}
-  \end{figure}
+\label{obr_sioh3ch3_vysledky_IV}\end{center}
+\end{figure} 
  %-------------------------------------------------------------------------------------------- 
-  \subsection{Molekula H$_6$Si0$_6$}
+  \subsection{Molekula H$_6$SiO$_6$}
  
   \begin{table}[htbp]
-\caption{Výsledné mísení orbitalů pro \ce{H6SiO6}}
+\caption{Výsledné mísení orbitalů pro \ce{(H6SiO6)^-2}}
 \begin{center}
 \begin{tabular}{|r|r|r|r|r|r|}
 \hline
@@ -551,71 +496,49 @@ Pro fragmentové orbitaly $\bra{7}{\hat{H}}\ket{25}$ byly nalezeny příslušné
 28 & 84\% & 26 & 97\% & - & - \\ \hline
 34 & 100\% & 32 & 99\% &  -& - \\ \hline
 \end{tabular}
-\end{center}
-\label{tab_h6sio6_vysledky}
+
+\label{tab_h6sio6_vysledky}\end{center}
 \end{table}
+   
+Fragmentové orbitaly  24, 30 a 34 se navzájem mísí za vzniku MO číslo 1, 28 a 34 znázorněných na obrázku \ref{obr_h6sio6_vysledky_I}.   
+\begin{figure}
+\begin{center}
+\subfigure[MO 5]{\includegraphics[width=5cm]{h6sio6_obrazky/s1_1.eps} 
+\label{obr_h6sio6_MO_s1_1}}
+\subfigure[MO 11]{\includegraphics[width=5cm]{h6sio6_obrazky/s1_28.eps}\label{obr_h6sio6_MO_s1_28}}
+\subfigure[MO 5]{\includegraphics[width=5cm]{h6sio6_obrazky/s1_34.eps} \label{obr_h6sio6_MO_s1_34}}
+\caption{Interakce $\bra{30}{\hat{H}}\ket{34}$, $\bra{24}{\hat{H}}\ket{34}$  z tabulky \ref{ttab_h6sio6_vysledky}.}
 
-Pro fragmentové orbitaly $\bra{30}{\hat{H}}\ket{34}$, $\bra{24}{\hat{H}}\ket{34}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_h6sio6_MO_s1_1}, \ref{obr_h6sio6_MO_s1_28} a \ref{obr_h6sio6_MO_s1_34} .
-  
-  \begin{figure}[h]
-\caption{MO 1 po interakci $\bra{30}{\hat{H}}\ket{34}$, $\bra{24}{\hat{H}}\ket{34}$  z tabulky \ref{tab_h6sio6_vysledky}}
-  \center
-  \includegraphics[width=5cm]{h6sio6_obrazky/s1_1.eps}
-  \label{obr_h6sio6_MO_s1_1}
-  \end{figure}
+\label{obr_h6sio6_vysledky_I}\end{center}
+\end{figure} 
+
+Fragmentové orbitaly  21, 28 a 32 se navzájem mísí za vzniku MO číslo 3, 26 a 32 znázorněných na obrázku \ref{obr_h6sio6_vysledky_II}.   
+\begin{figure}
+\begin{center}
+\subfigure[MO 3]{\includegraphics[width=5cm]{h6sio6_obrazky/s2_3.eps} 
+\label{obr_h6sio6_MO_s2_3}}
+\subfigure[MO 26]{\includegraphics[width=5cm]{h6sio6_obrazky/s2_26.eps}\label{obr_h6sio6_MO_s2_26}}
+\subfigure[MO 32]{\includegraphics[width=5cm]{h6sio6_obrazky/s2_32.eps} \label{obr_h6sio6_MO_s2_32}}
+\caption{Interakce $\bra{21}{\hat{H}}\ket{32}$, $\bra{28}{\hat{H}}\ket{32}$ z tabulky \ref{tab_h6sio6_vysledky}.}
+
+\label{obr_h6sio6_vysledky_II}\end{center}
+\end{figure} 
  
- \begin{figure}[h]
-\caption{MO 28 po interakci $\bra{30}{\hat{H}}\ket{34}$, $\bra{24}{\hat{H}}\ket{34}$  z tabulky \ref{tab_h6sio6_vysledky}}
-  \center
-  \includegraphics[width=5cm]{h6sio6_obrazky/s1_28.eps}
-  \label{obr_h6sio6_MO_s1_28}
-  \end{figure}
+  Fragmentové orbitaly  22 a 33 se navzájem mísí za vzniku MO číslo 2 znázorněného na obrázku \ref{obr_h6sio6_vysledky_III}.   
+\begin{figure}
+\begin{center}
+\subfigure[MO 2]{\includegraphics[width=5cm]{h6sio6_obrazky/s3_2.eps} 
+\label{obr_h6sio6_MO_s3_2}}
+\caption{Interakce $\bra{22}{\hat{H}}\ket{33}$ z tabulky \ref{tab_h6sio6_vysledky}.}
 
-\begin{figure}[h]
-\caption{MO 34 po interakci $\bra{30}{\hat{H}}\ket{34}$, $\bra{24}{\hat{H}}\ket{34}$  z tabulky \ref{tab_h6sio6_vysledky}}
-  \center
-  \includegraphics[width=5cm]{h6sio6_obrazky/s1_34.eps}
-  \label{obr_h6sio6_MO_s1_34}
-  \end{figure}
-  
-
-Pro fragmentové orbitaly $\bra{21}{\hat{H}}\ket{32}$, $\bra{28}{\hat{H}}\ket{32}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_h6sio6_MO_s2_3}, \ref{obr_h6sio6_MO_s2_26} a \ref{obr_h6sio6_MO_s2_32} .
-  
-  \begin{figure}[h]
-\caption{MO 3 po interakci $\bra{21}{\hat{H}}\ket{32}$, $\bra{28}{\hat{H}}\ket{32}$  z tabulky \ref{tab_h6sio6_vysledky}}
-  \center
-  \includegraphics[width=5cm]{h6sio6_obrazky/s2_3.eps}
-  \label{obr_h6sio6_MO_s2_3}
-  \end{figure}
- 
- \begin{figure}[h]
-\caption{MO 26 po interakci $\bra{21}{\hat{H}}\ket{32}$, $\bra{28}{\hat{H}}\ket{32}$ z tabulky \ref{tab_h6sio6_vysledky}}
-  \center
-  \includegraphics[width=5cm]{h6sio6_obrazky/s2_26.eps}
-  \label{obr_h6sio6_MO_s2_26}
-  \end{figure}
-
-\begin{figure}[h]
-\caption{MO 32 po interakci $\bra{21}{\hat{H}}\ket{32}$, $\bra{28}{\hat{H}}\ket{32}$  z tabulky \ref{tab_h6sio6_vysledky}}
-  \center
-  \includegraphics[width=5cm]{h6sio6_obrazky/s2_32.eps}
-  \label{obr_h6sio6_MO_s2_32}
-  \end{figure}
-
-Pro fragmentové orbitaly $\bra{22}{\hat{H}}\ket{33}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_h6sio6_MO_s3_2}.
-  
-  \begin{figure}[h]
-\caption{MO 2 po interakci $\bra{22}{\hat{H}}\ket{33}$  z tabulky \ref{tab_h6sio6_vysledky}}
-  \center
-  \includegraphics[width=5cm]{h6sio6_obrazky/s3_2.eps}
-  \label{obr_h6sio6_MO_s3_2}
-  \end{figure}
+\label{obr_h6sio6_vysledky_III}\end{center}
+\end{figure} 
 %----------------------------------------------------------------------------------------
- \subsection{Molekula Si(OH)$_3$O(H$_2$PO$_3$}
+ \subsection{Molekula Si(OH)$_3$O(H$_2$PO$_3$)}
  Pro molekulu \ce{Si(OH)3O(H2PO3)} byla nutná oprava zvolených fragmentů vzhledem k výpočetní náročnosti. Jako fragment jedna byla zvolena část \ce{Si(OH)3} a fragment dva byl \ce{O(H2PO3)}.  
 
 \begin{table}[htbp]
-\caption{Výsledné mísení orbitalů pro \ce{H6SiO6}}
+\caption{Výsledné mísení orbitalů pro  \ce{Si(OH)3O(H2PO3)}}
 \begin{center}
 \begin{tabular}{|r|r|}
 \hline
@@ -628,47 +551,38 @@ Pro fragmentové orbitaly $\bra{22}{\hat{H}}\ket{33}$ byly nalezeny příslušn�
 35 & 83 \\ \hline
 41 & 46 \\ \hline
 \end{tabular}
-\end{center}
-\label{tab_sio3_vysledky}
+
+\label{tab_sio3_vysledky}\end{center}
 \end{table}
 
-\begin{figure}[h]
-\caption{MO 4 po interakci $\bra{19}{\hat{H}}\ket{29}$, $\bra{15}{\hat{H}}\ket{29}$,$\bra{7}{\hat{H}}\ket{29}$, $\bra{22}{\hat{H}}\ket{29}$ z tabulky \ref{tab_sio3_vysledky}}
-  \center
-  \includegraphics[width=5cm]{sio3p_obrazky/mo_4.eps}
-  \label{obr_sio3_MO_4}
-  \end{figure}
+Fragmentové orbitaly  7, 15, 19, 22 a 29 se navzájem mísí za vzniku MO číslo 4, 14, 30, 35 a 41 znázorněných na obrázku \ref{obr_sio3p_vysledky_I}.   
+\begin{figure}
+\begin{center}
+\subfigure[MO 4]{\includegraphics[width=5cm]{sio3p_obrazky/mo_4.eps} 
+\label{obr_sio3_MO_4}}
+\subfigure[MO 14]{\includegraphics[width=5cm]{sio3p_obrazky/mo_14.eps} 
+\label{obr_sio3_MO_14}}
+\subfigure[MO 30]{\includegraphics[width=5cm]{sio3p_obrazky/mo_30.eps} 
+\label{obr_sio3_MO_30}}
+\subfigure[MO 35]{\includegraphics[width=5cm]{sio3p_obrazky/mo_35.eps} 
+\label{obr_sio3_MO_35}}
+\subfigure[MO 41]{\includegraphics[width=5cm]{sio3p_obrazky/mo_41.eps} 
+\label{obr_sio3_MO_41}}
+\caption{Interakce $\bra{19}{\hat{H}}\ket{29}$, $\bra{15}{\hat{H}}\ket{29}$,$\bra{7}{\hat{H}}\ket{29}$, $\bra{22}{\hat{H}}\ket{29}$ z tabulky \ref{tab_sio3_vysledky}.}
 
-\begin{figure}[h]
-\caption{MO 14 po interakci $\bra{19}{\hat{H}}\ket{29}$, $\bra{15}{\hat{H}}\ket{29}$,$\bra{7}{\hat{H}}\ket{29}$, $\bra{22}{\hat{H}}\ket{29}$ z tabulky \ref{tab_sio3_vysledky}}
-  \center
-  \includegraphics[width=5cm]{sio3p_obrazky/mo_14.eps}
-  \label{obr_sio3_MO_14}
-  \end{figure}
-
-\begin{figure}[h]
-\caption{MO 30 po interakci $\bra{19}{\hat{H}}\ket{29}$, $\bra{15}{\hat{H}}\ket{29}$,$\bra{7}{\hat{H}}\ket{29}$, $\bra{22}{\hat{H}}\ket{29}$ z tabulky \ref{tab_sio3_vysledky}}
-  \center
-  \includegraphics[width=5cm]{sio3p_obrazky/mo_30.eps}
-  \label{obr_sio3_MO_30}
-  \end{figure}
-
-\begin{figure}[h]
-\caption{MO 35 po interakci $\bra{19}{\hat{H}}\ket{29}$, $\bra{15}{\hat{H}}\ket{29}$,$\bra{7}{\hat{H}}\ket{29}$, $\bra{22}{\hat{H}}\ket{29}$ z tabulky \ref{tab_sio3_vysledky}}
-  \center
-  \includegraphics[width=5cm]{sio3p_obrazky/mo_35.eps}
-  \label{obr_sio3_MO_35}
-  \end{figure}  
-  
-\begin{figure}[h]
-\caption{MO 41 po interakci $\bra{19}{\hat{H}}\ket{29}$, $\bra{15}{\hat{H}}\ket{29}$,$\bra{7}{\hat{H}}\ket{29}$, $\bra{22}{\hat{H}}\ket{29}$ z tabulky \ref{tab_sio3_vysledky}}
-  \center
-  \includegraphics[width=5cm]{sio3p_obrazky/mo_41.eps}
-  \label{obr_sio3_MO_41}
-  \end{figure}  
+\label{obr_sio3p_vysledky_I}\end{center}
+\end{figure} 
   
 \section{DFT výpočet} 
-Pro DFT výpočty byly zvoleny molekuly, kde byl Si koordinován šesti kyslíky. 
+Pro DFT výpočty byly zvoleny molekuly, kde byl Si koordinován šesti kyslíky. Při konstrukci QM modelů molekul se zpočátku vyskytly potíže. Pro systém, kde byl křemík koordinován ve svém okolí šesti fosforečnany, docházelo k umělému vytvoření vodíkových vazeb a sytém se nepodařilo optimalizovat. Z tohoto důvodu bylo nutné použít jako výchozí molekulu křemík koordinovaný šesto fosforečnany, které byly zároveň spojeny jednotkami \ce{SiO4}, viz. obrázek \ref{obr_si_o_poh3_6_propojeno_si}.
+
+\begin{figure}[h]
+\caption{Si koordinován šesti fosforečnany, propojeny \ce{SiO4} }
+  \center
+  \includegraphics[width=10cm]{obr_si_o_poh3_6_propojeno_si.png}
+  \label{obr_si_o_poh3_6_propojeno_si}
+  \end{figure}
+
   
   
 {\csname captions\languagename\endcsname %% Temporarily override
