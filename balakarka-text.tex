@@ -222,10 +222,11 @@ V tomto přístupu jsou ovšem není dodržena antisymetrii vlnové funkce (Paul
 \end{vmatrix}
 \label{Slateruv_determinant}
 \end{equation}
-U atomů s více  elektrony chemie začíná, hlavním cílem je získat znalosti o molekulách. V tomto systému se nově objevuje více než jedno jádro a systém se stává opět příliš složitý pro matematické řešení. Ve skutečnosti je proton přibližně $1800 \times$ těžší než elektron, tudíž je rychlost mnohem menší, než rychlost elektronu. Situace lze zjednodušit oddělením pohybu elektronů od pohybu jader a řešit tak problémy odděleně. Přístup byl navržen jako Born$-$Oppenheimerova aproximace.
-
-
-
+U atomů s více  elektrony chemie začíná, hlavním cílem je získat znalosti o molekulách. V tomto systému se nově objevuje více než jedno jádro a systém se stává opět příliš složitý pro matematické řešení. Ve skutečnosti je proton přibližně $1800 \times$ těžší než elektron, tudíž je rychlost mnohem menší, než rychlost elektronu. Situace lze zjednodušit oddělením pohybu elektronů od pohybu jader a řešit tak problémy odděleně. Přístup byl navržen jako Born$-$Oppenheimerova aproximace \ref{eq_B_O_aproximace}. Vlnová funkce elektronů závisí pouze na poloze jader, ne jejich rychlosti.\cite{lechamolecularmodeling} Zároveň je vlnová funkce parametricky závislá na poloze jader, pro každou geometrii jader je získána jiná vlnová funkce. Závislost energie na poloze jader se pro víceatomové molekuly nazývá hyperplocha potenciální energie. \cite{dftshrnutivysledky}
+\begin{equation}
+\Psi_{tot}(nuclei, elektrons) = \Psi(electrons) \cdot \Psi(nuclei)
+\label{eq_B_O_aproximace} 
+\end{equation}
 
 \subsection{Hypervalence}
 \subsection{Teorie molekulových orbitalů}
@@ -367,9 +368,9 @@ Základní molekula pro čtyřkoordinovaný křemík je \ce{H4SiO4}, kde Si je k
 \multicolumn{2}{|c|}{$\bra{20}{\hat{H}}\ket{24}$, $\bra{16}{\hat{H}}\ket{24}$} & \multicolumn{2}{|c|}{$\bra{11}{\hat{H}}\ket{21}$, $\bra{19}{\hat{H}}\ket{21}$}& \multicolumn{2}{|c|}{$\bra{15}{\hat{H}}\ket{22}$, $\bra{18}{\hat{H}}\ket{22}$} \\
 \hline \hline
 \multicolumn{1}{|l|}{MO\footnote{Molekulový orbital} } & \multicolumn{1}{r|}{W\footnote{součet procentuálních příspěvků příslušných fragmentových orbitalů do příslušného molekulového orbitalu}} & \multicolumn{1}{l|}{MO} & \multicolumn{1}{r|}{W} & MO & \multicolumn{1}{r|}{W} \\ \hline
-1 & 84\% & 4 & 67\% & 2 & 65\% \\ \hline
-20 & 91\% & 16 & 79\% & 19 & 97\% \\ \hline
-24 & 99\% & 21 & 100\% &  22& 100\% \\ \hline
+1 & 84 \% & 4 & 67 \% & 2 & 65 \% \\ \hline
+20 & 91 \% & 16 & 79 \% & 19 &  97 \% \\ \hline
+24 & 99 \% & 21 & 100 \% &  22& 100 \% \\ \hline
 \end{tabular}
 \end{center}
 \label{tab_h4sio4_vysledky}
@@ -431,9 +432,9 @@ Fragmentové orbitaly  15, 18 a 22 se navzájem mísí za vzniku MO číslo 2, 1
 \hline
 \hline
 \multicolumn{1}{|l|}{MO} & \multicolumn{1}{r|}{W} & \multicolumn{1}{l|}{MO} & \multicolumn{1}{r|}{W} & MO & \multicolumn{1}{r|}{W}& MO & \multicolumn{1}{r|}{W} \\ \hline
-3 & 46\% & 11 & 79\% &25 & 100\%& 24 & 100 \% \\ \hline
-11 & 71\% & 5 & 40\% & 2 & 34\% &4 & 58\% \\ \hline
-26 & 98\% & - & - &  -& - &-&- \\ \hline
+3 & 46 \% & 11 & 79 \% &25 & 100 \%& 24 & 100 \% \\ \hline
+11 & 71 \% & 5 & 40 \% & 2 & 34 \% &4 & 58 \% \\ \hline
+26 & 98 \% & - & - &  -& - &-&- \\ \hline
 \end{tabular}
 \end{center}
 \label{tab_sioh3ch3_vysledky}
@@ -483,7 +484,15 @@ Fragmentové orbitaly  20 a 24 se navzájem mísí za vzniku MO číslo 4 a 24, 
 \end{figure} 
  %-------------------------------------------------------------------------------------------- 
   \subsection{Molekula H$_6$SiO$_6$}
+   \subsection{Molekula H$_6$SiO$_6$}
+ \begin{figure}[h!]
+\caption{Optimalizovaná struktura \ce{H6SiO6}. }
+  \center
+  \includegraphics[width=5cm]{obr_h6sio6.png}
+  \label{obr_h6sio6_opt_struktura}
+  \end{figure}
  
+  
   \begin{table}[htbp]
 \caption{Výsledné mísení orbitalů pro \ce{(H6SiO6)^-2}}
 \begin{center}
@@ -492,9 +501,9 @@ Fragmentové orbitaly  20 a 24 se navzájem mísí za vzniku MO číslo 4 a 24, 
 \multicolumn{2}{|c}{$\bra{30}{\hat{H}}\ket{34}$, $\bra{24}{\hat{H}}\ket{34}$} & \multicolumn{2}{|c|}{$\bra{21}{\hat{H}}\ket{32}$, $\bra{28}{\hat{H}}\ket{32}$}& \multicolumn{2}{|c|}{$\bra{22}{\hat{H}}\ket{33}$} \\
 \hline \hline
 \multicolumn{1}{|l|}{MO} & \multicolumn{1}{r|}{W} & \multicolumn{1}{l|}{MO} & \multicolumn{1}{r|}{W} & MO & \multicolumn{1}{r|}{W} \\ \hline
-1 & 96\% & 3 & 86\% &2 & 65\% \\ \hline
-28 & 84\% & 26 & 97\% & - & - \\ \hline
-34 & 100\% & 32 & 99\% &  -& - \\ \hline
+1 & 96 \% & 3 & 86 \% &2 & 65 \% \\ \hline
+28 & 84 \% & 26 & 97 \% & - & - \\ \hline
+34 & 100 \% & 32 & 99 \% &  -& - \\ \hline
 \end{tabular}
 
 \label{tab_h6sio6_vysledky}\end{center}
@@ -535,7 +544,14 @@ Fragmentové orbitaly  21, 28 a 32 se navzájem mísí za vzniku MO číslo 3, 2
 \end{figure} 
 %----------------------------------------------------------------------------------------
  \subsection{Molekula Si(OH)$_3$O(H$_2$PO$_3$)}
- Pro molekulu \ce{Si(OH)3O(H2PO3)} byla nutná oprava zvolených fragmentů vzhledem k výpočetní náročnosti. Jako fragment jedna byla zvolena část \ce{Si(OH)3} a fragment dva byl \ce{O(H2PO3)}.  
+ Pro molekulu \ce{Si(OH)3O(H2PO3)} \ref{obr_h3sio4_h2po3} byla nutná oprava zvolených fragmentů vzhledem k výpočetní náročnosti. Jako fragment jedna byla zvolena část \ce{Si(OH)3} a fragment dva byl \ce{O(H2PO3)}.  
+
+  \begin{figure}[h]
+\caption{Optimalizovaná struktura \ce{H3SiO4(H2PO3)} }
+  \center
+  \includegraphics[width=10cm]{obr_h3sio4_h2po3.png}
+  \label{obr_h3sio4_h2po3}
+  \end{figure}
 
 \begin{table}[htbp]
 \caption{Výsledné mísení orbitalů pro  \ce{Si(OH)3O(H2PO3)}}
@@ -574,14 +590,70 @@ Fragmentové orbitaly  7, 15, 19, 22 a 29 se navzájem mísí za vzniku MO čís
 \end{figure} 
   
 \section{DFT výpočet} 
-Pro DFT výpočty byly zvoleny molekuly, kde byl Si koordinován šesti kyslíky. Při konstrukci QM modelů molekul se zpočátku vyskytly potíže. Pro systém, kde byl křemík koordinován ve svém okolí šesti fosforečnany, docházelo k umělému vytvoření vodíkových vazeb a sytém se nepodařilo optimalizovat. Z tohoto důvodu bylo nutné použít jako výchozí molekulu křemík koordinovaný šesto fosforečnany, které byly zároveň spojeny jednotkami \ce{SiO4}, viz. obrázek \ref{obr_si_o_poh3_6_propojeno_si}.
+Pro DFT výpočty byly zvoleny molekuly, kde byl Si koordinován šesti kyslíky. Při konstrukci QM modelů molekul se zpočátku vyskytly potíže. Pro systém, kde byl křemík koordinován ve svém okolí šesti fosforečnany, docházelo k umělému vytvoření vodíkových vazeb a sytém se nepodařilo optimalizovat. Z tohoto důvodu bylo nutné použít jako výchozí molekulu křemík koordinovaný šesti fosforečnany, které byly zároveň spojeny jednotkami \ce{SiO4}, viz. obrázek \ref{obr_si_o_poh3_6_propojeno_si}. Další komplikací při optimalizaci geometrické struktury byl celkový náboj molekuly, který byl nakonec určen jako $2-$, viz. výpočet níže. 
+\begin{displaymath}
+\ce{Si}^{4+} + \ce{(HPO4)^{2-}} + \ce{Si3^{4+}} + \ce{(OH)6^1-} = \ce{Si(HPO4)Si3(OH)6)^{2-}}
+\end{displaymath}
 
 \begin{figure}[h]
-\caption{Si koordinován šesti fosforečnany, propojeny \ce{SiO4} }
+\caption{Křemík koordinován šesti fosforečnany, propojeny \ce{SiO4} }
   \center
   \includegraphics[width=10cm]{obr_si_o_poh3_6_propojeno_si.png}
   \label{obr_si_o_poh3_6_propojeno_si}
   \end{figure}
+  
+  \begin{figure}[h]
+\caption{Optimalizovaná struktura \ce{H5SiO5CH3} }
+  \center
+  \includegraphics[width=10cm]{obr_h5sio5ch3.png}
+  \label{obr_h5sio5ch3}
+  \end{figure}
+
+  \begin{figure}[ht]
+\caption{Optimalizovaná struktura \ce{SiO4(H2PO3)4} }
+  \center
+  \includegraphics[width=10cm]{obr_sio4_h2po3_4.png}
+  \label{obr_sio4_h2po3_4}
+  \end{figure}
+
+\begin{figure}[ht]
+\caption{Optimalizovaná struktura \ce{SiO4(H2PO3)4} }
+  \center
+  \includegraphics[width=10cm]{obr_sio4_h2po3_4.png}
+  \label{obr_sio4_h2po3_4}
+  \end{figure}
+
+\begin{figure}[ht]
+\caption{Optimalizovaná struktura \ce{SiO4(H2PO3)4} }
+  \center
+  \includegraphics[width=10cm]{obr_sipo4_4_ax_ekv.png}
+  \label{obr_sipo4_4_ax_ekv}
+  \end{figure}
+
+\begin{table}[htbp]
+\caption{Výsledné porovnávní struktur}
+\begin{center}
+\begin{tabular}{|l|r|r|r|r|}
+\hline
+\ce{H4SiO4} \ref{obr_h4sio4_opt_struktura} & -7,72994 & 1,67704 & 9,40698 & 6,05290 \\ \hline
+\ce{H6SiO6} \ref{obr_h6sio6_opt_struktura} & 3,61014 & 11,69682 & 8,08668 & -15,30695 \\ \hline
+\ce{H3SiO3CH3} \ref{obr_sioh3ch3_opt_struktura} & -7,74953 & 0,82505 & 8,57458 & 6,92448 \\ \hline
+\ce{H5SiO5CH3} \ref{obr_h5sio5ch3} & 3,88279 & 11,54988 & 7,66708 & -15,43267 \\ \hline
+\ce{H3SiO4(H2PO3)} \ref{obr_h3sio4_h2po3}& -8,56724 & 0,05987 & 8,62710 & 8,50737 \\ \hline
+\ce{SiO4(H2PO3)}\ref{obr_sio4_h2po3_4}& -8,08804 & -0,82913 & 7,25891 & 8,91717 \\ \hline
+SiO6(H2PO3)6 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
+Si(H2PO3)3OH & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
+Si(H2PO3)5OH & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
+Si(PO4)6(Si(OH)2)6 (IGLO) \ref{obr_si_o_poh3_6_propojeno_si} & -3,67027 & 4,03953 & 7,70980 & -0,36926 \\ \hline
+Si(PO4)6(Si(OH)2)6 (6-31G) & -3,34646 & -4,57424 & -1,22778 & 7,92069 \\ \hline
+Si(PO4)6(SiO4Et2)6 & -2,60848 & 5,10921 & 7,71770 & -2,50073 \\ \hline
+Si(PO4)4(C2CH3)2(Si(OH)2)6 & 5,36609 & 10,46686 & 5,10078 & -15,83295 \\ \hline
+Si(PO4)4(C2CH3)2(Si(OH)2)6 – ax a ekv \ref{obr_sipo4_4_ax_ekv.png}& 5,08091 & 10,13788 & 5,05697 & -15,21879 \\ \hline
+\end{tabular}
+\end{center}
+\label{tab_porovnani_molekul_dft}
+\end{table}
+
 
   
   
