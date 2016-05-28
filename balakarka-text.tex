@@ -105,6 +105,13 @@
 \usepackage[version=3]{mhchem}
 \usepackage{braket}
 \usepackage{subfigure}
+
+\usepackage{listings}% http://ctan.org/pkg/listings
+\renewcommand{\lstlistingname}{Struktura}% Listing -> Algorithm
+\renewcommand{\lstlistlistingname}{Seznam struktur}% List of Listings -> List of Algorithms
+\lstset{basicstyle=\ttfamily}
+
+
 \begin{document}
 \chapter{Úvod}
 Fosfosilikátové sloučeniny mají široké využití jako pokročilé technologické materiály. Jejich stabilní Brönstedovská kyselost za zvýšené teploty je klíčovou vlastností pro využití v palivových článcích a v heterogenní katalýze.\cite{korotcenkov2013handbook}\cite{Fougret2001295} V roce 2015 byla A. Stýskalíkem a spoluautory publikována originální syntéza mezoporózních  nanokrystalických  fosfosilikátů a hybridních anorganicko-organických materiálů pomocí nehydrolytických kondenzačních reakcí založených na esterové eliminaci.\cite{1306716} Jako prekurzory sloužily v případě fosfosilikátů octan křemičitý a tris(trimethylsilyl)ester kyseliny fosforečné. Zatímco posledně jmenované prekurzory poskytly mikroporózní gely se strukturními jednotkami \ce{SiO6}, zavedení organických skupin ve formě různých alkyl/arylacetoxysilanů indukovaly strukturní  a stavební změny vedoucí k neporózní, hybridním silikofosfátovým sklům.\cite{1316862} Tyto drastické změny vlastností byly připsány snížení zesíťovací kapacity křemíku. Organo-substituovaná křemíková centra navíc prokazovala zřejmě nedostatečnou Lewisovskou kyselost k získání hexakoordinace, neboť sterické překážky nehrály ve vzniku \ce{SiO6} center významnější roli.  Dále bylo pozorováno, že přítomnost skupin \ce{SiO6} je spojená s přítomností mikropórů, zatímco pokud tyto skupiny absentují, tak jsou vzorky mesoporézní.
@@ -347,7 +354,7 @@ $N$ jr normalizační faktor, $Y_{l,m}$ sféricky harmonická funkce, exponent z
 \end{equation}
  Výhodou GTO je to, že jejich součin je stále GTO a hledání $F_{ij}$je výpočetně nenáročné. Na rozdíl od ostatních funkcí nemají správné chování na jádře. Z tohoto důvodu je báze STO orbitalů tvořena několika GTO, které jsou označovány jako primitivní Gaussovské funkce.Největší přínos GTO je rozdíl v druhé mocnině vzdálenosti v exponenciálním členu.\cite{lowe2011quantum}. 
  V současné době existuje obrovské množství bazí, které lépe či hůře popisuje zvolený problém. Mezi základní báze jsou uváděny DZP, STO-3G a různé druhy 6-31G. DZP je double-zeta gassovská báze s polarizací, STO-3G jsou Slaterovy orbitaly zjednodušeny jako lineární kombinace tří primitivních gaussiánů, odpovídá minimální bázi. 3-21G jsou označovány jako \uv{split valence basics sets}. Vnitřní elektrony jsou popisovány tří primitivními gaussiány, valenční orbitaly  do dvou primitivních gaussiánů a jednoho jednoduchého gaussiánu. Pro bázi 6-31G je vnitřní oblast tvořena šesti primitivními gaussiány, ostatní je obdobné jako pro 3-21G. Báze 6-21*G je v základu obdobná, * označuje polarizační funkci. Přidává p orbital pro vodíky a d orbitaly pro těžší atomy. Symbol ** označuje přidání d orbitalů pro vodík.(zdroj je 3 pdf soubory z hodiny Metody kvantové chemie). \\
- DFT metodou lze krom optimalizací počítat také parametry nukleární magneetické rezonance (NMR). Jedním z NMR charakteristik molekul je chemické stínění. Do \textit{ab-inito} výpočtu nově vstupuje vnější magnetické pole $B_0$, které je reprezentováno vektorovým potenciálem tohoto pole. V ideálním případě by neměla mít volba počátku tohoto pole vliv na výsledek. Jedním z důsledků aproximace v kvantové chemii je fakt, že volba počátku výrazně ovlivňuje výsledné chemické stínění. Problém se nazývá \uv{Gauge origin problem}. Metoda IGLO (Individual Gauge for Localization Orbitals)řeší problém způsobem, že zahrnují počátek vektorového potenciálu do atomových orbitalů nebo do lokalizovaných molekulových orbitalů.\cite{Standara2006thesis}
+ DFT metodou lze krom optimalizací počítat také parametry nukleární magnetické rezonance (NMR). Jedním z NMR charakteristik molekul je chemické stínění. Do \textit{ab-inito} výpočtu nově vstupuje vnější magnetické pole $B_0$, které je reprezentováno vektorovým potenciálem tohoto pole. V ideálním případě by neměla mít volba počátku tohoto pole vliv na výsledek. Jedním z důsledků aproximace v kvantové chemii je fakt, že volba počátku výrazně ovlivňuje výsledné chemické stínění. Problém se nazývá \uv{Gauge origin problem}. Metoda GIAO (Gauge  Including Atomic Orbitals)řeší problém způsobem, že zahrnuje počátek vektorového potenciálu do atomových orbitalů. Vhodnou bazí pro tyto výpočty je IGLO$-$III (Individual Gauge for Localized Orbitals).\cite{Standara2006thesis} \cite{g09}
 
 \subsection{Kvalitativní koncepty v kvantové chemii}
 Důležitou součástí výzkumu v oblasti kvantové chemie jsou zjednodušené koncepty, které pomáhají s interpretací kvantově$-$chemických dat. Jedním z příkladů je vysvětlení vaznosti atomů a molekul. \\
@@ -362,7 +369,7 @@ Ochotu tvořit hypervalentní molekuly lze odhadnout podle konceptu HSAB (Hard a
 \eta = \frac{1}{2} \left( \frac{\delta \mu}{\delta N} \right) = \frac{1}{2}\left( \frac{\delta^2 E}{\delta N^2} \right) = \frac{I - A}{2}
 \label{hsab_vypocet_tvrdost}
 \end{equation} 
-$\chi$ je elektronegativita, $\chi$ je elektronegativity, $E$ je energie a $N$ je počet elektronů. \cite{hsabwatoc} Podle Koopmansova teorému $E_{HOMO} = - IP$, $IP$ je ionizační potenciál a $E_{LUMO} = EA$, $EA$ je elektronová afinita.\cite{kratochvilexcerpta} $\eta$ je atomová tvrdost \footnote{$\eta = \frac{1}{\sigma}$, $\sigma$ je měkkost atomu}. \cite{hsabwatoc} Tvrdá kyselina a báze je charakterizována velkým rozdílem $IP$ a $IA$, což se projeví jako vysoké hodnoty $\chi$ a $\eta$. Při znalosti $E_{HOMO}$ a $E_{LUMO}$ lze predikovat ochotu reakčního centra interagovat s námi zvoleným reagentem a zároveň odhadnout stabilitu vzniklého komplexu. Systémy s velkým rozdílem $E_{HOMO}$ a $E_{LUMO}$ jsou tvrdší, stabilnější a méně reaktivní.
+$\chi$ je absolutní elektronegativita, $\chi$ je elektronegativity, $E$ je energie a $N$ je počet elektronů. \cite{hsabwatoc} Podle Koopmansova teorému $E_{HOMO} = - IP$, $IP$ je ionizační potenciál a $E_{LUMO} = -EA$, $EA$ je elektronová afinita.\cite{kratochvilexcerpta} $\eta$ je atomová tvrdost \footnote{$\eta = \frac{1}{\sigma}$, $\sigma$ je měkkost atomu}.\cite{pearson1986absolute} Tvrdá kyselina a báze je charakterizována velkým rozdílem $IP$ a $IA$, což se projeví jako vysoké hodnoty $\chi$ a $\eta$. Při znalosti $E_{HOMO}$ a $E_{LUMO}$ lze predikovat ochotu reakčního centra interagovat s námi zvoleným reagentem a zároveň odhadnout stabilitu vzniklého komplexu. Systémy s velkým rozdílem $E_{HOMO}$ a $E_{LUMO}$ jsou tvrdší, stabilnější a méně reaktivní.\cite{hsabwatoc}
 
 
 
@@ -499,7 +506,7 @@ Fragmentové orbitaly  21 a 23 se navzájem mísí za vzniku MO číslo 2 a 25, 
 \begin{figure}
 \begin{center}
 \subfigure[MO 5]{\includegraphics[width=5cm]{sioh3ch3_obrazky/s3_2.eps} \label{obr_sioh3ch3_MO_s3_2}}
-\subfigure[MO 11]{\includegraphics[width=5cm]{sioh3ch3_obrazky/s3_2.eps}\label{obr_sioh3ch3_MO_s3_25}}
+\subfigure[MO 11]{\includegraphics[width=5cm]{sioh3ch3_obrazky/s3_25.eps}\label{obr_sioh3ch3_MO_s3_25}}
 \caption{Interakce $\bra{21}{\hat{H}}\ket{23}$  z tabulky \ref{tab_sioh3ch3_vysledky}.}
 
 \label{obr_sioh3ch3_vysledky_III}\end{center}
@@ -538,7 +545,6 @@ Fragmentové orbitaly  20 a 24 se navzájem mísí za vzniku MO číslo 4 a 24, 
 28 & 84 \% & 26 & 97 \% & - & - \\ \hline
 34 & 100 \% & 32 & 99 \% &  -& - \\ \hline
 \end{tabular}
-
 \label{tab_h6sio6_vysledky}\end{center}
 \end{table}
    
@@ -549,7 +555,7 @@ Fragmentové orbitaly  24, 30 a 34 se navzájem mísí za vzniku MO číslo 1, 2
 \label{obr_h6sio6_MO_s1_1}}
 \subfigure[MO 11]{\includegraphics[width=5cm]{h6sio6_obrazky/s1_28.eps}\label{obr_h6sio6_MO_s1_28}}
 \subfigure[MO 5]{\includegraphics[width=5cm]{h6sio6_obrazky/s1_34.eps} \label{obr_h6sio6_MO_s1_34}}
-\caption{Interakce $\bra{30}{\hat{H}}\ket{34}$, $\bra{24}{\hat{H}}\ket{34}$  z tabulky \ref{ttab_h6sio6_vysledky}.}
+\caption{Interakce $\bra{30}{\hat{H}}\ket{34}$, $\bra{24}{\hat{H}}\ket{34}$  z tabulky \ref{tab_h6sio6_vysledky}.}
 
 \label{obr_h6sio6_vysledky_I}\end{center}
 \end{figure} 
@@ -663,8 +669,6 @@ Pro výpočet absolutního chemického stínění byla na křemík a jeho bezpro
 \label{obr_si_kryst_struktura_real}}
 \subfigure[\ce{Si(PO4)4(C2CH3)2(Si(OH)2)6}]{\includegraphics[width=5cm]{obr_si_o_poh_propojeno_si_jeden_kruh.png} 
 \label{obr_si_o_poh3_6_propojeno_si}}
-\subfigure[\ce{Si(PO4)4(C2CH3)2(Si(OH)2)6}]{\includegraphics[width=5cm]{obr_sipo4_4_ax_ekv.png} 
-\label{obr_sipo4_4_ax_ekv}}
 \caption{Optimalizované struktury křemičitofosfátů}
 \end{center}
 \end{figure}
@@ -675,33 +679,33 @@ Pro výpočet absolutního chemického stínění byla na křemík a jeho bezpro
 \begin{center}
 \begin{tabular}{|l|r|r|r|r|}
 \hline
- & E$_{\ce{H}}$\footnote{HOMO $-$ Highest Occupied Molecular Orbital} [eV] & E$_{\ce{L}}$ \footnote{LUMO$ - $Lowest Unoccupied Molecular Orbital} [eV]& $\chi$ [eV] & $\eta$ [eV] \\ \hline
+ & E$_{\ce{H}}$\footnote{HOMO $-$ Highest Occupied Molecular Orbital} [eV] & E$_{\ce{L}}$\footnote{LUMO$ - $Lowest Unoccupied Molecular Orbital} [eV]& $\chi$ [eV] & $\eta$ [eV] \\ \hline
 \hline
-\ce{H4SiO4}  & -7,730 & 1,677 & 9,407 & 6,053 \\ \hline
-\ce{(H6SiO6)^{2-}}  & 3,610 & 11,697 & 8,087 & -15,307 \\ \hline
-\ce{H3SiO3CH3}  & -7,750 & 0,825 & 8,575 & 6,925 \\ \hline
-\ce{(H5SiO5CH3)^{2-}}  & 3,883 & 11,550 & 7,667 & -15,433 \\ \hline
-\ce{H3SiO4(H2PO3)} & -8,567 & 0,060 & 8,627 & 8,507 \\ \hline
-\ce{SiO4(H2PO3)} & -8,088 & -0,829 & 7,259 & 8,917 \\ \hline
+\ce{H4SiO4}  & -7,730 & 1,677 & 3,026 & 4,703 \\ \hline
+\ce{(H6SiO6)^{2-}}  & 3,610 & 11,697 &  -7,653 & 4,043 \\ \hline
+\ce{H3SiO3CH3}  & -7,750 & 0,825 &  3,462 & 4,287 \\ \hline
+\ce{(H5SiO5CH3)^{2-}}  & 3,883 & 11,550 &  -7,716 & 3,834 \\ \hline
+\ce{H3SiO4(H2PO3)} & -8,567 & 0,060 &  4,254 & 4,314 \\ \hline
+\ce{SiO4(H2PO3)4} & -8,088 & -0,829 & 4,459 & 3,629 \\ \hline
 \ce{(SiO6(H2PO3)6)^{2-}} & - \footnote{Strukturu se nepodařilo optimalizovat z důvodu nestability}& - & -& - \\ \hline
 \ce{Si(H2PO3)3OH} & - \footnote{Strukturu se nepodařilo optimalizovat z důvodu tvorby umělých vodíkových můstků} & - & - & - \\ \hline
 \ce{(Si(H2PO3)5OH)^{2-}} & - \footnote{Strukturu se nepodařilo optimalizovat z důvodu nestability} & - & - & - \\ \hline
-\ce{(Si(PO4)6(Si(OH)2)6)^{2-}} \footnote{Optimalizace s bazí IGLO-III} & -3,670 & 4,040 & 7,710 & -0,369 \\ \hline
-\ce{(Si(PO4)6(Si(OH)2)6)^{2-}} \footnote{Optimalizace s bazí 6-31G*}& -3,346 & 4,574 & 7,718 & -2,501 \\ \hline
-\ce{Si^{VI}(PO4)6(Si^{IV}O4Et2)6}\footnote{VI a IV jsou hodnoty koordinace křemíku, zdroj \cite{C3NJ00721A}} & -2,609 & 5,109 & 7,718& -2,501 \\ \hline
-\ce{Si(PO4)4(C2CH3)2(Si(OH)2)6} \footnote{Fosfor je nahrazen uhlíkem v rámci jednoho kruhu}& 5,366 & 10,467 & 5,101 & -15,833 \\ \hline
-\ce{(Si(PO4)4(C2CH3)2(Si(OH)2)6)^{4-}} \footnote{Fosfor je nahrazen uhlíkem na dvou různých kruzích} & 5,081 & 10,138 & 5,057 & -15,219 \\ \hline
+\ce{(Si(PO4)6(Si(OH)2)6)^{2-}} \footnote{Optimalizace s bazí IGLO-III} & -3,670 & 4,040 &  -0,185 & 3,855 \\ \hline
+\ce{(Si(PO4)6(Si(OH)2)6)^{2-}} \footnote{Optimalizace s bazí 6-31G*}& -3,346 & 4,574 &  -0,614 & 3,960 \\ \hline
+\ce{(Si^{VI}(PO4)6(Si^{IV}O4Et2)6)^{2-}} \footnote{VI a IV jsou hodnoty koordinace křemíku, zdroj \cite{C3NJ00721A}} & -2,609 & 5,109 & -1,250 & 3,859 \\ \hline
+\ce{Si(PO4)4(C2CH3)2(Si(OH)2)6} \footnote{Fosfor je nahrazen uhlíkem v rámci jednoho kruhu}& 5,366 & 10,467 &  -7,916 & 2,550 \\ \hline
 \end{tabular}
 \end{center}
 \label{tab_porovnani_molekul_dft}
 \end{minipage}
 \end{table}
 
-Z tabulky \ref{tab_porovnani_molekul_dft} vyplývá, že struktury se čtyř koordinovaným křemíkem jsou stabilnější. Jedno z kritérií stability jsou hodnoty energie HOMO a LUMO orbitalů. 
+Z tabulky \ref{tab_porovnani_molekul_dft} vyplývá, že struktury se čtyř koordinovaným křemíkem jsou stabilnější než struktury s křemíkem v koordinaci šest. Jedno z kritérií stability výsledných molekul jsou hodnoty energie HOMO a LUMO orbitalů. Především hypotetické molekuly \ce{(H5SiO5CH3)^{2-}} a \ce{Si(PO4)4(C2CH3)2(Si(OH)2)6} (oba případy) vykazují kladnou hodnotu energie HOMO orbitalů. Výsledný parametr $\eta$ také poukazuje na stabilitu molekuly a to podle teorie HSAB. Pro molekuly s velkou hodnotou $\eta$ platí, že vykazují větší stabilitu. Hypotetické sloučeniny  \ce{(SiO6(H2PO3)6)^{2-}}, \ce{Si(H2PO3)3OH} a \ce{(Si(H2PO3)5OH)^{2-}} se z důvodu nestability nepodařilo vůbec optimalizovat. \\
+Pro potřeby výpočtu NMR parametrů byla krystalická struktura upravena a krajní ethyly byly nahrazeny vodíky. Absolutní chemické stínění bylo počítáno pro centrální šestikoordinovanný křemík. Hodnoty pro upravenou krystalovou strukturu měly k dobrou shodu s experimentálními hodnotami, které byly převzaty z článku \cite{C3NJ00721A}. Z toho lze usoudit, že úprava struktury neměla výraznější dopad na absolutní chemické stínění. 
 
 \begin{table}[htbp]
 \begin{minipage}{\textwidth}
-%\caption{Výsledky pro absolutní magnetické stínění}
+\caption{Výsledky pro absolutní magnetické stínění upravené krystalové struktury \ref{obr_sobr_si_kryst_struktura}.}
 \begin{center}
 \begin{tabular}{|r|r|r|}
 \hline
@@ -721,10 +725,12 @@ Z tabulky \ref{tab_porovnani_molekul_dft} vyplývá, že struktury se čtyř koo
 
   
   \chapter{Závěr}
+Cílem této bakalářské práce bylo určit tvrdost/měkkost vybraných křemičitofosfátů a různých modifikací. Z těchto parametrů lze dále usuzovat stabilitu vzniklých sloučenin a jejich ochotu reagovat s dalšími látkami. Další s problémů bylo vysvětlit neochotu křemíku přejít ze čtyřkoordinace na šestikoordinaci pokud měl na sebe přímo navázaný uhlík. Funkce uhlíku jako destabilizujícího prvku v šestikoordinovanných sloučeninách křemíku byl možné pozorovat u sloučeniny \ce{(H5SiO5CH3)^{2-}}, kde je energie HOMO i LUMO orbitalu kladná. Tento efekt bylo možné také pozorovat u složitějších struktur, kde byl fosfor nahrazen za uhlík. Pokud byly nahrazeny fosfory na více než jednom kruhu, docházelo k rozpadu sloučeniny. Zásadním problémem při optimalizaci molekul byla tvorba umělých vodíkových můstků. Z tohoto důvodu bylo nutné rozšířit molekulu, aby se situace více přiblížila reálnému polymeru. \\
+Krystalová struktura byla pro výpočet absolutního chemického stínění upravena, přesto byla dobrá shoda s experimentem. Do budoucna by bylo zajímavé rozebrat i další modifikace křemičitofosfátů a porovnat stabilitu vůči množství uhlíků vázaných na centrální křemík. 
   
   \chapter{Výpočetní detaily}
   Molekuly z kapitoly \ref{kapitola_EHT} byly optimalizovány programem Gaussian \cite{g09}. Všechny optimalizace probíhaly s hybridním funkcionálem B3LYP a bazí 6-31G*. Struktury byly nejprve navrženy programem Avogadro, zobrazení výstupu z Gaussianu bylo prováděno programem MOLDEN. Programem MOLDEN byly i tvořeny obrázky struktur. Optimalizovaná struktura byla použita jako vstup pro program C.A.C.A.O.. Z interakčního diagramu a analýzou FMO byly vybrány MO, které byly zobrázovány grafickým prostředím C.A.C.A.O. Stejným program byl i použit pro tvorbu interakčních diagramů. \\
-  Molekuly z kapitoly \ref{kapitola_DFT} byly také optimalizovány programem Gaussian, zároveň byl použit stejný funkcionál i báze. Použití stejné báze umožnilo vzájemné porovnání molekul. Pro výpočet NMR parametrů byla struktura optimalizována s bazí IGLO-III, která byla implementována z webové stránky  . Na centrální molekulu křemíku a nejbližší okolí byla použitá báze IGLO$-$III, na vzdálené okolí báze 6-31G*. Vstupní soubory pro optimalizaci programem Gaussian jsou uvedeny jako příloha.
+  Molekuly z kapitoly \ref{kapitola_DFT} byly také optimalizovány programem Gaussian, zároveň byl použit stejný funkcionál i báze. Použití stejné báze umožnilo vzájemné porovnání molekul. Pro výpočet NMR parametrů byla struktura optimalizována s bazí IGLO-III, která byla implementována z webové stránky  . Na centrální molekulu křemíku a nejbližší okolí byla použitá báze IGLO$-$III, na vzdálené okolí báze 6-31G*. Vstupní soubory pro optimalizaci programem Gaussian jsou uvedeny jako příloha A. Při optimalizaci rentgenové struktury byla molekula nejprve zobrazena programem Mercury, následně byl proveden výpočet optimalizace programem Gaussian.
   
 {\csname captions\languagename\endcsname %% Temporarily override
 %% the BibLaTeX localization with the original babel definitions.
@@ -732,8 +738,8 @@ Z tabulky \ref{tab_porovnani_molekul_dft} vyplývá, že struktury se čtyř koo
   \thesis@selectLocale{\thesis@locale}\makeatother
 \printbibliography[heading=bibintoc]} %% Print the bibliography.
 \appendix %% Start the appendices.
-\chapter{An appendix}
- \begin{verbatim}
+\chapter{Přílohy}
+ \begin{lstlisting}[frame=single, caption={\ce{H4SiO4} },label=DescriptiveLabel]
 OPT H4SIO4 
 
 0 1
@@ -746,12 +752,12 @@ O  6 -1.349   .000  -.954
 H  7  1.453  -.750 -1.557 
 H  8   .750  1.453  1.557 
 H  9 -1.453   .750 -1.557 
- \end{verbatim}
- 
- \begin{verbatim}
+ \end{lstlisting}
+
+ \begin{lstlisting}[frame=single, caption={\ce{(H6SiO6)^{2-}} },label=DescriptiveLabel]
 OPT H6SIO6 
 
-0 1
+-2 1
 SI   .000   .000   .000  
 O   .000   .000 -1.652 
 O  1.652   .000   .000 
@@ -765,11 +771,12 @@ O   .000  1.652   .000
 H  -.866   .000  2.085 
 H -2.085   .866   .000 
 H   .866  2.085   .000
- \end{verbatim}
-\begin{figure}
-
-\begin{verbatim}
-OPT si(OH)3_ch3
+ \end{lstlisting}
+  
+  \newpage
+  
+  \begin{lstlisting}[frame=single, caption={\ce{H3SiO3CH3}},label=DescriptiveLabel]
+OPT H3SIO3CH3
 
 0 1
 Si        -0.93401        0.43592       -0.98471
@@ -783,8 +790,353 @@ C          0.59507        0.43830        0.08739
 H          1.37120        1.08100       -0.37659
 H          0.98140       -0.59723        0.18307
 H          0.34130        0.83253        1.09283
-\end{verbatim}
-\caption{okf}
-\end{figure}
+ \end{lstlisting}
 
+\begin{lstlisting}[frame=single, caption={\ce{H5SiO5CH3}},label=DescriptiveLabel]
+OPT H5SIO5CH3
+
+-2 1
+Si        -0.05446       -0.05417        0.00151
+O         -1.25911        0.47123       -0.90554
+H         -2.04028        0.83732       -0.91639
+O         -0.02244       -1.41252       -0.83536
+H          0.07095       -1.76839       -1.61560
+O          1.13825       -0.59195        0.91385
+H          1.68837       -1.23964        1.06136
+O          0.99948        0.58879       -1.00877
+H          1.76367        0.97919       -1.09334
+O         -1.10698       -0.70022        1.01320
+H         -1.63759       -1.36222        1.16938
+C         -0.08214        1.58320        0.98745
+H          0.94880        1.97923        1.11669
+H         -0.53656        1.48968        1.99698
+H         -0.64366        2.36871        0.43820
+
+ \end{lstlisting}
+ \newpage
+ 
+
+\begin{lstlisting}[frame=single, caption={\ce{H3SiO4(H2PO3)}},label=DescriptiveLabel]
+OPT H3SIO4POH3
+
+0 1
+Si        -0.17389       -0.68992        0.09187
+O         -1.37171       -1.10768       -0.86938
+H         -1.90255       -0.85573       -1.49914
+O          1.20675       -1.23623       -0.48131
+H          1.93595       -1.03849       -0.89488
+O         -0.42347       -1.28722        1.54568
+H         -0.53750       -2.00055        2.01473
+O         -0.11080        0.90003        0.19547
+P          0.00865        2.29054       -0.61619
+O          1.50200        2.21678        0.32214
+H          1.33718        2.18898        1.30929
+O          0.23992        3.81736        0.19126
+H          0.38224        4.47244       -0.53982
+O         -1.24444        2.52446        0.27085
+ \end{lstlisting}
+
+\newpage
+
+\begin{lstlisting}[frame=single, caption={\ce{SiO4(H2PO3)4}},label=DescriptiveLabel]
+OPT SIO4(H2PO3)4
+
+0 1
+Si        -1.67886        0.10962       -0.26584
+O         -2.65396        0.16657        0.98886
+O         -2.49892       -0.30809       -1.56252
+O         -1.02190        1.54148       -0.48605
+O         -0.53114       -0.96044       -0.00433
+P         -3.90417        0.91776        1.66428
+P          0.12835        2.56347       -0.02258
+P          0.92630       -1.48158       -0.43802
+P         -3.31301       -1.48394       -2.29603
+O         -4.15324        0.16004        2.99498
+O         -3.49406        2.55892        2.05354
+H         -3.16086        2.94204        1.20323
+O         -5.32427        0.74723        0.68078
+H         -5.04023        1.03972       -0.22179
+O          0.32107        2.46382        1.69996
+H          0.88425        3.24347        1.93571
+O         -0.41154        3.97176       -0.38913
+O          1.58041        2.24921       -0.92033
+H          2.18857        2.99375       -0.68285
+O          0.96872       -2.96902        0.00224
+O          2.15546       -0.60812        0.42208
+H          2.99211       -1.10545        0.23963
+O          1.08523       -1.41941       -2.16559
+H          0.84652       -0.48877       -2.40596
+O         -4.71745       -1.92229       -1.37491
+H         -4.37466       -2.09201       -0.46137
+O         -3.79620       -0.86104       -3.63223
+O         -2.26132       -2.81159       -2.67589
+H         -1.84439       -3.05574       -1.81140
+ \end{lstlisting}
+\newpage
+
+\begin{lstlisting}[frame=single, caption={\ce{(Si(PO4)6(Si(OH)2)6)^{2-}}},label=DescriptiveLabel]
+OPT SI(PO4)6(SI(OH)2)6
+
+Si        -0.00115       -0.00493       -0.00808
+O         -1.21958        0.47299       -0.92302
+O         -1.01116       -0.91265        0.86961
+O          0.26302       -1.25494       -1.02026
+O          1.21643       -0.47100        0.91588
+O          0.97838        0.90360       -0.90610
+O         -0.24953        1.24968        0.97901
+P         -2.72789        0.13058       -1.32125
+P         -1.57504       -2.37867        1.24202
+P          1.30298       -2.42873       -1.51870
+P          2.73301       -0.21272        1.35960
+P          1.31150        2.45005       -1.27906
+P         -1.20317        2.41853        1.54715
+O         -2.82079       -1.36681       -1.73612
+O         -2.44803       -3.04601        0.06692
+O         -0.28620       -3.23520        1.45424
+O          1.41825       -3.61219       -0.39646
+O          2.79210       -1.82122       -1.81247
+O          3.62599       -0.42570        0.09398
+O          2.95917        1.31616        1.74624
+O          2.10210        3.06658       -0.00503
+O         -0.06497        3.29051       -1.59220
+O         -1.50400        3.54482        0.46303
+O         -2.59586        1.75296        1.86645
+O         -3.53849        0.20564        0.03328
+O         -3.33630        1.01013       -2.44787
+O         -2.35170       -2.42169        2.58524
+O          0.74392       -3.09075       -2.81279
+O          3.25956       -1.17775        2.45561
+O          2.28622        2.50508       -2.48777
+O         -0.65635        3.11763        2.81971
+O         -4.88397       -2.40960       -0.78227
+O         -3.18509       -3.67192       -2.39855
+O          1.50278       -4.63267        2.14123
+O          4.86303       -2.57482       -0.28865
+O          5.22630       -0.46316       -1.65215
+O          4.67467        2.79903        0.49652
+O          3.03933        3.77526        2.34560
+O         -0.16802        5.54640       -0.47511
+O         -2.50784        4.66839       -1.59017
+O         -4.37440        2.35265        0.12711
+O         -4.61760        0.33547        2.25381
+Si        -3.36546       -2.69620       -1.18091
+Si         0.67201       -4.28798        0.87415
+Si         4.12070       -1.37639       -1.00562
+Si         3.20056        2.76015        1.13039
+Si        -1.08928        4.28823       -0.85266
+Si        -3.87351        1.21446        1.14136
+H         -5.50540       -1.81345       -0.86170
+O         -0.14416       -5.61947        0.66363
+H         -4.41141       -0.31621        2.79833
+H         -0.48313       -6.22474        1.18093
+H          1.28172       -4.88954        2.93467
+H          5.36821        3.21822        0.19716
+H          5.85399        0.04601       -1.34067
+H          5.33908       -2.73802        0.41084
+H         -4.19920        2.56846       -0.70505
+H         -3.38124        4.59596       -1.64921
+H          0.66077        5.80806       -0.47523
+H          2.57317        3.93579        3.05453
+H         -2.82697       -3.66462       -3.18196
+ \end{lstlisting}
+ \begin{lstlisting}[frame=single, caption={\ce{Si^{VI}(PO4)6(Si^{IV}O4Et2)6}},label=DescriptiveLabel]
+OPT KRYST.STRUKTURA
+
+-2  1
+Si       7.32701         3.07856         6.25613
+O        6.92240         3.12292         7.79313
+O        7.88487         1.59838         6.43045
+O        5.86168         2.52021         5.88888
+O        7.75659         3.03240         4.71001
+O        6.78654         4.56061         6.06495
+O        8.77527         3.64859         6.62635
+P        6.50059         2.24960         9.06746
+P        7.73171         0.07817         5.98978
+P        4.70285         2.38223         4.76685
+P        8.14133         3.92096         3.42439
+P        6.98147         6.09090         6.50144
+P        9.92153         3.78170         7.75271
+O        5.58458         1.06543         8.56645
+O        6.58508        -0.58976         6.89123
+O        7.24043         0.10512         4.48574
+O        5.03045         1.12369         3.82871
+O        4.62429         3.70657         3.86913
+O        6.82102         4.59396         2.82714
+O        9.10922         5.09432         3.89393
+O        8.17128         6.72198         5.65985
+O        7.39608         6.15711         8.03734
+O        9.55707         4.95262         8.77589
+O        0.00305         2.44077         8.60624
+O        7.80945         1.61162         9.73938
+O        5.68665         3.08307        10.08295
+O        9.06158        -0.71065         6.09472
+O        3.31995         2.12571         5.42207
+O        8.85480         3.10762         2.31852
+O        5.69725         6.92092         6.26076
+O        1.30351         4.06657         7.10820
+O        6.32861        -1.24638         9.37847
+O        4.21450        -0.99357         7.93481
+O        6.45214        -0.20790         2.11333
+O        5.02213         3.67586         1.26652
+O        4.64804         5.90301         2.56706
+O        8.48038         7.49451         3.22539
+O        0.49916         7.13223         4.74926
+O        9.44007         7.52080         8.79744
+O        7.98216         6.14220        10.48791
+O        9.72926         2.39701        11.22531
+O        0.01141         0.23100         9.85429
+Si       5.67660        -0.43229         8.18361
+Si       5.94425        -0.17683         3.67002
+Si       5.26304         4.45258         2.62618
+Si       9.06719         6.59261         4.37635
+Si       8.61920         6.19492         9.03610
+Si       9.39157         1.68550         9.85256
+C        6.05612        -1.72878        10.51309
+H        5.36026        -1.03083        11.02162
+H        5.57406        -2.71956        10.38122
+C        7.29767        -1.85884        11.37548
+H        8.04823        -2.52054        10.89527
+H        6.99096        -2.30892        12.34243
+H        7.74227        -0.85889        11.56923
+C        3.74890        -2.05407         7.47474
+H        3.52672        -1.89569         6.39818
+H        4.55585        -2.75480         7.76040
+C        2.49298        -2.62953         8.08467
+H        2.64052        -2.80597         9.16445
+H        2.27031        -3.61929         7.59873
+H        1.65027        -1.95852         7.85475
+O        5.32767        -1.53213         4.47005
+C        4.66441        -3.79726         5.47821
+H        4.01699        -3.66593         4.60853
+C        7.20379         0.40544         1.25009
+H        7.91780         1.07617         1.76027
+H        6.61588         1.03117         0.54019
+C        8.07349        -0.55840         0.45666
+H        8.73911        -1.11174         1.14990
+H        8.71832         0.00399        -0.26109
+H        7.43890        -1.26018        -0.11853
+C        5.28042         3.74943         0.03017
+H        5.52875         2.75236        -0.38192
+H        6.17199         4.40108        -0.10724
+C        4.09606         4.35303        -0.69165
+H        3.22346         3.67117        -0.60884
+H        4.35668         4.50368        -1.75778
+H        3.84391         5.33370        -0.23262
+C        4.55473         6.93580         3.28184
+H        5.57899         7.28988         3.52240
+H        4.00901         6.67024         4.21075
+C        3.80740         8.03135         2.56454
+H        4.35688         8.33248         1.64832
+H        3.74596         8.89133         3.26234
+H        2.78371         7.69050         2.30134
+C        8.82259         8.03179         2.14309
+H        9.13711         9.08705         2.33622
+H        9.73971         7.48606         1.79523
+C        7.70741         7.91219         1.06972
+H        8.23412         7.54583         0.14798
+H        7.38815         8.94153         0.85296
+H        6.63510         7.52880         1.26924
+C        1.04158         7.97966         5.50929
+H        0.29672         8.77458         5.73553
+H        1.34650         7.47367         6.44541
+C        2.21859         8.64994         4.83713
+H        2.98995         7.90169         4.56088
+H        2.64418         9.37024         5.56545
+H        1.88522         9.20447         3.93253
+C        9.32401         8.77260         8.83334
+H        8.59055         9.01071         9.62899
+H        8.95536         9.14023         7.85336
+C        0.64403         9.42696         9.18476
+H        1.08120         8.96573        10.09713
+H       10.44034        10.49846         9.38235
+H       11.36100         9.34039         8.34093
+C        7.06421         5.52190        11.09787
+H        6.11973         5.61857        10.51393
+H        7.37892         4.46390        11.15586
+C        6.81145         6.03841        12.50645
+H        7.64691         6.65116        12.90205
+H        6.66427         5.15645        13.16685
+H        5.86091         6.61436        12.53298
+C        9.56476         2.20328        12.46348
+H        8.49965         2.37976        12.72743
+H        9.83835         1.14935        12.67675
+C       10.45534         3.09164        13.30330
+H       11.52035         2.94689        13.02445
+H       10.31485         2.78540        14.36158
+H       10.16827         4.15841        13.19273
+C       10.10049        -0.82181         9.16550
+H       10.61980        -0.59213         8.21083
+H        9.07461        -1.18782         8.96551
+C       10.88198        -1.88682         9.91169
+H       11.95440        -1.60477         9.97889
+H       10.79260        -2.83865         9.34870
+H       10.47420        -2.03128        10.93463
+C        5.71160        -2.65189         5.07211
+H        6.56285        -2.95653         4.46945
+H        5.16687        -4.74367         5.34343
+H        6.38890        -2.62202         5.91368
+H        4.32121        -4.24020         6.55472
+ \end{lstlisting}
+ 
+ 
+  \begin{lstlisting}[frame=single, caption={\ce{(Si(PO4)4(C2CH3)2(Si(OH)2)6)^{4-}}, náhrada C za P v rámci jednoho kuhu},label=DescriptiveLabel]
+OPT 
+
+-4 1
+Si         0.03336       -0.15496        0.58945
+O          1.48009       -0.44735        1.50636
+O          0.31571       -1.64400       -0.42757
+O         -0.99890       -1.07130        1.76568
+O         -1.48843        0.00938       -0.40329
+O          0.89656        0.76801       -0.73682
+O         -0.28854        1.32951        1.47017
+P          2.39451       -3.18475       -0.85891
+P          2.85014        0.16384        1.96801
+P          1.17756        2.31532       -0.92694
+P         -1.51283        2.24003        1.83457
+C         -1.98890       -0.07940       -1.87333
+C         -1.75816       -2.43841        1.76662
+O          1.84702       -2.47385       -2.26023
+O          3.66058       -2.19405       -0.50087
+O          3.57744       -0.64079        2.97357
+O          2.66900        1.68793        2.36673
+H          2.28954        2.24318        1.62423
+O          1.86789        3.02334        0.19196
+O         -0.19550        2.99532       -1.37045
+O         -2.56492        1.28695        2.58541
+O         -2.21432        2.59123        0.42216
+O         -1.19400        3.49912        2.56594
+O         -2.80470       -1.47630       -1.96787
+C         -0.67850       -0.37340       -2.78796
+C         -0.70886       -3.55174        2.26080
+O         -2.04715       -2.90733        0.24120
+O          3.71183        0.31589        0.55763
+H         -2.30952        0.34789        2.45734
+Si        -1.60123        3.64024       -0.71481
+O         -1.31044        5.07285        0.02571
+H         -1.17555        4.90045        0.98368
+O         -2.66140        3.77006       -1.94111
+H         -2.84496        2.85660       -2.27519
+O          1.98518        2.31535       -2.32377
+H          2.62509        1.56432       -2.30927
+Si         4.12303       -0.60904       -0.70320
+O          5.76508       -0.51557       -0.86367
+H          6.03427       -0.63813       -1.78451
+O          3.47888       -0.10557       -2.15988
+H          2.81311       -0.76331       -2.45550
+H          0.98356       -2.03370       -2.02977
+Si        -3.29600       -2.50565       -0.77478
+O         -3.74376       -3.84108       -1.64043
+H         -4.18810       -4.49110       -1.07862
+O         -4.52929       -1.95904        0.15775
+H         -4.27681       -1.96970        1.11102
+H          0.17264       -3.50438        1.65613
+H         -1.15045       -4.52233        2.17217
+H         -0.45041       -3.36948        3.28300
+H         -0.96917       -0.44414       -3.81529
+H         -0.22820       -1.29405       -2.48049
+H          0.02480        0.42438       -2.67040
+ \end{lstlisting}
+ 
+ 
 \end{document}
