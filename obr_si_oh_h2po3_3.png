@@ -1,0 +1,572 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: Molden
+%%For: Schaft
+%%Creator: Drs G Schaftenaar
+%%DocumentFonts: Courier
+%%Pages (atend)
+%%BoundingBox: 0 0 612 792
+%%EndComments
+%
+%###### User Preferences ############
+%
+%---- SIZE AND ORIENTATION OF THE PLOT ---
+%
+/size    {  0.24 } def
+%---- These number can be negative -------
+/originx {  39.0 } def
+/originy { 753.0 } def
+/angle   { -90.0 } def
+%For Portrait use
+%/originx { 40.0 } def
+%/originy { 240.0 } def
+%/angle   { 0.0 } def
+%and BoundingBox: 25 255 535 765
+%
+%---- COLORS FOR DENSITY CONTOURS  -------
+%
+/poscontour { 18 } def
+/negcontour { 19 } def
+%---- FILL COLORS OF DENSITY SPACE MODE  -
+/posfill { 16 } def
+/negfill { 17 } def
+%---- COLOR OF UNIT CELL DEF. BLACK -
+/cellcol { 0 setcol } def
+/labelcol { 0 setcol } def
+%/cellcol { 1 setcol } def
+%
+%---- COLORS HAVE A HUE AND SATURATION ---
+%
+/hues {[.0 .0 .17 .33 .66 .5 .12 .54 .0 .83 .33 .1 .08 .15 .10 .0 .33 .1 .66 .0]} def
+/satus {[.0 .93 .95 1. .5 1. 1. .38 .0 1. .9 .41 1. .6 .95 .0 .5 .7 1. 1.]} def
+%
+%---- SET BOND RENDERING:  ---------------
+%---- shadedrod, whiterod, blackrod  -----
+%
+/dorod { shadedrod } def
+%
+%---- Include Tabel & Logo, Fontsize -----
+/tabel {true} def
+/titleandlogo {true} def
+/nullcontour {false} def
+/contourvalues {false} def
+/stickwidth {8} def
+/fontwidth {27} def
+/fontheight {35} def
+/dobackground {false} def
+%
+%###### END User Preferences ########
+/hue {hues col get} def
+/satu {satus col get} def
+/setcol {
+ /col exch def col 0 eq
+ {hue satu 0.0 sethsbcolor}
+ {hue satu 1.0 sethsbcolor}
+ifelse} def
+/m { moveto } def
+/l { lineto } def
+/s { stroke } def
+/n { newpath } def
+/lc { setlinecap } def
+/offset { 0 0 moveto (A) false charpath
+flattenpath pathbbox
+pop pop pop -1 mul /xoff exch def } def
+/doatom
+{ gsave
+  rx ry translate
+  90 -1 1
+  { gsave
+    dup cos hue exch satu exch sethsbcolor sin dup scale
+    newpath
+    0 0 rad 0 360 arc
+    closepath fill grestore } for
+    grestore } def
+/shadedrod
+{ gsave
+  x1 y1 translate
+  x2 x1 neg add
+  y2 y1 neg add
+  {atan neg rotate} stopped not {
+  87 -3 0
+  {dup
+  gsave
+  newpath
+   cos 1.0 cosb 0.5 mul neg add mul
+   hue exch satu exch sethsbcolor
+   sin 1.0 scale
+   1 cosb scale
+   0 0 hd 0 180 arcn
+   x2 x1 neg add dup mul
+   y2 y1 neg add dup mul
+   add sqrt
+  0 cosb eq {/cosb 1.0 def} if 0 exch cosb div translate
+   0 0 hd 180 360 arc
+  closepath fill
+  grestore } for
+  } if
+  grestore } def
+/blackrod
+{ gsave
+  x1 y1 translate
+  x2 x1 neg add
+  y2 y1 neg add
+  {atan neg rotate} stopped not {
+  newpath
+   0 setgray
+   1 cosb scale
+   0 0 hd 0 180 arcn
+   x2 x1 neg add dup mul
+   y2 y1 neg add dup mul
+   add sqrt
+  0 cosb eq {/cosb 1.0 def} if 0 exch cosb div translate
+   0 0 hd 180 360 arc
+  closepath stroke
+  } if
+  grestore } def
+/whiterod
+{ gsave
+  x1 y1 translate
+  x2 x1 neg add
+  y2 y1 neg add
+  {atan neg rotate} stopped not {
+  newpath
+   1 setgray
+   1 cosb scale
+   0 0 hd 0 180 arcn
+   x2 x1 neg add dup mul
+   y2 y1 neg add dup mul
+   add sqrt
+  0 cosb eq {/cosb 1.0 def} if 0 exch cosb div translate
+   0 0 hd 180 360 arc
+  closepath stroke
+  } if
+  grestore } def
+/dobond
+{ gsave
+  0 setlinecap
+  newpath moveto lineto
+  90 -5 5
+  { gsave dup cos hue exch satu exch sethsbcolor
+    sin 23 mul setlinewidth
+    stroke grestore } for
+  grestore } def
+/dobond2
+{ gsave
+  1 setlinecap
+  2 setlinejoin
+  newpath moveto lineto lineto
+  90 -5 5
+  { gsave dup cos hue exch satu exch sethsbcolor
+    sin 23 mul setlinewidth
+    stroke grestore } for
+  grestore } def
+/doshadedstick
+{ gsave
+  stickwidth setlinewidth
+  1 setlinecap
+  2 setlinejoin
+   1.0 cosb 0.8 mul neg add 
+   hue exch satu exch sethsbcolor
+  newpath
+  x1 y1 moveto
+  x2 y2 lineto
+  stroke
+  grestore } def
+/dostick
+{ gsave
+  stickwidth setlinewidth
+  1 setlinecap
+  2 setlinejoin
+  newpath
+  x1 y1 moveto
+  x2 y2 lineto
+  stroke
+  grestore } def
+/dobg
+{ gsave
+  setgray
+  newpath
+  0 0 m 2000 0 l 2000 2000 l 0 2000 l
+  closepath fill
+  grestore } def
+/Helvetica-Bold findfont [ fontwidth   0   0  fontheight   0   0] makefont setfont
+originx originy translate
+angle rotate
+   3 setlinewidth
+2 setlinecap
+size size scale
+%%EndProlog
+%%Page: ? 1
+dobackground {0.5 dobg} if
+n
+ /rx         1167  def
+ /ry          899  def
+ /col            1  def
+ /rad          108  def
+ doatom
+ /x1         1223  def
+ /y1          917  def
+ /x2         1328  def
+ /y2          948  def
+ /cosb   0.732079148      def
+ /col 0 def
+ /hd           49  def
+ dorod
+ /x1         1074  def
+ /y1          940  def
+ /x2          952  def
+ /y2          992  def
+ /cosb    2.53534894E-02  def
+           1  setcol
+ 1 setcol
+ 0 setlinecap [8 14] 0 setdash
+ 5 setlinewidth
+ doshadedstick
+ 0 setgray
+ 2 setlinecap [] 0 setdash
+ 2 setlinewidth
+ /x1          952  def
+ /y1          992  def
+ /x2          773  def
+ /y2         1070  def
+ /cosb   0.100000001      def
+          15  setcol
+ 1 setcol
+ 0 setlinecap [8 14] 0 setdash
+ 5 setlinewidth
+ doshadedstick
+ 0 setgray
+ 2 setlinecap [] 0 setdash
+ 2 setlinewidth
+ /rx          737  def
+ /ry         1085  def
+ /col           15  def
+ /rad           54  def
+ doatom
+ /x1          707  def
+ /y1         1105  def
+ /x2          604  def
+ /y2         1172  def
+ /cosb   0.313540608      def
+ /col 0 def
+ /hd           38  def
+ dorod
+ /rx          525  def
+ /ry         1224  def
+ /col            1  def
+ /rad          108  def
+ doatom
+ /x1          517  def
+ /y1         1213  def
+ /x2          500  def
+ /y2         1190  def
+ /cosb   0.985289693      def
+ /col 0 def
+ /hd           49  def
+ dorod
+ /rx         1950  def
+ /ry         1190  def
+ /col           15  def
+ /rad           54  def
+ doatom
+ /x1         1915  def
+ /y1         1205  def
+ /x2         1801  def
+ /y2         1252  def
+ /cosb   0.100216016      def
+ /col 0 def
+ /hd           38  def
+ dorod
+ /rx         1708  def
+ /ry         1291  def
+ /col            1  def
+ /rad          108  def
+ doatom
+ /x1         1642  def
+ /y1         1222  def
+ /x2         1497  def
+ /y2         1068  def
+ /cosb   0.113074079      def
+ /col 0 def
+ /hd           49  def
+ dorod
+ /rx         1406  def
+ /ry          972  def
+ /col            2  def
+ /rad          142  def
+ doatom
+ /x1         1335  def
+ /y1         1015  def
+ /x2         1142  def
+ /y2         1133  def
+ /cosb   0.688240886      def
+ /col 0 def
+ /hd           65  def
+ dorod
+ /x1         1484  def
+ /y1          872  def
+ /x2         1603  def
+ /y2          719  def
+ /cosb   0.264746159      def
+ /col 0 def
+ /hd           49  def
+ dorod
+ /rx          271  def
+ /ry         1717  def
+ /col           15  def
+ /rad           54  def
+ doatom
+ /x1          270  def
+ /y1         1690  def
+ /x2          268  def
+ /y2         1607  def
+ /cosb   0.670199513      def
+ /col 0 def
+ /hd           38  def
+ dorod
+ /rx         1659  def
+ /ry          646  def
+ /col            1  def
+ /rad          108  def
+ doatom
+ /x1         1610  def
+ /y1          589  def
+ /x2         1548  def
+ /y2          514  def
+ /cosb   0.605698407      def
+ /col 0 def
+ /hd           38  def
+ dorod
+ /rx          488  def
+ /ry         1174  def
+ /col            2  def
+ /rad          142  def
+ doatom
+ /x1          605  def
+ /y1         1176  def
+ /x2          920  def
+ /y2         1181  def
+ /cosb   0.334105819      def
+ /col 0 def
+ /hd           65  def
+ dorod
+ /x1          420  def
+ /y1         1285  def
+ /x2          315  def
+ /y2         1458  def
+ /cosb   0.204935938      def
+ /col 0 def
+ /hd           49  def
+ dorod
+ /x1          430  def
+ /y1         1063  def
+ /x2          353  def
+ /y2          916  def
+ /cosb   0.296730250      def
+ /col 0 def
+ /hd           49  def
+ dorod
+ /rx         1529  def
+ /ry          492  def
+ /col           15  def
+ /rad           54  def
+ doatom
+ /x1         1505  def
+ /y1          484  def
+ /x2         1386  def
+ /y2          445  def
+ /cosb   0.692812741      def
+          15  setcol
+ 1 setcol
+ 0 setlinecap [8 14] 0 setdash
+ 5 setlinewidth
+ doshadedstick
+ 0 setgray
+ 2 setlinecap [] 0 setdash
+ 2 setlinewidth
+ /x1         1386  def
+ /y1          445  def
+ /x2         1305  def
+ /y2          419  def
+ /cosb   0.692812741      def
+           1  setcol
+ 1 setcol
+ 0 setlinecap [8 14] 0 setdash
+ 5 setlinewidth
+ doshadedstick
+ 0 setgray
+ 2 setlinecap [] 0 setdash
+ 2 setlinewidth
+ /rx          266  def
+ /ry         1538  def
+ /col            1  def
+ /rad          108  def
+ doatom
+ /rx          311  def
+ /ry          836  def
+ /col            1  def
+ /rad          108  def
+ doatom
+ /x1          345  def
+ /y1          799  def
+ /x2          389  def
+ /y2          751  def
+ /cosb   0.827477396      def
+           1  setcol
+ 1 setcol
+ 0 setlinecap [8 14] 0 setdash
+ 5 setlinewidth
+ doshadedstick
+ 0 setgray
+ 2 setlinecap [] 0 setdash
+ 2 setlinewidth
+ /x1          389  def
+ /y1          751  def
+ /x2          453  def
+ /y2          680  def
+ /cosb   0.827477396      def
+          15  setcol
+ 1 setcol
+ 0 setlinecap [8 14] 0 setdash
+ 5 setlinewidth
+ doshadedstick
+ 0 setgray
+ 2 setlinecap [] 0 setdash
+ 2 setlinewidth
+ /rx         1057  def
+ /ry         1184  def
+ /col           11  def
+ /rad          162  def
+ doatom
+ /x1         1104  def
+ /y1         1321  def
+ /x2         1165  def
+ /y2         1498  def
+ /cosb   0.295630515      def
+ /col 0 def
+ /hd           49  def
+ dorod
+ /x1         1055  def
+ /y1         1068  def
+ /x2         1050  def
+ /y2          802  def
+ /cosb   0.561699450      def
+ /col 0 def
+ /hd           65  def
+ dorod
+ /rx         1432  def
+ /ry         1663  def
+ /col           15  def
+ /rad           54  def
+ doatom
+ /x1         1397  def
+ /y1         1651  def
+ /x2         1286  def
+ /y2         1614  def
+ /cosb   0.259658545      def
+ /col 0 def
+ /hd           38  def
+ dorod
+ /rx         1194  def
+ /ry         1583  def
+ /col            1  def
+ /rad          108  def
+ doatom
+ /rx         1242  def
+ /ry          398  def
+ /col            1  def
+ /rad          108  def
+ doatom
+ /x1         1196  def
+ /y1          471  def
+ /x2         1111  def
+ /y2          604  def
+ /cosb   0.398701757      def
+ /col 0 def
+ /hd           49  def
+ dorod
+ /rx          466  def
+ /ry          666  def
+ /col           15  def
+ /rad           54  def
+ doatom
+ /x1          490  def
+ /y1          662  def
+ /x2          573  def
+ /y2          648  def
+ /cosb   0.711589575      def
+ /col 0 def
+ /hd           38  def
+ dorod
+ /rx         1048  def
+ /ry          703  def
+ /col            2  def
+ /rad          142  def
+ doatom
+ /x1         1105  def
+ /y1          737  def
+ /x2         1195  def
+ /y2          789  def
+ /cosb   0.825288892      def
+ /col 0 def
+ /hd           49  def
+ dorod
+ /x1          922  def
+ /y1          683  def
+ /x2          728  def
+ /y2          653  def
+ /cosb   0.244084120      def
+ /col 0 def
+ /hd           49  def
+ dorod
+ /rx          637  def
+ /ry          638  def
+ /col            1  def
+ /rad          108  def
+ doatom
+ /rx         1236  def
+ /ry          813  def
+ /col            1  def
+ /rad          108  def
+ doatom
+ /x1         1166  def
+ /y1          833  def
+ /x2         1082  def
+ /y2          857  def
+ /cosb   0.634795129      def
+ /col 0 def
+ /hd           38  def
+ dorod
+ /rx         1055  def
+ /ry          865  def
+ /col           15  def
+ /rad           54  def
+ doatom
+titleandlogo {
+labelcol
+2100 1700 m
+(defaults used                           ) show
+2100 1640 m
+(                                        ) show
+2100 1580 m
+(last point                              ) show
+2100 1520 m
+(                                        ) show
+2100 1460 m
+(                                        ) show
+2100 1400 m
+(                                        ) show
+/print { 0 0 moveto 4 0 (MOLDEN) ashow } def
+2200 1850 translate
+4.0 4.0 scale
+.95 -.05 0
+{setgray print -1.5 +1.5 translate } for
+1 setgray print
+} if
+/#copies    1 def
+showpage
+39.00 753.00 translate
+-90.00 rotate
+1 setlinewidth
+2 setlinecap
+0.240000 0.240000 scale
+n
