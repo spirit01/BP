@@ -7,7 +7,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[
-  digital, %% This option enables the default options for the
+  printed, %% This option enables the default options for the
            %% digital version of a document. Replace with `printed`
            %% to enable the default options for the printed version
            %% of a document.
@@ -19,6 +19,7 @@
            %% hide the List of Tables.
   %% More options are listed in the user guide at
   %% <http://mirrors.ctan.org/macros/latex/contrib/fithesis/guide/mu/sci.pdf>.
+  oneside,
 ]{fithesis3}
 %% The following section sets up the locales used in the thesis.
 \usepackage[resetfonts]{cmap} %% We need to load the T2A font encoding
@@ -59,8 +60,7 @@
     title         = Studium vlivu koordinačního prostředí atomů Si a P na tvorbu SiO$_6$ center metodami EHT a DFT,
     TeXtitle      = Studium vlivu koordinačního prostředí atomů Si a P na tvorbu SiO$_6$ center metodami EHT a~DFT,
     titleEn       = A combined EHT/DFT study of Si and P coordination environment influence on the creation of SiO6 centers,
-    TeXtitleEn    = The Principles of the Typesetting of
-                    Mathematics in \TeX: the Program,
+    TeXtitleEn    = A combined EHT/DFT study of Si and P coordination environment influence on the creation of SiO6 centers,
     keywords      = {klíčové slovo 1, klíčové slovo 2, ...},
     TeXkeywords   = {klíčové slovo 1, klíčové slovo 2, \ldots},
     keywordsEn    = {keyword1, keyword2, ...},
@@ -582,26 +582,19 @@ Fragmentové orbitaly  21, 28 a 32 se navzájem mísí za vzniku MO číslo 3, 2
 \label{obr_h6sio6_vysledky_III}\end{center}
 \end{figure} 
 %----------------------------------------------------------------------------------------
- \subsection{Molekula Si(OH)$_3$O(H$_2$PO$_3$)}
- Pro molekulu \ce{Si(OH)3O(H2PO3)} \ref{obr_h3sio4_h2po3} byla nutná oprava zvolených fragmentů. Molekula postrádá symetrii, která by usnadňovala výpočet. Jako fragment jedna byla zvolena část \ce{Si(OH)3} a fragment dva byl \ce{O(H2PO3)}. Tato úprava usnadnila výpočetní náročnost a bylo možné získat informace o FMO. 
+ \subsection{Molekula H$_3$SiO$_4$(H$_2$PO$_3$)}
+ Pro molekulu\ce{H3SiO4(H2PO3)} \ref{obr_h3sio4_h2po3} byla nutná oprava zvolených fragmentů. Molekula postrádá symetrii, která by usnadňovala výpočet. Jako fragment jedna byla zvolena část \ce{Si(OH)3} a fragment dva byl \ce{O(H2PO3)}. Tato úprava usnadnila výpočetní náročnost a bylo možné získat informace o FMO. 
 
 \begin{figure}
 \begin{center}
-\subfigure[Interakční diagram pro \ce{Si(OH)3O(H2PO3)}.]{\includegraphics[width=5cm]{h3sio3P_diagram.eps} \label{h3sio4_h2po3_diagram_upraveny}}
-\subfigure[Optimalizovaná struktura \ce{Si(OH)3CH3}.]{\includegraphics[width=5cm]{obr_h3sio4_h2po3.png}\label{obr_h3sio4_h2po3}}
+\subfigure[Interakční diagram pro \ce{H3SiO4(H2PO3)}.]{\includegraphics[width=5cm]{h3sio3P_diagram.eps} \label{h3sio4_h2po3_diagram_upraveny}}
+\subfigure[Optimalizovaná struktura \ce{H3SiO4(H2PO3)}.]{\includegraphics[width=5cm]{obr_h3sio4_h2po3.png}\label{obr_h3sio4_h2po3}}
 \label{obr_SiOH3OH2PO)_vysledky_I}
 \end{center}
 \end{figure}
 
-  \begin{figure}[h]
-\caption{Optimalizovaná struktura \ce{H3SiO4(H2PO3)} }
-  \center
-  \includegraphics[width=10cm]{obr_h3sio4_h2po3.png}
-  \label{}
-  \end{figure}
-
 \begin{table}[htbp]
-\caption{Výsledné mísení orbitalů pro  \ce{Si(OH)3O(H2PO3)}}
+\caption{Výsledné mísení orbitalů pro \ce{H3SiO4(H2PO3)}}
 \begin{center}
 \begin{tabular}{|r|r|}
 \hline
@@ -667,7 +660,7 @@ Pro výpočet absolutního chemického stínění byla na křemík a jeho bezpro
 \label{obr_sobr_si_kryst_struktura}}
 \subfigure[\ce{(Si^{VI}(PO4)6(Si^{IV}O4Et2)6)^{2-}} ]{\includegraphics[width=5cm]{obr_si_kryst_struktura_real.png} 
 \label{obr_si_kryst_struktura_real}}
-\subfigure[\ce{Si(PO4)4(C2CH3)2(Si(OH)2)6}]{\includegraphics[width=5cm]{obr_si_o_poh_propojeno_si_jeden_kruh.png} 
+\subfigure[\ce{(Si(PO4)4(C2CH3)2(Si(OH)2)6)^{4-}}]{\includegraphics[width=5cm]{obr_si_o_poh_propojeno_si_jeden_kruh.png} 
 \label{obr_si_o_poh3_6_propojeno_si}}
 \caption{Optimalizované struktury křemičitofosfátů}
 \end{center}
@@ -693,7 +686,7 @@ Pro výpočet absolutního chemického stínění byla na křemík a jeho bezpro
 \ce{(Si(PO4)6(Si(OH)2)6)^{2-}} \footnote{Optimalizace s bazí IGLO-III} & -3,670 & 4,040 &  -0,185 & 3,855 \\ \hline
 \ce{(Si(PO4)6(Si(OH)2)6)^{2-}} \footnote{Optimalizace s bazí 6-31G*}& -3,346 & 4,574 &  -0,614 & 3,960 \\ \hline
 \ce{(Si^{VI}(PO4)6(Si^{IV}O4Et2)6)^{2-}} \footnote{VI a IV jsou hodnoty koordinace křemíku, zdroj \cite{C3NJ00721A}} & -2,609 & 5,109 & -1,250 & 3,859 \\ \hline
-\ce{Si(PO4)4(C2CH3)2(Si(OH)2)6} \footnote{Fosfor je nahrazen uhlíkem v rámci jednoho kruhu}& 5,366 & 10,467 &  -7,916 & 2,550 \\ \hline
+\ce{(Si(PO4)4(C2CH3)2(Si(OH)2)6)^{4-}} \footnote{Fosfor je nahrazen uhlíkem v rámci jednoho kruhu}& 5,366 & 10,467 &  -7,916 & 2,550 \\ \hline
 \end{tabular}
 \end{center}
 \label{tab_porovnani_molekul_dft}
@@ -729,8 +722,8 @@ Cílem této bakalářské práce bylo určit tvrdost/měkkost vybraných křemi
 Krystalová struktura byla pro výpočet absolutního chemického stínění upravena, přesto byla dobrá shoda s experimentem. Do budoucna by bylo zajímavé rozebrat i další modifikace křemičitofosfátů a porovnat stabilitu vůči množství uhlíků vázaných na centrální křemík. 
   
   \chapter{Výpočetní detaily}
-  Molekuly z kapitoly \ref{kapitola_EHT} byly optimalizovány programem Gaussian \cite{g09}. Všechny optimalizace probíhaly s hybridním funkcionálem B3LYP a bazí 6-31G*. Struktury byly nejprve navrženy programem Avogadro, zobrazení výstupu z Gaussianu bylo prováděno programem MOLDEN. Programem MOLDEN byly i tvořeny obrázky struktur. Optimalizovaná struktura byla použita jako vstup pro program C.A.C.A.O.. Z interakčního diagramu a analýzou FMO byly vybrány MO, které byly zobrázovány grafickým prostředím C.A.C.A.O. Stejným program byl i použit pro tvorbu interakčních diagramů. \\
-  Molekuly z kapitoly \ref{kapitola_DFT} byly také optimalizovány programem Gaussian, zároveň byl použit stejný funkcionál i báze. Použití stejné báze umožnilo vzájemné porovnání molekul. Pro výpočet NMR parametrů byla struktura optimalizována s bazí IGLO-III, která byla implementována z webové stránky  . Na centrální molekulu křemíku a nejbližší okolí byla použitá báze IGLO$-$III, na vzdálené okolí báze 6-31G*. Vstupní soubory pro optimalizaci programem Gaussian jsou uvedeny jako příloha A. Při optimalizaci rentgenové struktury byla molekula nejprve zobrazena programem Mercury, následně byl proveden výpočet optimalizace programem Gaussian.
+  Molekuly z kapitoly \ref{kapitola_EHT} byly optimalizovány programem Gaussian \cite{g09}. Všechny optimalizace probíhaly s hybridním funkcionálem B3LYP a bazí 6-31G*. Struktury byly nejprve navrženy programem Avogadro \cite{Avogadro}, zobrazení výstupu z Gaussianu bylo prováděno programem MOLDEN \cite{Molden}. Programem MOLDEN byly i tvořeny obrázky struktur. Optimalizovaná struktura byla použita jako vstup pro program C.A.C.A.O. \cite{cacao}. Z interakčního diagramu a analýzou FMO byly vybrány MO, které byly zobrázovány grafickým prostředím C.A.C.A.O. Stejným program byl i použit pro tvorbu interakčních diagramů. \\
+  Molekuly z kapitoly \ref{kapitola_DFT} byly také optimalizovány programem Gaussian, zároveň byl použit stejný funkcionál i báze. Použití stejné báze umožnilo vzájemné porovnání molekul. Pro výpočet NMR parametrů byla struktura optimalizována s bazí IGLO-III, která byla implementována z webové stránky  . Na centrální molekulu křemíku a nejbližší okolí byla použitá báze IGLO$-$III, na vzdálené okolí báze 6-31G*. Báze IGLO$-$III pro atom křemíku a kyslíku byla stažena z webové stránky EMSL \cite{EMSL}. Vstupní soubory pro optimalizaci programem Gaussian jsou uvedeny jako příloha A. Při optimalizaci rentgenové struktury byla molekula nejprve zobrazena programem Mercury \cite{Mercury}, následně byl proveden výpočet optimalizace programem Gaussian.
   
 {\csname captions\languagename\endcsname %% Temporarily override
 %% the BibLaTeX localization with the original babel definitions.
