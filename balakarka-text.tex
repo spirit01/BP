@@ -228,9 +228,6 @@ U atomů s více  elektrony chemie začíná, hlavním cílem je získat znalost
 \label{eq_B_O_aproximace} 
 \end{equation}
 
-\subsection{Hypervalence}
-\subsection{Teorie molekulových orbitalů}
-
 \section{Metody kvantové chemie}
 Metody výpočetní chemie lze ve stručnosti shrnutou na \textit{Ab inito} metody, semi-empirické metody a DFT metody. \textit{Ab inito} metody řeší Schröfingerovu rovnici bez použití parametrů z experimentálních dat.  Vzájemnou souvislost a podobnost metody vystihuje schéma na obrázku \ref{schema_QM}.
  \begin{figure}[h]
@@ -268,24 +265,33 @@ V roce 1964 uveřejnili Koch a Hohenberg dva teorémy, které ukázaly, že ener
 \cite{lechamolecularmodeling}
 \subsection{Principy}
 \subsubsection{První Hohenberg- Kohn teorém}
-Pro libovolný systém interagujících elektronů je externí potenciál v ext jednoznačně
-určen elektronovou hustotou (až na konstantu)
+Pro libovolný systém interagujících elektronů je externí potenciál $V_{ext}$ jednoznačně
+určen elektronovou hustotou (až na konstantu). \cite{dftshrnutivysledky}
+\begin{equation}
+E_{el} = E_{el} (\varrho)
+\end{equation}
+ Za znalosti elektronové hustoty lze vypočítat energii a všechny ostatní vlastnosti základního stavu.
 \subsubsection{Druhý Hohenberg-Kohn teorém}
-Druhý teorém je postaven na variačním principu.
+Druhý teorém je postaven na variačním principu. Poskytuje informace, jak lze najít elektronovou hustotu, která poskytne nejnižší a zároveň nejpřesnější energii.
 \cite{koch2000chemist} 
-Předpokládejme, že danému externímu potenciálu V ext přísluší elektronová hustota
-$\varrho_0$. Pak pro jakoukoli jinou elektronovou hustotu $\varrho$
-0 bude platit
+Předpokládejme, že danému externímu potenciálu $V'_{ext}$ přísluší elektronová hustota
+$\varrho_0$. Pak pro jakoukoli jinou elektronovou hustotu $\varrho_0$ bude platit
 \begin{equation}
 E [\varrho_0] < E[\varrho ']
 \end{equation}
-Druhý teorém je přístup, jakým způsobem hledat správný funkcionál.
+
 \subsubsection{Kohn-Shamovy rovnice}
-Při hledání vhodného funkcionálu je zásadní problém zahrnout kinetickou energii elektronů, klasickou coulombickou interakci mezi elektrony a dále korelační a výměnné efekty. Kinetickou energii lze započítat jako součet kinetické energie jednotlivých elektronů popsaných jednoelektronovou funkcí. Součet $E_{kin}$ pro jednotlivé elektrony poskytnou celkovou kinetickou energii \ref{kineticka_energie_jednoelektronova}. \cite{dftshrnutivysledky}
+Při hledání vhodného funkcionálu je zásadní problém zahrnout kinetickou energii elektronů, klasickou coulombickou interakci mezi elektrony a dále korelační a výměnné efekty. Hlavní myšlenkou bylo rozdělení hledaného funkcionálu $F(\varrho(\vec{r}))$ do menší částí. \cite{koch2000chemist}
 \begin{equation}
-E_{kin} = -\frac{1}{2} \sum_{i=1} ^{N} \int \varphi \Delta_i \varphi d \vec{r}_i
+F(\varrho(\vec{r})) = T_s[\varrho(\vec{r})] + J[\varrho(\vec{r})] + E_{EX}[\varrho(\vec{r})]
+\end{equation}
+ Kinetickou energii $T_s$ lze započítat jako Shamův potenciál. Lze sestavit pole neinteragujících elektronů, které bude mít stejnou elektronovou hustotu jako reálný systém interagujících elektronů. $T_{s}$ lze počítat jako součet jednoelektronových funkcí \ref{kineticka_energie_jednoelektronova}. \cite{koch2000chemist}
+\begin{equation}
+T_s = -\frac{1}{2} \sum_{i=1} ^{N}  \bra{\psi_i}{\nabla^{2}}\ket{\psi_i}
 \label{kineticka_energie_jednoelektronova}
 \end{equation}
+Tímto způsobem vypočítaná $E_{kin}$ není skutečná $E_{kin}$ systému. \\
+$J[\varrho(\vec{r})]$ je 
 \subsection{DFT v praxi}
 Výběr vhodného funkcionálu je nelehký úkol. Funkcionály mohou být obecně rozděleny na tři kategorie. Aproximace lokální hustoty (Local Density Approximation, LDA), metoda zoběcněného gradientu (Generalized Gradient Approximation, GGA) a poté hybridní funkcionály. \cite{dftshrnutivysledky}
 \subsubsection{Aproximacce lokální hustoty}
@@ -313,7 +319,8 @@ E_{XC}^{LSD}[\varrho_{\alpha}, \varrho_{\beta}] = \int \varrho (\vec{r} \epsilon
 GGA funkcionál vychází z aproximace lokální hustoty, která je dále vylepšována. Jedna z možností je použít \textbf{gradient elektronové hustoty} $\nabla \varrho (\vec{r})$.  \cite{koch2000chemist}
 
 \subsubsection{Hybridní funkcionály}
-Přístup kombinuje HF vzorec pro výpočet energie ( \textbf{dát odkaz}) a výměnné funkcionály. Do této kategorie patří nejznámější funkcionál \textbf{B3LYP}.
+Přístup kombinuje HF vzorec pro výpočet energie ( \textbf{dát odkaz}) a výměnné funkcionály. 
+Do této kategorie patří nejznámější funkcionál \textbf{B3LYP}.
 \begin{equation}
 E_{ex}^{B3LYP} = (1-a_0-a_x)E_x^{LDA} + a_0E_x^{exact} + a_x^{B88} + (1-a_c)E_c^{VWN} + a_c^{LYP}
 \label{B3LYP_rovnice}
@@ -339,7 +346,24 @@ $N$ jr normalizační faktor, $Y_{l,m}$ sféricky harmonická funkce, exponent z
 \chi(r) = Nr^n e^{-a(r-r_A)^2}
 \end{equation}
  Výhodou GTO je to, že jejich součin je stále GTO a hledání $F_{ij}$je výpočetně nenáročné. Na rozdíl od ostatních funkcí nemají správné chování na jádře. Z tohoto důvodu je báze STO orbitalů tvořena několika GTO, které jsou označovány jako primitivní Gaussovské funkce.Největší přínos GTO je rozdíl v druhé mocnině vzdálenosti v exponenciálním členu.\cite{lowe2011quantum}. 
- V současné době existuje obrovské množství bazí, které lépe či hůře popisuje zvolený problém. Mezi základní báze jsou uváděny DZP, STO-3G a různé druhy 6-31G. DZP je double-zeta gassovská báze s polarizací, STO-3G jsou Slaterovy orbitaly zjednodušeny jako lineární kombinace tří primitivních gaussiánů, odpovídá minimální bázi. 3-21G jsou označovány jako \uv{split valence basics sets}. Vnitřní elektrony jsou popisovány tří primitivními gaussiány, valenční orbitaly  do dvou primitivních gaussiánů a jednoho jednoduchého gaussiánu. Pro bázi 6-31G je vnitřní oblast tvořena šesti primitivními gaussiány, ostatní je obdobné jako pro 3-21G. Báze 6-21*G je v základu obdobná, * označuje polarizační funkci. Přidává p orbital pro vodíky a d orbitaly pro těžší atomy. Symbol ** označuje přidání d orbitalů pro vodík.(zdroj je 3 pdf soubory z hodiny Metody kvantové chemie) 
+ V současné době existuje obrovské množství bazí, které lépe či hůře popisuje zvolený problém. Mezi základní báze jsou uváděny DZP, STO-3G a různé druhy 6-31G. DZP je double-zeta gassovská báze s polarizací, STO-3G jsou Slaterovy orbitaly zjednodušeny jako lineární kombinace tří primitivních gaussiánů, odpovídá minimální bázi. 3-21G jsou označovány jako \uv{split valence basics sets}. Vnitřní elektrony jsou popisovány tří primitivními gaussiány, valenční orbitaly  do dvou primitivních gaussiánů a jednoho jednoduchého gaussiánu. Pro bázi 6-31G je vnitřní oblast tvořena šesti primitivními gaussiány, ostatní je obdobné jako pro 3-21G. Báze 6-21*G je v základu obdobná, * označuje polarizační funkci. Přidává p orbital pro vodíky a d orbitaly pro těžší atomy. Symbol ** označuje přidání d orbitalů pro vodík.(zdroj je 3 pdf soubory z hodiny Metody kvantové chemie). \\
+ DFT metodou lze krom optimalizací počítat také parametry nukleární magneetické rezonance (NMR). Jedním z NMR charakteristik molekul je chemické stínění. Do \textit{ab-inito} výpočtu nově vstupuje vnější magnetické pole $B_0$, které je reprezentováno vektorovým potenciálem tohoto pole. V ideálním případě by neměla mít volba počátku tohoto pole vliv na výsledek. Jedním z důsledků aproximace v kvantové chemii je fakt, že volba počátku výrazně ovlivňuje výsledné chemické stínění. Problém se nazývá \uv{Gauge origin problem}. Metoda IGLO (Individual Gauge for Localization Orbitals)řeší problém způsobem, že zahrnují počátek vektorového potenciálu do atomových orbitalů nebo do lokalizovaných molekulových orbitalů.\cite{Standara2006thesis}
+
+\subsection{Kvalitativní koncepty v kvantové chemii}
+Důležitou součástí výzkumu v oblasti kvantové chemie jsou zjednodušené koncepty, které pomáhají s interpretací kvantově$-$chemických dat. Jedním z příkladů je vysvětlení vaznosti atomů a molekul. \\
+Lewisovská teorie chemické vazby nahlíží na vazbu jako na lokalizovaný koncept, kde jsou elektrony na spojnici jader. Tento jednoduchý koncept předpokládá, že platí tzv. oktetové pravidlo a maximální počet vazeb odpovídá číslu skupiny, ve které se atom nachází. Tato teorie si bohužel nedokáže poradit už s molekulou methanu. Podle Lewisovské teorie by měl uhlík tvořit dvojvazné molekuly. V případě čtyřvazných molekul by měly být dvě vazby rovnocenné a dvě o nižší energii kvůlu zapojení rozdílných orbitalů. V methanu ale najdeme čtyři stejně dlouhé a naprosto rovnocenné vazby. Vysvětlení této skutečnosti nabízí teorie hybridizace. Ta předpokládá, že může dojít ke sjednocení orbitalů o blízké energii, za vzniku hybridního orbitalu. Tímto způsob vytvořené vazby si jsou naprosto rovnocenné. Ani koncept hybridizace nevysvětluje všechny případy vaznosti molekul. Pro některé atomy jsou si orbitaly natolik vzdálené, že hybridizace nepřichází v úvahu. Nejlepším popisem pro tyto systémy jsou molekulové orbitaly. Ty zavádí do celého popisu princip delokalizace. Mezi molekuly, které se vymykají Lewisovskému přístpupu, lze zařadit obecně sloučeniny vzácných plynů (fluoridy xenonu),  \ce{SF6}, \ce{ClF3} a \ce{I3^-}. \\
+
+Ochotu tvořit hypervalentní molekuly lze odhadnout podle konceptu HSAB (Hard and Sfot Acids and Basics). Kyseliny a báze mohou být rozděleny na měkké a tvrdé. HSAB teorie říká, že tvrdá kyselina a tvrdá báze spolu poskytnou stabilní komplex, naopak slabá kyselina a slabá báze spolu poskytnou méně stabilní komplex. Z toho vyplývá, že ze znalosti reakčních podmínek a příslušné tvrdosti lze predikovat stabilitu vzniklého komplexu. Jeden z možností kvantitativního určení tvrdosti/měkkosti je určení parametrů $\chi$ \footnote{Elektronegativity byla Paulingem definována pomocí ionizačního potenciálu a elektronové afinity} \ref{hsab_vypocet_elektronegativita} a $\eta$ \ref{hsab_vypocet_tvrdost}. \cite{hsabclanek}. 
+\begin{equation}
+\chi = - \left( \frac{\delta E}{\delta N} \right) = \frac{IP + EA}{2} = -\mu
+\label{hsab_vypocet_elektronegativita}
+\end{equation} 
+\begin{equation}
+\eta = \frac{1}{2} \left( \frac{\delta \mu}{\delta N} \right) = \frac{1}{2}\left( \frac{\delta^2 E}{\delta N^2} \right) = \frac{I - A}{2}
+\label{hsab_vypocet_tvrdost}
+\end{equation} 
+$\chi$ je elektronegativita, $\chi$ je elektronegativity, $E$ je energie a $N$ je počet elektronů. \cite{hsabwatoc} Podle Koopmansova teorému $E_{HOMO} = - IP$, $IP$ je ionizační potenciál a $E_{LUMO} = EA$, $EA$ je elektronová afinita.\cite{kratochvilexcerpta} $\eta$ je atomová tvrdost \footnote{$\eta = \frac{1}{\sigma}$, $\sigma$ je měkkost atomu}. \cite{hsabwatoc} Tvrdá kyselina a báze je charakterizována velkým rozdílem $IP$ a $IA$, což se projeví jako vysoké hodnoty $\chi$ a $\eta$. Při znalosti $E_{HOMO}$ a $E_{LUMO}$ lze predikovat ochotu reakčního centra interagovat s námi zvoleným reagentem a zároveň odhadnout stabilitu vzniklého komplexu. Systémy s velkým rozdílem $E_{HOMO}$ a $E_{LUMO}$ jsou tvrdší, stabilnější a méně reaktivní.
+
 
 
 
@@ -595,65 +619,85 @@ Pro DFT výpočty byly zvoleny molekuly, kde byl Si koordinován šesti kyslíky
 \ce{Si}^{4+} + \ce{(HPO4)^{2-}} + \ce{Si3^{4+}} + \ce{(OH)6^1-} = \ce{Si(HPO4)Si3(OH)6)^{2-}}
 \end{displaymath}
 
-\begin{figure}[h]
-\caption{Křemík koordinován šesti fosforečnany, propojeny \ce{SiO4} }
-  \center
-  \includegraphics[width=10cm]{obr_si_o_poh3_6_propojeno_si.png}
-  \label{obr_si_o_poh3_6_propojeno_si}
-  \end{figure}
-  
-  \begin{figure}[h]
-\caption{Optimalizovaná struktura \ce{H5SiO5CH3} }
-  \center
-  \includegraphics[width=10cm]{obr_h5sio5ch3.png}
-  \label{obr_h5sio5ch3}
-  \end{figure}
+\begin{figure}
+\begin{center}
+\subfigure[	\ce{H4SiO4}]{\includegraphics[width=5cm]{h4sio4_obr.png} 
+\label{obr_h4sio4_II}}
+\subfigure[\ce{(H6SiO6)^{2-}}]{\includegraphics[width=5cm]{obr_h6sio6.png} 
+\label{obr_h6sio6_II}}
+\subfigure[ \ce{H3SiO3CH3}]{\includegraphics[width=5cm]{si(oh)3ch3_obr.png} 
+\label{obr_h3sio3ch3}}
+\subfigure[\ce{(H5SiO5CH3)^{2-}} ]{\includegraphics[width=5cm]{obr_h5sio5ch3.png} 
+\label{obr_h5sio5ch3}}
+\subfigure[\ce{H3SiO4(H2PO3)}]{\includegraphics[width=5cm]{obr_h3sio4_h2po3.png} 
+\label{obr_h3sio4_h2po3}}
+\subfigure[\ce{SiO4(H2PO3)4}]{\includegraphics[width=5cm]{obr_sio4_h2po3_4.png} 
+\label{obr_sio4_h2po3_4}}
+\caption{Optimalizované struktury sloučenin křemíku}
+\label{tab_vysledky_dft_I}\end{center}
+\end{figure} 
 
-  \begin{figure}[ht]
-\caption{Optimalizovaná struktura \ce{SiO4(H2PO3)4} }
-  \center
-  \includegraphics[width=10cm]{obr_sio4_h2po3_4.png}
-  \label{obr_sio4_h2po3_4}
-  \end{figure}
-
-\begin{figure}[ht]
-\caption{Optimalizovaná struktura \ce{SiO4(H2PO3)4} }
-  \center
-  \includegraphics[width=10cm]{obr_sio4_h2po3_4.png}
-  \label{obr_sio4_h2po3_4}
-  \end{figure}
-
-\begin{figure}[ht]
-\caption{Optimalizovaná struktura \ce{SiO4(H2PO3)4} }
-  \center
-  \includegraphics[width=10cm]{obr_sipo4_4_ax_ekv.png}
-  \label{obr_sipo4_4_ax_ekv}
-  \end{figure}
+\begin{figure}
+\begin{center}
+\subfigure[\ce{(SiO6(H2PO3)6(SiO4)6)^{2-}}]{\includegraphics[width=5cm]{obr_si_kryst_struktura.png} 
+\label{obr_sobr_si_kryst_struktura}}
+\subfigure[\ce{(Si^{VI}(PO4)6(Si^{IV}O4Et2)6)^{2-}} ]{\includegraphics[width=5cm]{obr_si_kryst_struktura_real.png} 
+\label{obr_si_kryst_struktura_real}}
+\subfigure[\ce{Si(PO4)4(C2CH3)2(Si(OH)2)6}]{\includegraphics[width=5cm]{obr_si_o_poh_propojeno_si_jeden_kruh.png} 
+\label{obr_si_o_poh3_6_propojeno_si}}
+\subfigure[\ce{Si(PO4)4(C2CH3)2(Si(OH)2)6}]{\includegraphics[width=5cm]{obr_sipo4_4_ax_ekv.png} 
+\label{obr_sipo4_4_ax_ekv}}
+\caption{Optimalizované struktury křemičitofosfátů}
+\end{center}
+\end{figure}
 
 \begin{table}[htbp]
-\caption{Výsledné porovnávní struktur}
+\begin{minipage}{\textwidth}
+\caption{Srovnání energiových parametrů pro vybrané struktury}
 \begin{center}
 \begin{tabular}{|l|r|r|r|r|}
 \hline
-\ce{H4SiO4} \ref{obr_h4sio4_opt_struktura} & -7,72994 & 1,67704 & 9,40698 & 6,05290 \\ \hline
-\ce{H6SiO6} \ref{obr_h6sio6_opt_struktura} & 3,61014 & 11,69682 & 8,08668 & -15,30695 \\ \hline
-\ce{H3SiO3CH3} \ref{obr_sioh3ch3_opt_struktura} & -7,74953 & 0,82505 & 8,57458 & 6,92448 \\ \hline
-\ce{H5SiO5CH3} \ref{obr_h5sio5ch3} & 3,88279 & 11,54988 & 7,66708 & -15,43267 \\ \hline
-\ce{H3SiO4(H2PO3)} \ref{obr_h3sio4_h2po3}& -8,56724 & 0,05987 & 8,62710 & 8,50737 \\ \hline
-\ce{SiO4(H2PO3)}\ref{obr_sio4_h2po3_4}& -8,08804 & -0,82913 & 7,25891 & 8,91717 \\ \hline
-SiO6(H2PO3)6 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
-Si(H2PO3)3OH & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
-Si(H2PO3)5OH & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
-Si(PO4)6(Si(OH)2)6 (IGLO) \ref{obr_si_o_poh3_6_propojeno_si} & -3,67027 & 4,03953 & 7,70980 & -0,36926 \\ \hline
-Si(PO4)6(Si(OH)2)6 (6-31G) & -3,34646 & -4,57424 & -1,22778 & 7,92069 \\ \hline
-Si(PO4)6(SiO4Et2)6 & -2,60848 & 5,10921 & 7,71770 & -2,50073 \\ \hline
-Si(PO4)4(C2CH3)2(Si(OH)2)6 & 5,36609 & 10,46686 & 5,10078 & -15,83295 \\ \hline
-Si(PO4)4(C2CH3)2(Si(OH)2)6 – ax a ekv \ref{obr_sipo4_4_ax_ekv.png}& 5,08091 & 10,13788 & 5,05697 & -15,21879 \\ \hline
+ & E$_{\ce{H}}$\footnote{HOMO $-$ Highest Occupied Molecular Orbital} [eV] & E$_{\ce{L}}$ \footnote{LUMO$ - $Lowest Unoccupied Molecular Orbital} [eV]& $\chi$ [eV] & $\eta$ [eV] \\ \hline
+\hline
+\ce{H4SiO4}  & -7,730 & 1,677 & 9,407 & 6,053 \\ \hline
+\ce{(H6SiO6)^{2-}}  & 3,610 & 11,697 & 8,087 & -15,307 \\ \hline
+\ce{H3SiO3CH3}  & -7,750 & 0,825 & 8,575 & 6,925 \\ \hline
+\ce{(H5SiO5CH3)^{2-}}  & 3,883 & 11,550 & 7,667 & -15,433 \\ \hline
+\ce{H3SiO4(H2PO3)} & -8,567 & 0,060 & 8,627 & 8,507 \\ \hline
+\ce{SiO4(H2PO3)} & -8,088 & -0,829 & 7,259 & 8,917 \\ \hline
+\ce{(SiO6(H2PO3)6)^{2-}} & - \footnote{Strukturu se nepodařilo optimalizovat z důvodu nestability}& - & -& - \\ \hline
+\ce{Si(H2PO3)3OH} & - \footnote{Strukturu se nepodařilo optimalizovat z důvodu tvorby umělých vodíkových můstků} & - & - & - \\ \hline
+\ce{(Si(H2PO3)5OH)^{2-}} & - \footnote{Strukturu se nepodařilo optimalizovat z důvodu nestability} & - & - & - \\ \hline
+\ce{(Si(PO4)6(Si(OH)2)6)^{2-}} \footnote{Optimalizace s bazí IGLO-III} & -3,670 & 4,040 & 7,710 & -0,369 \\ \hline
+\ce{(Si(PO4)6(Si(OH)2)6)^{2-}} \footnote{Optimalizace s bazí 6-31G*}& -3,346 & 4,574 & 7,718 & -2,501 \\ \hline
+\ce{Si^{VI}(PO4)6(Si^{IV}O4Et2)6}\footnote{VI a IV jsou hodnoty koordinace křemíku, zdroj \cite{C3NJ00721A}} & -2,609 & 5,109 & 7,718& -2,501 \\ \hline
+\ce{Si(PO4)4(C2CH3)2(Si(OH)2)6} \footnote{Fosfor je nahrazen uhlíkem v rámci jednoho kruhu}& 5,366 & 10,467 & 5,101 & -15,833 \\ \hline
+\ce{(Si(PO4)4(C2CH3)2(Si(OH)2)6)^{4-}} \footnote{Fosfor je nahrazen uhlíkem na dvou různých kruzích} & 5,081 & 10,138 & 5,057 & -15,219 \\ \hline
 \end{tabular}
 \end{center}
 \label{tab_porovnani_molekul_dft}
+\end{minipage}
 \end{table}
 
+\begin{table}[htbp]
+\begin{minipage}{\textwidth}
+%\caption{Výsledky pro absolutní magnetické stínění}
+\begin{center}
+\begin{tabular}{|r|r|r|}
+\hline
+\multicolumn{1}{|l|}{Ćíslo atomu} & \multicolumn{1}{l|}{Abs. magn. stínění [ppm]} & \multicolumn{1}{l|}{Chem. posuv \footnote{Experimentální hodnoty \cite{1316862}} [ppm]} \\ \hline
+1 & 546,5 & -101 \\ \hline
+43 & 433,0 & -212 \\ \hline
+44 & 432,9 & -212 \\ \hline
+45 & 432,1 & -212 \\ \hline
+46 & 432,9 & -212 \\ \hline
+47 & 432,9 & -212 \\ \hline
+48 & 432,3 & -212 \\ \hline
+\end{tabular}
+\end{center}
+\label{vysledky_abs_magn_stineni}
+\end{minipage}
+\end{table}
 
   
   
