@@ -281,9 +281,9 @@ E [\varrho_0] < E[\varrho ']
 \end{equation}
 
 \subsubsection{Kohn-Shamovy rovnice}
-Při hledání vhodného funkcionálu je zásadní problém zahrnout kinetickou energii elektronů, klasickou coulombickou interakci mezi elektrony a dále korelační a výměnné efekty. Hlavní myšlenkou bylo rozdělení hledaného funkcionálu $F(\varrho(\vec{r}))$ do menší částí. \cite{koch2000chemist}
+Při hledání vhodného funkcionálu je zásadní problém zahrnout kinetickou energii elektronů, klasickou coulombickou interakci mezi elektrony a dále korelační a výměnné efekty. Hlavní myšlenkou bylo rozdělení hledaného funkcionálu $E(\varrho(\vec{r}))$ do menší částí. \cite{koch2000chemist}
 \begin{equation}
-F(\varrho(\vec{r})) = T_s[\varrho(\vec{r})] + J[\varrho(\vec{r})] + E_{EX}[\varrho(\vec{r})]
+E(\varrho(\vec{r})) = T_s[\varrho(\vec{r})] + J[\varrho(\vec{r})] + \int V_{EX}(\vec{r})\varrho(\vec{r})d\vec{r} + E_{EX}[\varrho(\vec{r})]
 \end{equation}
  Kinetickou energii $T_s$ lze započítat jako Shamův potenciál. Lze sestavit pole neinteragujících elektronů, které bude mít stejnou elektronovou hustotu jako reálný systém interagujících elektronů. $T_{s}$ lze počítat jako součet jednoelektronových funkcí \ref{kineticka_energie_jednoelektronova}. \cite{koch2000chemist}
 \begin{equation}
@@ -291,7 +291,7 @@ T_s = -\frac{1}{2} \sum_{i=1} ^{N}  \bra{\psi_i}{\nabla^{2}}\ket{\psi_i}
 \label{kineticka_energie_jednoelektronova}
 \end{equation}
 Tímto způsobem vypočítaná $E_{kin}$ není skutečná $E_{kin}$ systému. \\
-$J[\varrho(\vec{r})]$ je 
+$J[\varrho(\vec{r})]$ je přesná Coulombovská repulze. $E_{EX}[\varrho(\vec{r})]$ je výměnně$-$korelační energie, $\int V_{EX}(\vec{r})\varrho(\vec{r})d\vec{r}$ je přesná energie atrakce elektronů jádry.
 \subsection{DFT v praxi}
 Výběr vhodného funkcionálu je nelehký úkol. Funkcionály mohou být obecně rozděleny na tři kategorie. Aproximace lokální hustoty (Local Density Approximation, LDA), metoda zoběcněného gradientu (Generalized Gradient Approximation, GGA) a poté hybridní funkcionály. \cite{dftshrnutivysledky}
 \subsubsection{Aproximacce lokální hustoty}
@@ -368,21 +368,24 @@ $\chi$ je elektronegativita, $\chi$ je elektronegativity, $E$ je energie a $N$ j
 
 
 \chapter{Výsledky a diskuze}
-Cílem praktické výpočetní části bylo zkoumat struktury fosfokřemičitanů metodou EHT a DFT. Pro metodu EHT byly vybrány menší struktury, metodou DFT byly zkoumány větší struktury.
-\section{Výpočty metodou EHT a jejich grafický výstup ve formě obrázku C.A.C.A.O. s použitím předvolených parametrů pro všechny atomy}
-Pro účel vazebné analýzy byly všechny čtyři molekuly studovány prostřednictvím tzv. fragmentové analýzy. V jejich rámci byly provedeny kvantově chemické výpočty nejen pro kompletní molekuly, ale i pro podjednotky P=O a trojici bazálních ligandů. Výsledné MO pak byly vyjádřeny pomocí těchto fragmentových orbitalů. Míra interakce jednotlivých párů FMO z hlediska jejich příspěvků do překryvové populace. Všechny struktury molekul byly před výpočtem optimalizovány programem Gaussian \cite{g09} \footnote{B3LYP 6-31G*}.
+Cílem výpočetní části bylo zkoumat struktury křemičitofosfátů metodou EHT a DFT. Pro metodu EHT byly vybrány menší struktury, metodou DFT byly zkoumány větší struktury. Ze získaných hodnot energie HOMO a LUMO orbitalů 
+\section{Výpočty metodou EHT a jejich grafický výstup ve formě obrázku C.A.C.A.O. s použitím předvolených parametrů pro všechny atomy} \label{kapitola_EHT}
+Pro účel vazebné analýzy byly všechny čtyři molekuly studovány prostřednictvím tzv. fragmentové analýzy. V jejich rámci byly provedeny kvantově chemické výpočty nejen pro kompletní molekuly, ale i pro podjednotky P=O a trojici bazálních ligandů. Výsledné MO pak byly vyjádřeny pomocí těchto fragmentových orbitalů (FMO). FMO byly vybírány z interakčních diagramů podle příspěvků do překryvové populace. Z těchto hodnot lze určit míru interakce. Všechny struktury molekul byly před výpočtem optimalizovány programem Gaussian \cite{g09} \footnote{B3LYP 6-31G*}.
 %H4SIO4
 % --------------------------------------------------------------------------
 \subsection{Molekula H$_4$SiO$_4$}
-Základní molekula pro čtyřkoordinovaný křemík je \ce{H4SiO4}, kde Si je koordinován čtyřmi kyslíky.
+Základní molekula pro reprezentaci čtyřkoordinovaného křemíku byla \ce{H4SiO4}. Z interakčního diagramu \ref{h4sio4_diagram_upraveney} byly vybrány FMO $\bra{20}{\hat{H}}\ket{24}$, $\bra{16}{\hat{H}}\ket{24}$, $\bra{11}{\hat{H}}\ket{21}$, $\bra{19}{\hat{H}}\ket{21}$, $\bra{15}{\hat{H}}\ket{22}$ a $\bra{18}{\hat{H}}\ket{22}$, pro které byla udělána analýza složení molekulových orbitalů. Molekula má symetrii S$_4$. 
 
-\begin{figure}[h!]
-\caption{Optimalizovaná struktura \ce{H4SiO4}. }
-  \center
-  \includegraphics[width=5cm]{h4sio4_obr.png}
-  \label{obr_h4sio4_opt_struktura}
-  \end{figure}
-  
+\begin{figure}
+\begin{center}
+\subfigure[Interakční diagram pro \ce{H4SiO4}.]{\includegraphics[width=5cm]{h4sio4_diagram_upraveeny.eps} \label{h4sio4_diagram_upraveny}}
+\subfigure[Optimalizovaná struktura \ce{H4SiO4}.]{\includegraphics[width=5cm]{h4sio4_obr.png}\label{h4sio4_obr}}
+\label{obr_h4sio4_vysledky_I}
+\end{center}
+\end{figure}
+ 
+ 
+ 
 \begin{table}[htbp]
 \begin{minipage}{\textwidth}
 \caption{Výsledné mísení orbitalů pro \ce{H4SiO4}}
@@ -440,12 +443,17 @@ Fragmentové orbitaly  15, 18 a 22 se navzájem mísí za vzniku MO číslo 2, 1
 \end{figure} 
 %-------------------------------------------------------------------------------------
 \subsection{Molekula Si(OH)$_3$CH$_3$}
-\begin{figure}[h!]
-\caption{Optimalizovaná struktura \ce{Si(OH)3CH3}. }
-  \center
-  \includegraphics[width=5cm]{si(oh)3ch3_obr.png}
-  \label{obr_sioh3ch3_opt_struktura}
-  \end{figure}
+Molekula \ce{H3SiO3CH3} byla zvolena jako příklad přímé interakce křemík$-$uhlík ve sloučeninách, kde je křemík koordinován čtyřmi atomy. Tato molekula nevykazuje žádnou symetrii. Pro výběr FMO se opět vycházelo ze znalosti interakčního diagramu. 
+
+\begin{figure}
+\begin{center}
+\subfigure[Interakční diagram pro \ce{H3SiO3CH3}.]{\includegraphics[width=5cm]{sioh3ch3_diagram_upraveny.eps} \label{h4sio4_diagram_upraveny}}
+\subfigure[Optimalizovaná struktura \ce{Si(OH)3CH3}.]{\includegraphics[width=5cm]{si(oh)3ch3_obr.png}\label{obr_sioh3ch3_opt_struktura}}
+\label{obr_h4sio4_vysledky_I}
+\end{center}
+\end{figure}
+
+
   
 \begin{table}[htbp]
 \caption{Výsledné mísení orbitalů pro \ce{Si(OH)3CH3}}
@@ -508,14 +516,15 @@ Fragmentové orbitaly  20 a 24 se navzájem mísí za vzniku MO číslo 4 a 24, 
 \end{figure} 
  %-------------------------------------------------------------------------------------------- 
   \subsection{Molekula (H$_6$SiO$_6$)$^{2-}$}
- 
- \begin{figure}[h!]
-\caption{Optimalizovaná struktura \ce{(H6SiO6)^{2-}}. }
-  \center
-  \includegraphics[width=5cm]{obr_h6sio6.png}
-  \label{obr_h6sio6_opt_struktura}
-  \end{figure}
- 
+  Molekula \ce{(H6SiO6)^{2-}} představuje příklad křemíku koordinovaného šesti kyslíky. Molekula vykazovala vysokou symetrii S$_6$, pro výpočet byla z důvodu technických problémů s programem C.A.C.A.O. použita symetrie C$_i$. Tato molekula je hypervalentní a celkový náboj je $2-$.
+  
+  \begin{figure}
+\begin{center}
+\subfigure[Interakční diagram pro \ce{(H6SiO6)^{2-}}.]{\includegraphics[width=5cm]{h6sio6_diagram.eps} \label{h6sio6_diagram_upraveny}}
+\subfigure[Optimalizovaná struktura \ce{(H6SiO6)^{2-}}.]{\includegraphics[width=5cm]{obr_h6sio6.png}\label{obr_h6sio6_opt_struktura}}
+\label{obr_h6sio6_vysledky_I}
+\end{center}
+\end{figure}
   
   \begin{table}[htbp]
 \caption{Výsledné mísení orbitalů pro \ce{(H6SiO6)^-2}}
@@ -568,13 +577,21 @@ Fragmentové orbitaly  21, 28 a 32 se navzájem mísí za vzniku MO číslo 3, 2
 \end{figure} 
 %----------------------------------------------------------------------------------------
  \subsection{Molekula Si(OH)$_3$O(H$_2$PO$_3$)}
- Pro molekulu \ce{Si(OH)3O(H2PO3)} \ref{obr_h3sio4_h2po3} byla nutná oprava zvolených fragmentů vzhledem k výpočetní náročnosti. Jako fragment jedna byla zvolena část \ce{Si(OH)3} a fragment dva byl \ce{O(H2PO3)}.  
+ Pro molekulu \ce{Si(OH)3O(H2PO3)} \ref{obr_h3sio4_h2po3} byla nutná oprava zvolených fragmentů. Molekula postrádá symetrii, která by usnadňovala výpočet. Jako fragment jedna byla zvolena část \ce{Si(OH)3} a fragment dva byl \ce{O(H2PO3)}. Tato úprava usnadnila výpočetní náročnost a bylo možné získat informace o FMO. 
+
+\begin{figure}
+\begin{center}
+\subfigure[Interakční diagram pro \ce{Si(OH)3O(H2PO3)}.]{\includegraphics[width=5cm]{h3sio3P_diagram.eps} \label{h3sio4_h2po3_diagram_upraveny}}
+\subfigure[Optimalizovaná struktura \ce{Si(OH)3CH3}.]{\includegraphics[width=5cm]{obr_h3sio4_h2po3.png}\label{obr_h3sio4_h2po3}}
+\label{obr_SiOH3OH2PO)_vysledky_I}
+\end{center}
+\end{figure}
 
   \begin{figure}[h]
 \caption{Optimalizovaná struktura \ce{H3SiO4(H2PO3)} }
   \center
   \includegraphics[width=10cm]{obr_h3sio4_h2po3.png}
-  \label{obr_h3sio4_h2po3}
+  \label{}
   \end{figure}
 
 \begin{table}[htbp]
@@ -613,8 +630,9 @@ Fragmentové orbitaly  7, 15, 19, 22 a 29 se navzájem mísí za vzniku MO čís
 \label{obr_sio3p_vysledky_I}\end{center}
 \end{figure} 
   
-\section{DFT výpočet} 
-Pro DFT výpočty byly zvoleny molekuly, kde byl Si koordinován šesti kyslíky. Při konstrukci QM modelů molekul se zpočátku vyskytly potíže. Pro systém, kde byl křemík koordinován ve svém okolí šesti fosforečnany, docházelo k umělému vytvoření vodíkových vazeb a sytém se nepodařilo optimalizovat. Z tohoto důvodu bylo nutné použít jako výchozí molekulu křemík koordinovaný šesti fosforečnany, které byly zároveň spojeny jednotkami \ce{SiO4}, viz. obrázek \ref{obr_si_o_poh3_6_propojeno_si}. Další komplikací při optimalizaci geometrické struktury byl celkový náboj molekuly, který byl nakonec určen jako $2-$, viz. výpočet níže. 
+\section{DFT výpočet} \label{kapitola_DFT}
+Pro DFT výpočty byly zvoleny molekuly, kde byl křemík koordinován šesti kyslíky. Při konstrukci QM modelů molekul se zpočátku vyskytly potíže. Pro systém, kde byl křemík koordinován ve svém okolí šesti fosforečnany, docházelo k umělému vytvoření vodíkových vazeb a sytém se nepodařilo optimalizovat. Z tohoto důvodu bylo nutné použít jako výchozí molekulu křemík koordinovaný šesti fosforečnany, které byly zároveň spojeny jednotkami \ce{SiO4}, viz. obrázek \ref{obr_si_o_poh3_6_propojeno_si}. Další komplikací při optimalizaci geometrické struktury byl celkový náboj molekuly, který byl nakonec určen jako $2-$, viz. výpočet níže. \\
+Pro výpočet absolutního chemického stínění byla na křemík a jeho bezprostřední okolí použita báze IGLO$-$III. Ostatní atomy byly počítány s bazí 6-31G*. 
 \begin{displaymath}
 \ce{Si}^{4+} + \ce{(HPO4)^{2-}} + \ce{Si3^{4+}} + \ce{(OH)6^1-} = \ce{Si(HPO4)Si3(OH)6)^{2-}}
 \end{displaymath}
@@ -705,7 +723,8 @@ Z tabulky \ref{tab_porovnani_molekul_dft} vyplývá, že struktury se čtyř koo
   \chapter{Závěr}
   
   \chapter{Výpočetní detaily}
-  
+  Molekuly z kapitoly \ref{kapitola_EHT} byly optimalizovány programem Gaussian \cite{g09}. Všechny optimalizace probíhaly s hybridním funkcionálem B3LYP a bazí 6-31G*. Struktury byly nejprve navrženy programem Avogadro, zobrazení výstupu z Gaussianu bylo prováděno programem MOLDEN. Programem MOLDEN byly i tvořeny obrázky struktur. Optimalizovaná struktura byla použita jako vstup pro program C.A.C.A.O.. Z interakčního diagramu a analýzou FMO byly vybrány MO, které byly zobrázovány grafickým prostředím C.A.C.A.O. Stejným program byl i použit pro tvorbu interakčních diagramů. \\
+  Molekuly z kapitoly \ref{kapitola_DFT} byly také optimalizovány programem Gaussian, zároveň byl použit stejný funkcionál i báze. Použití stejné báze umožnilo vzájemné porovnání molekul. Pro výpočet NMR parametrů byla struktura optimalizována s bazí IGLO-III, která byla implementována z webové stránky  . Na centrální molekulu křemíku a nejbližší okolí byla použitá báze IGLO$-$III, na vzdálené okolí báze 6-31G*. Vstupní soubory pro optimalizaci programem Gaussian jsou uvedeny jako příloha.
   
 {\csname captions\languagename\endcsname %% Temporarily override
 %% the BibLaTeX localization with the original babel definitions.
@@ -714,9 +733,58 @@ Z tabulky \ref{tab_porovnani_molekul_dft} vyplývá, že struktury se čtyř koo
 \printbibliography[heading=bibintoc]} %% Print the bibliography.
 \appendix %% Start the appendices.
 \chapter{An appendix}
-Here you can insert the appendices of your thesis.   
+ \begin{verbatim}
+OPT H4SIO4 
 
+0 1
+SI  1   .000   .000   .000 
+O  2   .000 -1.349   .954 
+H  3  -.750 -1.453  1.557 
+O  4  1.349   .000  -.954 
+O  5   .000  1.349   .954 
+O  6 -1.349   .000  -.954 
+H  7  1.453  -.750 -1.557 
+H  8   .750  1.453  1.557 
+H  9 -1.453   .750 -1.557 
+ \end{verbatim}
+ 
+ \begin{verbatim}
+OPT H6SIO6 
 
+0 1
+SI   .000   .000   .000  
+O   .000   .000 -1.652 
+O  1.652   .000   .000 
+O   .000 -1.652   .000 
+H   .866   .000 -2.085 
+H  2.085  -.866   .000 
+H  -.866 -2.085   .000 
+O   .000   .000  1.652 
+O -1.652   .000   .000 
+O   .000  1.652   .000 
+H  -.866   .000  2.085 
+H -2.085   .866   .000 
+H   .866  2.085   .000
+ \end{verbatim}
+\begin{figure}
 
+\begin{verbatim}
+OPT si(OH)3_ch3
+
+0 1
+Si        -0.93401        0.43592       -0.98471
+O         -2.03997       -0.48875       -0.31004
+H         -2.23645       -0.99494        0.35857
+O         -0.55798       -0.13126       -2.42355
+H          0.06732       -0.44366       -2.92683
+O         -1.47925        1.92557       -1.11519
+H         -1.36662        2.74938       -0.89044
+C          0.59507        0.43830        0.08739
+H          1.37120        1.08100       -0.37659
+H          0.98140       -0.59723        0.18307
+H          0.34130        0.83253        1.09283
+\end{verbatim}
+\caption{okf}
+\end{figure}
 
 \end{document}
