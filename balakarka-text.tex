@@ -57,19 +57,18 @@
     author        = Petra Hrozková,
     gender        = f,
     advisor       = doc. Mgr. M. Munzarová Dr. rer. nat ,
-    title         = Studium vlivu koordinačního prostředí atomů Si a P na tvorbu SiO$_6$ center metodami EHT a DFT,
-    TeXtitle      = Studium vlivu koordinačního prostředí atomů Si a P na tvorbu SiO$_6$ center metodami EHT a~DFT,
-    titleEn       = A combined EHT/DFT study of Si and P coordination environment influence on the creation of SiO6 centers,
-    TeXtitleEn    = A combined EHT/DFT study of Si and P coordination environment influence on the creation of SiO6 centers,
-    keywords      = {klíčové slovo 1, klíčové slovo 2, ...},
-    TeXkeywords   = {klíčové slovo 1, klíčové slovo 2, \ldots},
-    keywordsEn    = {keyword1, keyword2, ...},
-    TeXkeywordsEn = {keyword1, keyword2, \ldots},
+    title         = Studium vlivu koordinačního prostředí atomů Si a~P na tvorbu SiO$_6$ center metodami EHT a~DFT,
+    TeXtitle      = Studium vlivu koordinačního prostředí atomů Si a~P na tvorbu SiO$_6$ center metodami EHT a~DFT,
+    titleEn       = A~combined EHT/DFT study of Si and P coordination environment influence on the creation of SiO6 centers,
+    TeXtitleEn    = A~combined EHT/DFT study of Si and P coordination environment influence on the creation of SiO6 centers,
+    keywords      = {křemičitofosfáty; orbitaly; HSAB; EHT; DFT},
+    TeXkeywords   = {křemičitofosfáty; orbitaly; HSAB; EHT; DFT},
+    keywordsEn    = {silicophosphates; orbitals; HSAB; EHT; DFT},
+    TeXkeywordsEn = {silicophosphates; orbitals; HSAB; EHT; DFT},
 }
 \thesislong{abstract}{
-    This is the abstract of my thesis, which can
-
-    span multiple paragraphs.
+    Práce je zaměřena na studium jednotek \ce{SiO4} a~\ce{SiO4} v~křemičitofosfátových polymerech. Struktury jsou porovnávány na úrovni rozšířené Hückelovy metody a~teorie funkcionálu hustoty. Hlavním faktorem, který je sledován, je energetická vzdálenost HOMO a~LUMO orbitalů. Z~tohoto parametru lze podle teorie HSAB určit tvrdost/měkkost kyseliny a~následnou stabilitu. Z~experimentálních pozorování vyplývá, že křemík ztrácí schopnost koordinovat se do čísla šest, pokud je na něj přímo navázán uhlík. \\
+Z~porovnání energii HOMO a~LUMO orbitalů lze usoudit stabilitu sloučenin s~jednotkou \ce{SiO4} a~\ce{SiO6}. Postupně jsou obměňovány okolní ligandy a~fosfor je nahrazen uhlíkem. Na závěr je porovnána námi upravená krystalová struktura s~experimentálními hodnotami . Kritériem je absolutní chemické stínění šestikoordinovaného křemíku.
 }
 \thesislong{abstractEn}{
     This is the English abstract of my thesis, which can
@@ -77,9 +76,7 @@
     span multiple paragraphs.
 }
 \thesislong{thanks}{
-    This is the acknowledgement for my thesis, which can
-
-    span multiple paragraphs.
+    Na tomto místě bych chtěla v~první řadě poděkovat doc. Mgr. Markétě Munzarové, Dr. rer. nat. za neskutečnou ochotu, trpělivost a~cenné připomínky při psaní této bakalářské práce a~to až do jejího konce. Dále bych chtěla poděkovat svému příteli Lukáši Němcovi za obrovskou trpělivost, péči, podporu a~pomoc s~technickými detaily.
 }
 %% The following section sets up the bibliography.
 \usepackage{csquotes}
@@ -114,8 +111,8 @@
 
 \begin{document}
 \chapter{Úvod}
-Fosfosilikátové sloučeniny mají široké využití jako pokročilé technologické materiály. Jejich stabilní Brönstedovská kyselost za zvýšené teploty je klíčovou vlastností pro využití v palivových článcích a v heterogenní katalýze.\cite{korotcenkov2013handbook}\cite{Fougret2001295} V roce 2015 byla A. Stýskalíkem a spoluautory publikována originální syntéza mezoporózních  nanokrystalických  fosfosilikátů a hybridních anorganicko-organických materiálů pomocí nehydrolytických kondenzačních reakcí založených na esterové eliminaci.\cite{1306716} Jako prekurzory sloužily v případě fosfosilikátů octan křemičitý a tris(trimethylsilyl)ester kyseliny fosforečné. Zatímco posledně jmenované prekurzory poskytly mikroporózní gely se strukturními jednotkami \ce{SiO6}, zavedení organických skupin ve formě různých alkyl/arylacetoxysilanů indukovaly strukturní  a stavební změny vedoucí k neporózní, hybridním silikofosfátovým sklům.\cite{1316862} Tyto drastické změny vlastností byly připsány snížení zesíťovací kapacity křemíku. Organo-substituovaná křemíková centra navíc prokazovala zřejmě nedostatečnou Lewisovskou kyselost k získání hexakoordinace, neboť sterické překážky nehrály ve vzniku \ce{SiO6} center významnější roli.  Dále bylo pozorováno, že přítomnost skupin \ce{SiO6} je spojená s přítomností mikropórů, zatímco pokud tyto skupiny absentují, tak jsou vzorky mesoporézní.
-Vzhledem k těmto pozorováním, jakož i obecné zajímavosti problému aktivace křemíku k tvorbě hypervalentních struktur,\cite{rendler2005hypervalent} se jeví jako užitečné studovat vliv prekurzorů na schopnost tvorby center \ce{SiO6} také teoreticky, konkrétně metodami kvantové chemie. Ty totiž poskytují detailní charakterizaci strukturně-elektronových parametrů prekurzorů i výsledných systémů, která by mohla interpretovat tendenci k hypervalenci křemíku v konkrétním systému. Jako téma této bakalářské práce byl zvoleno studium nejjednodušších možných fosfátových prekurzorů využitých v minulosti k syntéze silikofosfátů, konkrétně molekul \ce{POCl3}, \ce{PO(OH)3}, a \ce{PO(OCH3)3}. Elektronová struktura těchto systémů byla studována pomocí Rozšířené Hückelovy metody v implementaci programu C.A.C.A.O.\cite{cacao}. Práce se zaměřuje na porovnání vazebných charakteristik jednotlivých sloučenin z této trojice z hlediska orbitálních interakcí, přičemž nejdůležitějšími zkoumanými semikvantitativními parametry je  vzdálenost energií nejvyššího obsazeného a nejnižšího neobsazeného molekulového orbitalu (tzv. HOMO-LUMO mezera) a velikost energie odpovídající středu tohoto intervalu. Zmíněné parametry jsou totiž v rámci teorie HSAB (\uv{Hard and Soft Acids and Bases}) spojovány s charakterizací tvrdosti a měkkosti Lewisovských kyselin a bazí a jejich reaktivitou.[odkaz] Naším cílem bylo, prostřednictvím porovnání nejjednodušších možných fosfátových prekurzorů, navrhnout strategii pro porozumění elektronové struktuře složitějších prekurzorů využívaných v konkrétních syntézách, např. tris(trimethylsilyl)fosfátu využívaného v syntéze A. Stýskalíka. Z pohledu křemičitanových prekurzorů se podobnému úkolu věnuje bakalářská práce Petry Hrozkové. [odkaz]
+Fosfosilikátové sloučeniny mají široké využití jako pokročilé technologické materiály. Jejich stabilní Brönstedovská kyselost za zvýšené teploty je klíčovou vlastností pro využití v~palivových článcích a~v~heterogenní katalýze.\cite{korotcenkov2013handbook}\cite{Fougret2001295} V~roce 2015 byla A. Stýskalíkem a~spoluautory publikována originální syntéza mezoporózních  nanokrystalických  fosfosilikátů a~hybridních anorganicko-organických materiálů pomocí nehydrolytických kondenzačních reakcí založených na esterové eliminaci.\cite{1306716} Jako prekurzory sloužily v~případě fosfosilikátů octan křemičitý a~tris(trimethylsilyl)ester kyseliny fosforečné. Zatímco posledně jmenované prekurzory poskytly mikroporózní gely se strukturními jednotkami \ce{SiO6}, zavedení organických skupin ve formě různých alkyl/arylacetoxysilanů indukovaly strukturní  a~stavební změny vedoucí k~neporózní, hybridním silikofosfátovým sklům.\cite{1316862} Tyto drastické změny vlastností byly připsány snížení zesíťovací kapacity křemíku. Organo-substituovaná křemíková centra navíc prokazovala zřejmě nedostatečnou Lewisovskou kyselost k~získání hexakoordinace, neboť sterické překážky nehrály ve vzniku \ce{SiO6} center významnější roli.  Dále bylo pozorováno, že přítomnost skupin \ce{SiO6} je spojená s~přítomností mikropórů, zatímco pokud tyto skupiny absentují, tak jsou vzorky mezoporézní.
+Vzhledem k~těmto pozorováním, jakož i obecné zajímavosti problému aktivace křemíku k~tvorbě hypervalentních struktur,\cite{rendler2005hypervalent} se jeví jako užitečné studovat vliv prekurzorů na schopnost tvorby center \ce{SiO6} také teoreticky, konkrétně metodami kvantové chemie. Ty totiž poskytují detailní charakterizaci strukturně-elektronových parametrů prekurzorů i výsledných systémů, která by mohla interpretovat tendenci k~hypervalenci křemíku v~konkrétním systému. Jako téma této bakalářské práce byl zvoleno studium sloučenin s~jednotkami \ce{SiO4} a~\ce{SiO6}. Elektronová struktura těchto systémů byla studována pomocí Rozšířené Hückelovy metody v~implementaci programu C.A.C.A.O.\cite{cacao} a~metodou DFT v~programu Gaussian \cite{g09}. Práce se zaměřuje na porovnání vazebných charakteristik jednotlivých sloučenin z~hlediska orbitálních interakcí, přičemž nejdůležitějšími zkoumanými semikvantitativními parametry je  vzdálenost energií nejvyššího obsazeného a~nejnižšího neobsazeného molekulového orbitalu (tzv. HOMO-LUMO mezera) a~velikost energie odpovídající středu tohoto intervalu. Zmíněné parametry jsou totiž v~rámci teorie HSAB (\uv{Hard and Soft Acids and Bases}) spojovány s~charakterizací tvrdosti a~měkkosti Lewisovských kyselin a~bazí a~jejich reaktivitou. \cite{pearson1986absolute} Naším cílem bylo určit tvrdost pro větší jednotky \ce{SiO4} a~\ce{SiO6} a~z~toho odvodit stabilitu těchto jednotek. 
 \begin{otherlanguage}{czech}
 
 \begin{figure}[h!]
@@ -161,47 +158,47 @@ Vzhledem k těmto pozorováním, jakož i obecné zajímavosti problému aktivac
 
 
 \chapter{Teoretická část}
-Porozumění chemické vazbě mezi atomy daného systému je předpokladem pro vyčerpávající interpretaci získaných experimentálních dat. Na základě znalosti elektronové struktury je často možné také předpovědět spektroskopické vlastnosti a reaktivitu dané molekuly. Pojem chemické vazby je založen na pojmu atom. Počátky tzv. atomové teorie datujeme do období $430-310$ př. n. l. Autorem atomové hypotézy byl řecký filozof Démokritos, který předpokládal, že hmota je stvořena z malých, dále nedělitelných částí. Tato myšlenka byla v pozdějším období alchymie potlačena. Renesance atomové teorie se datuje až do 18.století. John Dalton použil atomovou teorii k popsání průběhu chemických reakcí. Zároveň formuloval zákon stálých poměr slučovacích a zákon stálých poměrů násobných. Od poloviny 19.století se objevují první myšlenky pojmu valence prvků. Německému chemikovi F. A. Kekulému je přisuzováno prvenství předpokladu o čtyřvaznosti uhlíku. Samotné porozumění pojmu valence však bylo možné až po objevení elektronu v roce 1897 J. J. Thomsonem. Toto období může být označeno jako předkvantové období. V roce 1905 bylo publikováno vysvětlení záření černého tělesa, což odstartovalo kvantový popis atomů a molekul.Lewis jako první nahlížel na chemickou vazbu jako na párování elektronů. \cite{Munzarova1996thesis} \\
-Kvantový popis atomů a molekul lze obecně rozdělit na lokalizovaný a delokalizovaný. Myšlenka lokalizovaného popisu elektronů ve vazbě je starší a odpovídá představě, že mezi dvěma jádry existuje přímá spojnice, pružina. Autorem popisu chemické vazby s pomocí valenčních vazeb (Valence Bond Theory, VB) je Heitler a London. VB navazuje na myšlenku sdílení elektronových páru od Lewise. Ústřední myšlenkou jsou vazebné orbitaly, kdy největší elektronová hustota je na spojnici dvou jader sousedních atomů. Spojením dvou atomových orbitalů vzniká vazebný orbital. Tomuto popisu se vymyká například uhlík, proto byl vymyšlen koncept hybridizace. Hlavní myšlenkou je, že dojde k spojení orbitalů, které jsou si blízké v energii. Vzniknou tak rovnocenné hybridní orbitaly. \cite{Munzarova1996thesis} \\
-Současně s VB se objevovala teorie molekulových orbitalů (Molecular orbital, MO). Elektronová hustota je delokalizována přes všechny atomy a představa chemické vazby jako pružinky neexistuje.\cite{Munzarova1996thesis} \\
+Porozumění chemické vazbě mezi atomy daného systému je předpokladem pro vyčerpávající interpretaci získaných experimentálních dat. Na základě znalosti elektronové struktury je také možné předpovědět spektroskopické vlastnosti a~reaktivitu dané molekuly. Pojem chemické vazby je založen na pojmu atom. Počátky tzv. atomové teorie datujeme do období $430-310$ př. n. l. Autorem atomové hypotézy byl řecký filozof Démokritos, který předpokládal, že hmota je stvořena z~malých, dále nedělitelných částí. Tato myšlenka byla v~pozdějším období alchymie potlačena. Renesance atomové teorie se datuje až do 18.století. John Dalton použil atomovou teorii k~popsání průběhu chemických reakcí. Zároveň formuloval zákon stálých poměr slučovacích a~zákon stálých poměrů násobných. Od poloviny 19.století se objevují první myšlenky pojmu valence prvků. Německému chemikovi F. A. Kekulému je přisuzováno prvenství předpokladu o~čtyřvaznosti uhlíku. Samotné porozumění pojmu valence však bylo možné až po objevení elektronu v~roce 1897 J. J. Thomsonem. Toto období může být označeno jako předkvantové období. V~roce 1905 bylo publikováno vysvětlení záření černého tělesa, což odstartovalo kvantový popis atomů a~molekul. Lewis jako první nahlížel na chemickou vazbu jako na párování elektronů. \cite{Munzarova1996thesis} \\
+Kvantový popis atomů a~molekul lze obecně rozdělit na lokalizovaný a~delokalizovaný. Myšlenka lokalizovaného popisu elektronů ve vazbě je starší a~odpovídá představě, že mezi dvěma jádry existuje přímá spojnice, pružina. Autorem popisu chemické vazby s~pomocí valenčních vazeb (Valence Bond Theory, VB) je Heitler a~London. VB navazuje na myšlenku sdílení elektronových páru od Lewise. Ústřední myšlenkou jsou vazebné orbitaly, kdy největší elektronová hustota je na spojnici dvou jader sousedních atomů. Spojením dvou atomových orbitalů vzniká vazebný orbital. Tomuto popisu se vymyká například uhlík, proto byl vymyšlen koncept hybridizace. Hlavní myšlenkou je, že dojde k~spojení orbitalů, které jsou si blízké v~energii. Vzniknou tak rovnocenné hybridní orbitaly. \cite{Munzarova1996thesis} \\
+Současně s~VB se objevovala teorie molekulových orbitalů (Molecular orbital, MO). Elektronová hustota je delokalizována přes všechny atomy a~představa chemické vazby jako pružinky neexistuje.\cite{Munzarova1996thesis} \\
 Opuštění VB jako popisu chemické vazby bylo zpočátku dáno především vyšší výpočetní náročnosti VB, dále se ukázaly také kvantitativní nedostatky při popisu složitějších molekul. \cite{lowe2011quantum} 
 
-\section{Vlnová funkce a Schrödingerova rovnice}
-Chemické vlastnosti molekul určuje jejich geometrická a elektronová struktura. Ve 20. století již bylo známo, že elektrony se svým chováním vymykají představám klasické mechaniky. Na počátku 20. století bylo popsáno chování černého tělesa, fotoelektrického jevu a atomová spektra. Myšlenka, že svět je tvořen z diskrétních částí, kvant, vedla k vzniku kvantové mechaniky. Zlomovou myšlenkou bylo teoretické popsání záření černého tělesa, které vysvětlit Max Planck \ref{eq_Plack}. Předpokládal, že energie se nepředává spojitě ale po přesně daných částech. Na tomto základě Albert Einstein vysvětlil podstatu fotoelektrického jevu, kdy předpokládal, že světlo je složeno z částí a ty nazval fotony. Elektromagnetické vlnění začalo mít částicovou povahu.
+\section{Vlnová funkce a~Schrödingerova rovnice}
+Chemické vlastnosti molekul určuje jejich geometrická a~elektronová struktura. Ve 20. století již bylo známo, že elektrony se svým chováním vymykají představám klasické mechaniky. Na počátku 20. století bylo popsáno chování černého tělesa, fotoelektrického jevu a~čáry v~atomovém spektru. Myšlenka, že svět je tvořen z~diskrétních částí, kvant, vedla ke vzniku kvantové mechaniky. Zlomovou myšlenkou bylo teoretické popsání záření černého tělesa, které vysvětlit Max Planck \ref{eq_Plack}. Předpokládal, že energie se nepředává spojitě ale po přesně daných částech, kvantech. Na tomto základě Albert Einstein vysvětlil podstatu fotoelektrického jevu, kdy předpokládal, že i světlo je složeno z~částí a~nazval je fotony. Elektromagnetické vlnění začalo mít částicovou povahu.
 \begin{equation}
 E = h \nu
 \label{eq_Plack}
 \end{equation}
-$E$ je energie, $h$  je Planckova konstanta\footnote{6, 626 070 040  $\cdot 10^{-34} ~ J \cdot s$ \href{http://physics.nist.gov/cgi-bin/cuu/Value?h}{ Physical Measurement Laboratory of NIST}  }, $\nu$ je frekvence. Na tuto představu navázal Louis de Broglie a navrhl, když vlny mohou mít vlastnosti částic, mohou mít částice vlnové vlastnosti a navrhl rovnici vlny \ref{rce_rovnice_vlny}.
+$E$ je energie, $h$  je Planckova konstanta\footnote{6, 626 070 040  $\cdot 10^{-34} ~ J \cdot s$ \href{http://physics.nist.gov/cgi-bin/cuu/Value?h}{ Physical Measurement Laboratory of NIST}  }, $\nu$ je frekvence. Na tuto představu navázal Louis de Broglie a~navrhl, když vlny mohou mít vlastnosti částic, mohou mít částice vlnové vlastnosti \ref{rce_rovnice_vlny}.
 \begin{equation}
 \lambda = \frac{h}{mv}
 \label{rce_rovnice_vlny}
 \end{equation}
-$\lambda$ je vlnová délka, $m$ je hmotnosti částice a $v$ je rychlost částice. Částice a vlny mají podle rovnic \ref{rce_rovnice_vlny} a \ref{eq_Plack} duální charakter. Navazující práce se týkala objasnění atomových čárových spekter, kdy atom poskytoval vždy čárová a dokonale reprodukovatelná spektra. I zde byly pomocí myšlenky kvantování později objeveny čáry i mimo viditelnou oblast. Na tyto práce později navázal E. Schrödinger, W. Heisenberg nebo P. A. M. Dirac. a kvantová teorie se začala rozvíjet. \cite{celyprincipy}\\
-V běžné mechanice je systém možné přesně popsat polohou a hybnosti, díky těmto veličinám lze předvídat i pohyb budoucí. V kvantové mechanice je veškerá interpretace pravděpodobnostní. Vždy lze říci, že se daná částice bude v nějakém prostoru v daném čase vyskytovat pouze s určitou pravděpodobností. Informaci o částici v sobě nese Schrödingerova rovnice \ref{SCH_time_dependent}, diferenciální rovnice druhého řádu.\cite{polak2000obecna}
+$\lambda$ je vlnová délka, $m$ je hmotnosti částice a~$v$ je rychlost částice. Částice a~vlny mají podle rovnic \ref{rce_rovnice_vlny} a~\ref{eq_Plack} duální charakter. Navazující práce se týkala objasnění atomových čárových spekter, kdy atom poskytoval vždy čárová a~dokonale reprodukovatelná spektra. I~zde byly pomocí myšlenky kvantování později objeveny čáry i mimo viditelnou oblast. Na tyto práce později navázal E. Schrödinger, W. Heisenberg nebo P.~A.~M.~Dirac a~kvantová teorie se začala rozvíjet. \cite{celyprincipy}\\
+V~běžné mechanice je systém možné přesně popsat polohou a~hybnosti, díky těmto veličinám lze předvídat i pohyb budoucí. V~kvantové mechanice je veškerá interpretace pravděpodobnostní. Vždy lze říci, že se daná částice bude v~nějakém prostoru v~daném čase vyskytovat pouze s~určitou pravděpodobností. Informaci o~částici v~sobě nese Schrödingerova rovnice \ref{SCH_time_dependent}, diferenciální rovnice druhého řádu.\cite{polak2000obecna}
 \begin{equation}
 i \hbar \frac{\delta}{\delta t} \Psi (\vec{r},t)=\widehat{H} \Psi(\vec{r},t)
 \label{SCH_time_dependent}
 \end{equation}
-$\widehat{H}$ je Hamiltonián, operátor, který reprezentuje kvantově mechanickou cestu k výpočtu energie systému, $E$ je energie, vlastní hodnota Hamiltoniánu, $\Psi$ je vlnová funkce, která v sobě ukrývá celou informaci o systému, $\hbar$ je redukovaná Planckova konstanta. Hamiltonián se skládá ze dvou částí, operátoru kinetické a potenciální energie.
+$\widehat{H}$ je Hamiltonián, operátor, který reprezentuje kvantově mechanickou cestu k~výpočtu energie systému, $E$ je energie, vlastní hodnota Hamiltoniánu, $\Psi$ je vlnová funkce, která v~sobě ukrývá celou informaci o~systému, $\hbar$ je redukovaná Planckova konstanta. Hamiltonián se skládá ze dvou částí, operátoru kinetické a~potenciální energie.
 \begin{equation}
 \widehat{H} = \widehat{T} + \widehat{V}
 \end{equation}
-$\widehat{T}$ reprezentuje kinetickou enregii, $\widehat{V}$ je potenciální energie. Kvantově mechanický výraz pro kinetickou energii $\widehat{T}$ je sumou jednočásticových operátorů. 
+$\widehat{T}$ reprezentuje kinetickou enregii, $\widehat{V}$ potenciální energii. Kvantově mechanický výraz pro kinetickou energii $\widehat{T}$ je sumou jednočásticových operátorů. 
 \begin{equation}
 \widehat{T_i} = - \frac{h^2}{8 \pi ^2} \sum \frac{1}{m_i} \left( \frac{\delta^2}{\delta x_i^2} +\frac{\delta^2}{\delta y_i^2} +\frac{\delta^2}{\delta z_i^2} \right)
 \end{equation}
-$m_i$ je hmotnost $i-té$ částice. Kvantově mechanický výraz pro potenciální energii $\widehat{V}$ je coulombovská interakce mezi částicemi.
+$m_i$ je hmotnost částice. Kvantově mechanický výraz pro potenciální energii $\widehat{V}$ je coulombovská interakce mezi částicemi.
 \begin{equation}
 \widehat{V} = \sum_{i<j}\sum \left( \frac{e_i e_j}{r_{i,j}}\right)
 \end{equation}
- Pro účely této práce postačí stacionární Schrödingerova rovnice, která v sobě nezahrnuje čas \ref{schrodingerova_rovnice}.\\
+ Pro účely této práce postačí stacionární Schrödingerova rovnice, která v~sobě nezahrnuje čas \ref{schrodingerova_rovnice}.\\
  \begin{equation}
 \widehat{H}\Psi = E \Psi
 \label{schrodingerova_rovnice}
 \end{equation}
-Vlnovou funkci $\Psi$ lze získat řešením Schrödingerovy rovnice \ref{schrodingerova_rovnice}. Fyzikální význam má pouze $|\Psi|^2$, což vyjadřuje hustotu pravděpodobnosti výskytu elektronu. Tento matematický prostor se nazývá orbital. Exaktní řešení \ref{schrodingerova_rovnice} existuje pouze pro atom vodíku a další exotické atomy, které mají jeden elektron a jeden proton. Při rozšíření atomu byť i jeden elektron se \ref{schrodingerova_rovnice} stává analyticky neřešitelnou. Na řádu přichází numerické přístupy a aproximace. Pro atom s více elektrony lze k problému přistoupit tak, že elektrony nebudou vzájemně interagovat. Toto řešení pro chemii prakticky nemá význam, lze s tím řešit pouze speciální případy iontů. Hartree přišel na způsob řešení, kdy se elektron pohybuje časové průměrném poli ostatních jader. \cite{warren1986ab}
-Příslušnou vlnovou funkci pro atom s více elektrony \ref{eq_MO} lze zapsat součin jednoelektronových funkcí \ref{eq_AO}.  V základu je navrhnuta hrubá vlnová funkce, která poskytuje energii vyšší než je energie základního stavu. Tato funkce \ref{eq_MO} je variačním přístupem upravována, dokud není nalezena nejnižší energie.  
+Vlnovou funkci $\Psi$ lze získat řešením Schrödingerovy rovnice \ref{schrodingerova_rovnice}. Fyzikální význam má pouze $|\Psi|^2$, což vyjadřuje hustotu pravděpodobnosti výskytu elektronu. Tento matematický prostor se nazývá orbital. Exaktní řešení \ref{schrodingerova_rovnice} existuje pouze pro atom vodíku a~další exotické atomy, které mají jeden elektron a~jeden proton. Při rozšíření atomu byť i jeden elektron se rovnice \ref{schrodingerova_rovnice} stává analyticky neřešitelnou. Na řadu přichází numerické přístupy a~aproximace. Pro atom s~více elektrony lze k~problému přistoupit tak, že elektrony nebudou vzájemně interagovat. Toto řešení nemá chemický význam, lze tím řešit pouze speciální případy iontů. Hartree přišel na způsob řešení, kdy se elektron pohybuje v časově průměrném poli ostatních jader. \cite{warren1986ab}
+Příslušnou vlnovou funkci pro atom s~více elektrony \ref{eq_MO} lze zapsat součin jednoelektronových funkcí \ref{eq_AO}.  V~základu je navrhnuta hrubá vlnová funkce, která poskytuje energii vyšší, než je energie základního stavu. Tato funkce \ref{eq_MO} je variačním přístupem upravována, dokud není nalezena nejnižší energie.  
 \begin{equation}
 \psi_{AO} = 1s(1)
 \label{eq_AO}
@@ -210,16 +207,16 @@ Příslušnou vlnovou funkci pro atom s více elektrony \ref{eq_MO} lze zapsat s
 \psi_{MO} = 1s(1) \cdot 2s(1)
 \label{eq_MO}
 \end{equation} 
-Zároveň musí platit, že všechny orbitaly musí být vzájemně orthogonální a normalizované.
+Zároveň musí platit, že všechny orbitaly musí být vzájemně orthogonální a~normalizované.
 \begin{equation}
-S_{ii} = \int \psi_i * \psi_i dx dy dz = 1 ~ \bigwedge ~ S_{ij} = \int \psi_i * \psi_j dx dy dz = 0
+S_{ii} = \int \psi_i * \psi_i dx dy dz = 1 ~ \wedge ~ S_{ij} = \int \psi_i * \psi_j dx dy dz = 0
 \end{equation}
-V tomto přístupu jsou ovšem není dodržena antisymetrii vlnové funkce (Pauliho princip). \cite{warren1986ab}
+V~tomto přístupu jsou ovšem není dodržena antisymetrii vlnové funkce (Pauliho princip). \cite{warren1986ab}
 \begin{equation}
 \Psi (1,2) = - \Psi (2,1)
 \label{Paulliho_princip}
 \end{equation}
- Každá jednoelektronová funkce má prostorou a spinovou část, tzv.~spinoorbital. Pro mnohaelektronové atomy už je pro správný výpočet energie vzít spin v úvahu.  Antisymetrii a spin do Hartreeho metody zavedl Vladimir Aleksandrovič Fock a John Slater. Výsledkem byla Hartree-Fockova metoda self-konzistentního pole(HF-SCF), kde se funkce s nejnižší energii hledá iterativním způsobem za pomoc variačního počtu. Vlnová funkce se zapisuje pomocí Slaterova determinantu, SD, který má obecný tvar \ref{Slateruv_determinant}. SD zaručuje antisymetrii vlnové funkce vůči výměně polohových a spinových souřadnic. $\psi_i$ je jednoelektronová vlnová funkce, $s_j$ jsou elektrony, $\sqrt{N!}$ je normalizační faktor.
+ Každá jednoelektronová funkce má prostorovu a~spinovou část, tzv.~spinoorbital. Pro mnohaelektronové atomy už je pro správný výpočet energie vzít spin v~úvahu.  Antisymetrii a~spin do Hartreeho metody zavedl Vladimir Aleksandrovič Fock a~John Slater. Výsledkem byla Hartree-Fockova metoda self-konzistentního pole(HF-SCF), kde se funkce s~nejnižší energii hledá iterativním způsobem za pomoc variačního počtu. Vlnová funkce se zapisuje pomocí Slaterova determinantu, SD, který má obecný tvar \ref{Slateruv_determinant}. SD zaručuje antisymetrii vlnové funkce vůči výměně polohových a~spinových souřadnic. $\psi_i$ je jednoelektronová vlnová funkce, $s_j$ jsou elektrony, $\sqrt{N!}$ je normalizační faktor.
 \begin{equation}
 \psi =  \frac{1}{\sqrt{N!}}\begin{vmatrix}
 \psi_1(1)\alpha(1) & \psi_1(1) \beta (1) & \psi_2(1)\alpha(1) & \dots & \psi_{n/2}(1)\beta(1) \\
@@ -229,26 +226,26 @@ V tomto přístupu jsou ovšem není dodržena antisymetrii vlnové funkce (Paul
 \end{vmatrix}
 \label{Slateruv_determinant}
 \end{equation}
-U atomů s více  elektrony chemie začíná, hlavním cílem je získat znalosti o molekulách. V tomto systému se nově objevuje více než jedno jádro a systém se stává opět příliš složitý pro matematické řešení. Ve skutečnosti je proton přibližně $1800 \times$ těžší než elektron, tudíž je rychlost mnohem menší, než rychlost elektronu. Situace lze zjednodušit oddělením pohybu elektronů od pohybu jader a řešit tak problémy odděleně. Přístup byl navržen jako Born$-$Oppenheimerova aproximace \ref{eq_B_O_aproximace}. Vlnová funkce elektronů závisí pouze na poloze jader, ne jejich rychlosti.\cite{lechamolecularmodeling} Zároveň je vlnová funkce parametricky závislá na poloze jader, pro každou geometrii jader je získána jiná vlnová funkce. Závislost energie na poloze jader se pro víceatomové molekuly nazývá hyperplocha potenciální energie. \cite{dftshrnutivysledky}
+U~atomů s~více  elektrony chemie začíná, hlavním cílem je získat znalosti o~molekulách. V~tomto systému se nově objevuje více než jedno jádro a~systém se stává opět příliš složitý pro matematické řešení. Ve skutečnosti je proton přibližně $1800 \times$ těžší než elektron, tudíž je rychlost mnohem menší, než rychlost elektronu. Situace lze zjednodušit oddělením pohybu elektronů od pohybu jader a~řešit tak problémy odděleně. Přístup byl navržen jako Born-Oppenheimerova aproximace \ref{eq_B_O_aproximace}. Vlnová funkce elektronů závisí pouze na poloze jader, ne jejich rychlosti.\cite{lechamolecularmodeling} Zároveň je vlnová funkce parametricky závislá na poloze jader, pro každou geometrii jader je získána jiná vlnová funkce. Závislost energie na poloze jader se pro víceatomové molekuly nazývá hyperplocha potenciální energie.\cite{dftshrnutivysledky}
 \begin{equation}
 \Psi_{tot}(nuclei, elektrons) = \Psi(electrons) \cdot \Psi(nuclei)
 \label{eq_B_O_aproximace} 
 \end{equation}
 
 \section{Metody kvantové chemie}
-Metody výpočetní chemie lze ve stručnosti shrnutou na \textit{Ab inito} metody, semi-empirické metody a DFT metody. \textit{Ab inito} metody řeší Schröfingerovu rovnici bez použití parametrů z experimentálních dat.  Vzájemnou souvislost a podobnost metody vystihuje schéma na obrázku \ref{schema_QM}.
+Metody výpočetní chemie lze ve stručnosti shrnutou na \textit{Ab inito} metody, semi-empirické metody a~DFT metody. \textit{Ab inito} metody řeší Schrödingerovu rovnici bez použití parametrů z~experimentálních dat.  Vzájemnou souvislost a~podobnost metody vystihuje schéma na obrázku \ref{schema_QM}.
  \begin{figure}[h]
-\caption{Schéma post-Hartree-Fockových teorií, $n^m$ je škálování vzhledem k velikosti systémy \cite{pdf_obrazek}. }
+\caption{Schéma post-Hartree-Fockových teorií, $n^m$ je škálování vzhledem k~velikosti systémy \cite{pdf_obrazek}. }
   \center
   \includegraphics[width=12cm]{schema_QM.png}
   \label{schema_QM}
   \end{figure}
-  Metody QM vychází z řešení stacionární Schrödingerovy rovnice \ref{schrodingerova_rovnice}. Semiempirické metody řeší Schrödingerovu rovnici pouze částečně, některé parametry jsou dodány z experimentů. \\
-     Základní aproximací je Born-Oppenheimerova aproximace a zapsání vlnové funkce jako Slaterův determinant pomocí atomových orbitalů. Z tohoto základu vznikla Hartree, která navíc uvažuje elektron v průměrném poli zbylých elektronů. Zde pomocí variačního přístupu hledá nejvhodnější energii. Antysymetrii vlnové funkce zajistí SD a Fockovy rovnice, proto Hartee-Fockova metoda. Samotný HF přístup v sobě neobsahuje korelaci pohybu elektronů. Tento faktor je tam možno vložit dodatečně pomocí tradičních \textit{ab inito} metod Many-Body Pertrubation  theory (MBPT), konfigurační interakcce (configuration interaction, CI) nebo spřažené klastry( coupled cluster methods, CC). Śkálování těchto metod je uvedeno na obrázku \ref{schema_QM}. Tyto metody jsou přesné, ale výpočetně velice náročné proto nejsou vhodné pro příliš velké systémy. Řešením je použití teorie funkcionálu hustoty (The Density Functional theory, DFT) nebo Rozšířenou Hückelovu metodu (The Extenden Hückle theory, EHT).
+  Metody QM vychází z~řešení stacionární Schrödingerovy rovnice \ref{schrodingerova_rovnice}. Semiempirické metody řeší Schrödingerovu rovnici pouze částečně, některé parametry jsou dodány z~experimentů. \\
+     Základní aproximací je Born-Oppenheimerova aproximace a~zapsání vlnové funkce jako Slaterův determinant pomocí atomových orbitalů. Z~tohoto základu vznikla Hartree, která navíc uvažuje elektron v~průměrném poli zbylých elektronů. Zde pomocí variačního přístupu hledá nejvhodnější energii. Antysymetrii vlnové funkce zajistí SD a~Fockovy rovnice, proto Hartee-Fockova metoda. Samotný HF přístup v~sobě neobsahuje korelaci pohybu elektronů. Tento faktor je tam možno vložit dodatečně pomocí tradičních \textit{ab inito} metod jako například Many-Body Pertrubation  theory (MBPT), konfigurační interakcce (Configuration Interaction, CI) nebo spřažené klastry(Coupled Cluster methods, CC). Śkálování těchto metod je uvedeno na obrázku \ref{schema_QM}. Tyto metody jsou přesné, ale výpočetně velice náročné, proto nejsou vhodné pro příliš velké systémy. Řešením je použití teorie funkcionálu hustoty (The Density Functional theory, DFT) nebo Rozšířenou Hückelovu metodu (The Extended Hückle theory, EHT).
 
 \section{Rozšířená Hückelova metoda}
-EHT se řadí mezi semiemprické metody, které  pro výpočet energie používají klasický \textit{ab inito} přístup, pouze jsou některé parametry vzaty z experimentu. Tím se snižuje výpočetní náročnost. Přes její jednoduchost dává dobré kvalitativní výsledky především v oblasti molekulových orbitalů. EHT navazuje na Hückelův přístup, který platil pro konjugované systémy. EHT může být použita i pro systémy se $\sigma$ vazbami. Na rozvoji teorie se podílel Roald Hoffman. \cite{lowe2011quantum} \\
-Základem metody je sekulární rovnice, která je známá již z metody MO-LCAO. (viz. sekulární rovnice v metody MO-LCAO). EHT poskytuje jednoduché řešení členu $H_{ij}$ pomocí vzorce \ref{EHT_vypocet_H} a empirických parametrů. $S_{ij}$ je překryvový integrál, $E$ je hlednanní energie.
+EHT se řadí mezi semiemprické metody, které  pro výpočet energie používají klasický \textit{ab inito} přístup a~některé parametry jsou vzaty z~experimentu. Tím se snižuje výpočetní náročnost. Přes její jednoduchost dává dobré kvalitativní výsledky především v~oblasti molekulových orbitalů. EHT navazuje na Hückelův přístup, který platil pouze pro konjugované systémy. EHT může být použita i pro systémy se $\sigma$~vazbami. Na rozvoji teorie se podílel Roald Hoffman.\cite{lowe2011quantum} \\
+Základem metody jsou sekulární rovnice. EHT poskytuje jednoduché řešení členu $H_{ij}$ pomocí vzorce \ref{EHT_vypocet_H} a~empirických parametrů. $S_{ij}$ je překryvový integrál, $E$ je hledaná energie.
 \begin{equation}
 E = \begin{vmatrix}
 H_{11} - E S_{11} & H_{12} - E S_{12} & \dots & H_{1j} - E S_{1j} \\
@@ -260,16 +257,15 @@ H_{i1} - E S_{i1} & H_{i2} - E S_{i2} & \dots & H_{ij} - E S_{ij} \\
 
 
 \begin{equation}
-H_{ij} = K S_{ij} \left( \frac{H_{ii} + H_{jj}}{2} \right)
+H_{ij} = K~S_{ij} \left( \frac{H_{ii} + H_{jj}}{2} \right)
 \label{EHT_vypocet_H}
 \end{equation}
-kde $K$ si parametr, jehož hodnota byla R. Hoffmannnem stanoevna na 1,75. 
+kde $K$ je parametr, jehož hodnota byla R. Hoffmannem stanovena na 1,75.\cite{lowe2011quantum}
 
 \section{Metoda funkcionálu hustoty}
-DFT metody jsou založeny na vztahu mezi elektronovou hustotou a celkovou energii systému, teorie funkcionální \footnote{Funkcionál je operátor, který zobrazuje z prostoru funkcí do množiny obecně komplexních čísel} hustoty. Elektronová hustota $\varrho(\pmb{r})$ je pravděpodobnosti, že v nějakém bodě prostoru nalezneme nějaký elektron.  Výhodou tohoto přístupu je, že elektronová hustota je funkcí pouze tří prostorových souřadnic. Tento výpočetní model byl objeven už v roce 1920, pro chemii začal mít význam až v 60. letech 20. století. Výpočetně podobně náročná jako HF, ale přesnější, obsahují korelační energii. \\
+DFT metody jsou založeny na vztahu mezi elektronovou hustotou a~celkovou energii systému, teorie funkcionální \footnote{Funkcionál je operátor, který zobrazuje z~prostoru funkcí do množiny obecně komplexních čísel.} hustoty. Elektronová hustota $\varrho(\vec{r})$ je pravděpodobnosti, že v~nějakém bodě prostoru nalezneme nějaký elektron.  Výhodou tohoto přístupu je, že elektronová hustota je funkcí pouze tří prostorových souřadnic. Tento výpočetní model byl objeven už v~roce 1920, pro chemii začal mít význam až v~60. letech 20. století. DFT přístup je výpočetně podobně náročný jako HF, ale přesnější, obsahuje korelační energii. \\
 
-V roce 1964 uveřejnili Koch a Hohenberg dva teorémy, které ukázaly, že energie základního stavu  a další vlastnosti jsou jednoznačně určeny elektronovou hustotou. Energie je funkcionál elektronové hustoty .
-\cite{lechamolecularmodeling}
+V~roce 1964 uveřejnili Koch a~Hohenberg dva teorémy, které ukázaly, že energie základního stavu  a~další vlastnosti jsou jednoznačně určeny elektronovou hustotou. Energie je funkcionál elektronové hustoty.\cite{lechamolecularmodeling}
 \subsection{Principy}
 \subsubsection{První Hohenberg- Kohn teorém}
 Pro libovolný systém interagujících elektronů je externí potenciál $V_{ext}$ jednoznačně
@@ -277,18 +273,17 @@ určen elektronovou hustotou (až na konstantu). \cite{dftshrnutivysledky}
 \begin{equation}
 E_{el} = E_{el} (\varrho)
 \end{equation}
- Za znalosti elektronové hustoty lze vypočítat energii a všechny ostatní vlastnosti základního stavu.
+ Za znalosti elektronové hustoty lze vypočítat energii a~všechny ostatní vlastnosti základního stavu.
 \subsubsection{Druhý Hohenberg-Kohn teorém}
-Druhý teorém je postaven na variačním principu. Poskytuje informace, jak lze najít elektronovou hustotu, která poskytne nejnižší a zároveň nejpřesnější energii.
+Druhý teorém je postaven na variačním principu. Poskytuje informace, jak lze najít elektronovou hustotu, která poskytne nejnižší a~zároveň nejpřesnější energii.
 \cite{koch2000chemist} 
-Předpokládejme, že danému externímu potenciálu $V'_{ext}$ přísluší elektronová hustota
-$\varrho_0$. Pak pro jakoukoli jinou elektronovou hustotu $\varrho_0$ bude platit
+Energie přesné elektronové hustoty základního stavu $\varrho_O$ je vždy menší, než energie nalezená jinou fyzikálně přijatelnou elektronovou hustotou $\varrho'$.\cite{Semradthesis}
 \begin{equation}
 E [\varrho_0] < E[\varrho ']
 \end{equation}
 
 \subsubsection{Kohn-Shamovy rovnice}
-Při hledání vhodného funkcionálu je zásadní problém zahrnout kinetickou energii elektronů, klasickou coulombickou interakci mezi elektrony a dále korelační a výměnné efekty. Hlavní myšlenkou bylo rozdělení hledaného funkcionálu $E(\varrho(\vec{r}))$ do menší částí. \cite{koch2000chemist}
+Při hledání vhodného funkcionálu je zásadní problém zahrnout kinetickou energii elektronů, klasickou coulombickou interakci mezi elektrony a~dále korelační a~výměnné efekty. Hlavní myšlenkou bylo rozdělení hledaného funkcionálu $E(\varrho(\vec{r}))$ do menší částí. \cite{koch2000chemist}
 \begin{equation}
 E(\varrho(\vec{r})) = T_s[\varrho(\vec{r})] + J[\varrho(\vec{r})] + \int V_{EX}(\vec{r})\varrho(\vec{r})d\vec{r} + E_{EX}[\varrho(\vec{r})]
 \end{equation}
@@ -298,16 +293,16 @@ T_s = -\frac{1}{2} \sum_{i=1} ^{N}  \bra{\psi_i}{\nabla^{2}}\ket{\psi_i}
 \label{kineticka_energie_jednoelektronova}
 \end{equation}
 Tímto způsobem vypočítaná $E_{kin}$ není skutečná $E_{kin}$ systému. \\
-$J[\varrho(\vec{r})]$ je přesná Coulombovská repulze. $E_{EX}[\varrho(\vec{r})]$ je výměnně$-$korelační energie, $\int V_{EX}(\vec{r})\varrho(\vec{r})d\vec{r}$ je přesná energie atrakce elektronů jádry.
-\subsection{DFT v praxi}
-Výběr vhodného funkcionálu je nelehký úkol. Funkcionály mohou být obecně rozděleny na tři kategorie. Aproximace lokální hustoty (Local Density Approximation, LDA), metoda zoběcněného gradientu (Generalized Gradient Approximation, GGA) a poté hybridní funkcionály. \cite{dftshrnutivysledky}
+$J[\varrho(\vec{r})]$ je přesná Coulombovská repulze. $E_{EX}[\varrho(\vec{r})]$ je výměnně-korelační energie, $\int V_{EX}(\vec{r})\varrho(\vec{r})d\vec{r}$ je přesná energie atrakce elektronů jádry.
+\subsection{DFT v~praxi}
+Výběr vhodného funkcionálu je nelehký úkol. Funkcionály mohou být obecně rozděleny na tři kategorie. Aproximace lokální hustoty (Local Density Approximation, LDA), metoda zoběcněného gradientu (Generalized Gradient Approximation, GGA) a~poté hybridní funkcionály. \cite{dftshrnutivysledky}
 \subsubsection{Aproximacce lokální hustoty}
-LDA funkcionály vychází z modelu homogenního elektronového plynu, kdy máme v celém systému konstantní elektronovou hustotu.\cite{dftshrnutivysledky} V základu se jedná o \textit{ab inito} přístup, přesto má pro chemii využití pouze pro valenční elektrony. Často totiž v molekulách není pravidelná distribuce elektronové hustoty. Prostor lze rozdělit na jednotky objemu a elektronovou hustotu sčítat přes objem podle rovnice.
+LDA funkcionály vychází z~modelu homogenního elektronového plynu, kdy máme v~celém systému konstantní elektronovou hustotu.\cite{dftshrnutivysledky} V~základu se jedná o~\textit{ab inito} přístup, přesto má pro chemii využití pouze pro valenční elektrony. Často totiž v~molekulách není pravidelná distribuce elektronové hustoty. Prostor lze rozdělit na jednotky objemu a~elektronovou hustotu sčítat přes objem podle rovnice.
 \begin{equation}
 E_{XC}^{LDA} = \int \varrho (\vec{r} \epsilon_{XC} (\varrho (\vec{R})) d \vec{r}
 \label{LDA_vyraz_pro_obecnou_energii}
 \end{equation}
-Tvar $\epsilon_{XC}(\varrho (\vec{r}))$je výměnně-korelační energie pro jeden elektron, která může být rozdělena na výměnnou a korelační část. 
+Tvar $\epsilon_{XC}(\varrho (\vec{r}))$je výměnně-korelační energie pro jeden elektron, která může být rozdělena na výměnnou a~korelační část. 
 \begin{equation}
 \epsilon_{XC}(\varrho (\vec{r})) = \epsilon_x (\varrho) + \epsilon_c (\varrho)
 \label{LDA_tvar_vymene_korelacni_energie}
@@ -317,71 +312,66 @@ Výměnný člen lze zapsat analyticky, známy pod názvem Slaterův výměnný 
 \epsilon_{XC}(\varrho (\vec{r})) = - \frac{3}{4} \sqrt[3]{\frac{3 \varrho (\vec{r})}{\pi}}
 \label{LDA_vymenny_clen}
 \end{equation}
-Korelační energii lze zavést metodou VWN (auto rVosko, Wilky a Nuisar) pomocí numerických výpočtů. Vylepšením je spinově závislá aproximace lokální hustoty, která zavádí elektrony se spinem $\alpha$ a $\beta$.
+Korelační energii lze zavést metodou VWN (auto rVosko, Wilky a~Nuisar) pomocí numerických výpočtů. Vylepšením je spinově závislá aproximace lokální hustoty, která zavádí elektrony se spinem $\alpha$ a~$\beta$.
 \begin{equation}
 E_{XC}^{LSD}[\varrho_{\alpha}, \varrho_{\beta}] = \int \varrho (\vec{r} \epsilon_{XC}( \varrho_{\alpha}(\vec{r}), \varrho_{\beta}(\vec{r})) d \vec{r}
 \end{equation}
 \cite{koch2000chemist}
 \subsubsection{Metoda zobecněného gradientu}
-GGA funkcionál vychází z aproximace lokální hustoty, která je dále vylepšována. Jedna z možností je použít \textbf{gradient elektronové hustoty} $\nabla \varrho (\vec{r})$.  \cite{koch2000chemist}
+GGA funkcionál vychází z~aproximace lokální hustoty, která je dále vylepšována. Jedna z~možností je použít \textbf{gradient elektronové hustoty} $\nabla \varrho (\vec{r})$.  \cite{koch2000chemist}
 
 \subsubsection{Hybridní funkcionály}
-Přístup kombinuje HF vzorec pro výpočet energie ( \textbf{dát odkaz}) a výměnné funkcionály. 
+Přístup kombinuje HF vzorec pro výpočet energie ( \textbf{dát odkaz}) a~výměnné funkcionály. 
 Do této kategorie patří nejznámější funkcionál \textbf{B3LYP}.
 \begin{equation}
 E_{ex}^{B3LYP} = (1-a_0-a_x)E_x^{LDA} + a_0E_x^{exact} + a_x^{B88} + (1-a_c)E_c^{VWN} + a_c^{LYP}
 \label{B3LYP_rovnice}
 \end{equation}
-$a_0$, $a_x$ a $a_c$ jsou nastavitelné parametry. \textbf{B3LYP} má 20\% podíl výměnné energie. \cite{dftshrnutivysledky}
+$a_0$, $a_x$ a~$a_c$ jsou nastavitelné parametry. \textbf{B3LYP} má 20\% podíl výměnné energie. \cite{dftshrnutivysledky}
 
-
-
-
-Předchůdci Aproximace lokální hustoty LDA a GGA funkcionály. B3LYP \footnote{vyvinut v roce 1993} je hybridní funkcionál, který vznikl jako kombinace BLYP (GGA) a výpočtu z Kohn-Slamových orbitalů(vypočítáme část výměnné energie).
-
-
-\section{Báze v \textit{ab inito} výpočtech }\label{kapitola_baze}
-Množina funkcí, ze kterých jsou skládány orbitaly, se nazývá bazí atomových orbitalů. Pro výběr funkcí platí dvě základní pravidla. Příslušné bázové funkce musí dostatečně dobře popsat vlnovou funkci, aby získané výsledky měly chemický význam. Zároveň integrály $F_{ij}$ a $S_{ij}$ musí být řešitelné v rozumně dlouhém časem. \cite{lowe2011quantum}
-Pro popis atomu lze použít minimální nebo rozšířené báze. Minimální báze obsahuje pouze funkce, které popisují orbitaly obsazené v základním stavu daného atomu. Rozšířená báze obsahuje například polarizační funkce nebo difuzní funkce. Mezi základní typy bazí pro atomové orbitaly jsou orbitaly vodíkové typu, orbitaly Slaterova typu (STOs) a gaussovské funkce. \cite{dftshrnutivysledky}
-Orbitaly vodíkového typu mají radiální a angulární část. Orbitaly vodíkového mají nevýhodu ve své složitosti a často je nutné použít numerické řešení problému. STO orbitaly nemají radiální uzly a pro některé integrály neexistuje analytické řešení. STO orbitaly jsou ve tvaru polynomu souřadnic a exponenciály\ref{STO_orbital}.\cite{jensen2007introduction}
+\section{Báze v~\textit{ab inito} výpočtech }\label{kapitola_baze}
+Množina funkcí, ze kterých jsou skládány orbitaly, se nazývá bazí atomových orbitalů. Pro výběr funkcí platí dvě základní pravidla. Příslušné bázové funkce musí dostatečně dobře popsat vlnovou funkci, aby získané výsledky měly chemický význam. Zároveň integrály $F_{ij}$ a~$S_{ij}$ musí být řešitelné v~rozumně dlouhém časem. \cite{lowe2011quantum}
+Pro popis atomu lze použít minimální nebo rozšířené báze. Minimální báze obsahuje pouze funkce, které popisují orbitaly obsazené v~základním stavu daného atomu. Rozšířená báze obsahuje například polarizační funkce nebo difuzní funkce. Mezi základní typy bazí pro atomové orbitaly jsou orbitaly vodíkové typu, orbitaly Slaterova typu (STOs) a~gaussovské funkce. \cite{dftshrnutivysledky}
+Orbitaly vodíkového typu mají radiální a~angulární část. Orbitaly vodíkového mají nevýhodu ve své složitosti a~často je nutné použít numerické řešení problému. STO orbitaly nemají radiální uzly a~pro některé integrály neexistuje analytické řešení. STO orbitaly jsou ve tvaru polynomu souřadnic a~exponenciály \ref{STO_orbital}.\cite{jensen2007introduction}
 \begin{equation}
 \chi_{\zeta, n, l, m}(r, \theta, \varphi) = NY_{l,m} (\theta, \varphi) r^{n-1} e^{-\zeta r}
 \label{STO_orbital} 
 \end{equation}
-$N$ jr normalizační faktor, $Y_{l,m}$ sféricky harmonická funkce, exponent závisí na vzdálenosti od jádra. Radiální část je tvořena jako lineární kombinace STO. Především přidáváním bázových funkcí STO typu enormně narůstá výpočetní čas. Alternativou jsou Gaussovské orbitaly (Gausian type orbitals, GTO).
+$N$ je normalizační faktor, $Y_{l,m}$ sféricky harmonická funkce, exponent závisí na vzdálenosti od jádra jako $r$. Radiální část je tvořena jako lineární kombinace STO. Především přidáváním bázových funkcí STO typu enormně narůstá výpočetní čas. Alternativou jsou Gaussovské orbitaly (Gausian type orbitals, GTO).
 \begin{equation}
 \chi(r) = Nr^n e^{-a(r-r_A)^2}
 \end{equation}
- Výhodou GTO je to, že jejich součin je stále GTO a hledání $F_{ij}$je výpočetně nenáročné. Na rozdíl od ostatních funkcí nemají správné chování na jádře. Z tohoto důvodu je báze STO orbitalů tvořena několika GTO, které jsou označovány jako primitivní Gaussovské funkce.Největší přínos GTO je rozdíl v druhé mocnině vzdálenosti v exponenciálním členu.\cite{lowe2011quantum}. 
- V současné době existuje obrovské množství bazí, které lépe či hůře popisuje zvolený problém. Mezi základní báze jsou uváděny DZP, STO-3G a různé druhy 6-31G. DZP je double-zeta gassovská báze s polarizací, STO-3G jsou Slaterovy orbitaly zjednodušeny jako lineární kombinace tří primitivních gaussiánů, odpovídá minimální bázi. 3-21G jsou označovány jako \uv{split valence basics sets}. Vnitřní elektrony jsou popisovány tří primitivními gaussiány, valenční orbitaly  do dvou primitivních gaussiánů a jednoho jednoduchého gaussiánu. Pro bázi 6-31G je vnitřní oblast tvořena šesti primitivními gaussiány, ostatní je obdobné jako pro 3-21G. Báze 6-21*G je v základu obdobná, * označuje polarizační funkci. Přidává p orbital pro vodíky a d orbitaly pro těžší atomy. Symbol ** označuje přidání d orbitalů pro vodík.(zdroj je 3 pdf soubory z hodiny Metody kvantové chemie). \\
- DFT metodou lze krom optimalizací počítat také parametry nukleární magnetické rezonance (NMR). Jedním z NMR charakteristik molekul je chemické stínění. Do \textit{ab-inito} výpočtu nově vstupuje vnější magnetické pole $B_0$, které je reprezentováno vektorovým potenciálem tohoto pole. V ideálním případě by neměla mít volba počátku tohoto pole vliv na výsledek. Jedním z důsledků aproximace v kvantové chemii je fakt, že volba počátku výrazně ovlivňuje výsledné chemické stínění. Problém se nazývá \uv{Gauge origin problem}. Metoda GIAO (Gauge  Including Atomic Orbitals)řeší problém způsobem, že zahrnuje počátek vektorového potenciálu do atomových orbitalů. Vhodnou bazí pro tyto výpočty je IGLO$-$III (Individual Gauge for Localized Orbitals).\cite{Standara2006thesis} \cite{g09}
+ Výhodou GTO je to, že jejich součin je stále GTO. Na rozdíl od ostatních funkcí nemají správné chování na jádře. Z~tohoto důvodu je báze STO orbitalů tvořena několika GTO, které jsou označovány jako primitivní Gaussovské funkce. Největším přínosem GTO je rozdíl v~druhé mocnině vzdálenosti v~exponenciálním členu.\cite{lowe2011quantum}. 
+ V~současné době existuje obrovské množství bazí, které lépe či hůře popisuje zvolený problém. Mezi základní báze jsou uváděny DZP, STO-3G a~různé druhy 6-31G. DZP je double-zeta gassovská báze s~polarizací, STO-3G jsou Slaterovy orbitaly zjednodušeny jako lineární kombinace tří primitivních gaussiánů, odpovídá minimální bázi. 3-21G jsou označovány jako \uv{split valence basics sets}. Vnitřní elektrony jsou popisovány tří primitivními gaussiány, valenční orbitaly  do dvou primitivních gaussiánů a~jednoho jednoduchého gaussiánu. Pro bázi 6-31G je vnitřní oblast tvořena šesti primitivními gaussiány, ostatní je obdobné jako pro 3-21G. Báze 6-21*G je v~základu obdobná, * označuje polarizační funkci. Přidává p orbital pro vodíky a~d orbitaly pro těžší atomy. Symbol ** označuje přidání d orbitalů pro vodík.\cite{lowe2011quantum} \\
+ 
+ DFT metodami lze krom optimalizací počítat také parametry nukleární magnetické rezonance (NMR). Jedním z~NMR charakteristik molekul je chemické stínění. Do \textit{ab-inito} výpočtu nově vstupuje vnější magnetické pole $B_0$, které je reprezentováno vektorovým potenciálem tohoto pole. V~ideálním případě by neměla mít volba počátku tohoto pole vliv na výsledek. Jedním z~důsledků aproximace v~kvantové chemii je fakt, že volba počátku výrazně ovlivňuje výsledné chemické stínění. Problém se nazývá \uv{Gauge origin problem}. Metoda GIAO (Gauge  Including Atomic Orbitals)řeší problém způsobem, že zahrnuje počátek vektorového potenciálu do atomových orbitalů. Vhodnou bazí pro tyto výpočty je IGLO$-$III (Individual Gauge for Localized Orbitals).\cite{Standara2006thesis} \cite{g09}
 
-\subsection{Kvalitativní koncepty v kvantové chemii}
-Důležitou součástí výzkumu v oblasti kvantové chemie jsou zjednodušené koncepty, které pomáhají s interpretací kvantově$-$chemických dat. Jedním z příkladů je vysvětlení vaznosti atomů a molekul. \\
-Lewisovská teorie chemické vazby nahlíží na vazbu jako na lokalizovaný koncept, kde jsou elektrony na spojnici jader. Tento jednoduchý koncept předpokládá, že platí tzv. oktetové pravidlo a maximální počet vazeb odpovídá číslu skupiny, ve které se atom nachází. Tato teorie si bohužel nedokáže poradit už s molekulou methanu. Podle Lewisovské teorie by měl uhlík tvořit dvojvazné molekuly. V případě čtyřvazných molekul by měly být dvě vazby rovnocenné a dvě o nižší energii kvůlu zapojení rozdílných orbitalů. V methanu ale najdeme čtyři stejně dlouhé a naprosto rovnocenné vazby. Vysvětlení této skutečnosti nabízí teorie hybridizace. Ta předpokládá, že může dojít ke sjednocení orbitalů o blízké energii, za vzniku hybridního orbitalu. Tímto způsob vytvořené vazby si jsou naprosto rovnocenné. Ani koncept hybridizace nevysvětluje všechny případy vaznosti molekul. Pro některé atomy jsou si orbitaly natolik vzdálené, že hybridizace nepřichází v úvahu. Nejlepším popisem pro tyto systémy jsou molekulové orbitaly. Ty zavádí do celého popisu princip delokalizace. Mezi molekuly, které se vymykají Lewisovskému přístpupu, lze zařadit obecně sloučeniny vzácných plynů (fluoridy xenonu),  \ce{SF6}, \ce{ClF3} a \ce{I3^-}. \\
+\subsection{Kvalitativní koncepty v~kvantové chemii}
+Důležitou součástí výzkumu v~oblasti kvantové chemie jsou zjednodušené koncepty, které pomáhají s~interpretací kvantově$-$chemických dat. Jedním z~příkladů je vysvětlení vaznosti atomů a~molekul. \\
+Lewisovská teorie chemické vazby nahlíží na vazbu jako na lokalizovaný koncept, kde jsou elektrony na spojnici jader. Tento jednoduchý koncept předpokládá, že platí tzv. oktetové pravidlo a~maximální počet vazeb odpovídá číslu skupiny, ve které se atom nachází. Tato teorie si bohužel nedokáže poradit už s~molekulou methanu. Podle Lewisovské teorie by měl uhlík tvořit dvojvazné molekuly. V~případě čtyřvazných molekul by měly být dvě vazby rovnocenné a~dvě o~nižší energii kvůlu zapojení rozdílných orbitalů. V~methanu ale najdeme čtyři stejně dlouhé a~naprosto rovnocenné vazby. Vysvětlení této skutečnosti nabízí teorie hybridizace. Ta předpokládá, že může dojít ke sjednocení orbitalů o~blízké energii, za vzniku hybridního orbitalu. Tímto způsob vytvořené vazby si jsou naprosto rovnocenné. Ani koncept hybridizace nevysvětluje všechny případy vaznosti molekul. Pro některé atomy jsou si orbitaly natolik vzdálené, že hybridizace nepřichází v~úvahu. Nejlepším popisem pro tyto systémy jsou molekulové orbitaly. Ty zavádí do celého popisu princip delokalizace. Mezi molekuly, které se vymykají Lewisovskému přístpupu, lze zařadit obecně sloučeniny vzácných plynů (fluoridy xenonu),  \ce{SF6}, \ce{ClF3} a~\ce{I3^-}. \\
 
-Ochotu tvořit hypervalentní molekuly lze odhadnout podle konceptu HSAB (Hard and Sfot Acids and Basics). Kyseliny a báze mohou být rozděleny na měkké a tvrdé. HSAB teorie říká, že tvrdá kyselina a tvrdá báze spolu poskytnou stabilní komplex, naopak slabá kyselina a slabá báze spolu poskytnou méně stabilní komplex. Z toho vyplývá, že ze znalosti reakčních podmínek a příslušné tvrdosti lze predikovat stabilitu vzniklého komplexu. Jeden z možností kvantitativního určení tvrdosti/měkkosti je určení parametrů $\chi$ \footnote{Elektronegativity byla Paulingem definována pomocí ionizačního potenciálu a elektronové afinity} \ref{hsab_vypocet_elektronegativita} a $\eta$ \ref{hsab_vypocet_tvrdost}. \cite{hsabclanek}. 
+Ochotu tvořit hypervalentní molekuly lze odhadnout podle konceptu HSAB (Hard and Sfot Acids and Basics). Kyseliny a~báze mohou být rozděleny na měkké a~tvrdé. HSAB teorie říká, že tvrdá kyselina a~tvrdá báze spolu poskytnou stabilní komplex, naopak slabá kyselina a~slabá báze spolu poskytnou méně stabilní komplex. Z~toho vyplývá, že ze znalosti reakčních podmínek a~příslušné tvrdosti lze predikovat stabilitu vzniklého komplexu. Jeden z~možností kvantitativního určení tvrdosti/měkkosti je určení parametrů $\chi$ \footnote{Elektronegativity byla Paulingem definována pomocí ionizačního potenciálu a~elektronové afinity} \ref{hsab_vypocet_elektronegativita} a~$\eta$ \ref{hsab_vypocet_tvrdost}. \cite{hsabclanek}. 
 \begin{equation}
 \chi = - \left( \frac{\delta E}{\delta N} \right) = \frac{IP + EA}{2} = -\mu
 \label{hsab_vypocet_elektronegativita}
 \end{equation} 
 \begin{equation}
-\eta = \frac{1}{2} \left( \frac{\delta \mu}{\delta N} \right) = \frac{1}{2}\left( \frac{\delta^2 E}{\delta N^2} \right) = \frac{I - A}{2}
+\eta = \frac{1}{2} \left( \frac{\delta \mu}{\delta N} \right) = \frac{1}{2}\left( \frac{\delta^2 E}{\delta N^2} \right) = \frac{I~- A}{2}
 \label{hsab_vypocet_tvrdost}
 \end{equation} 
-$\chi$ je absolutní elektronegativita, $\chi$ je elektronegativity, $E$ je energie a $N$ je počet elektronů. \cite{hsabwatoc} Podle Koopmansova teorému $E_{HOMO} = - IP$, $IP$ je ionizační potenciál a $E_{LUMO} = -EA$, $EA$ je elektronová afinita.\cite{kratochvilexcerpta} $\eta$ je atomová tvrdost \footnote{$\eta = \frac{1}{\sigma}$, $\sigma$ je měkkost atomu}.\cite{pearson1986absolute} Tvrdá kyselina a báze je charakterizována velkým rozdílem $IP$ a $IA$, což se projeví jako vysoké hodnoty $\chi$ a $\eta$. Při znalosti $E_{HOMO}$ a $E_{LUMO}$ lze predikovat ochotu reakčního centra interagovat s námi zvoleným reagentem a zároveň odhadnout stabilitu vzniklého komplexu. Systémy s velkým rozdílem $E_{HOMO}$ a $E_{LUMO}$ jsou tvrdší, stabilnější a méně reaktivní.\cite{hsabwatoc}
+$\chi$ je absolutní elektronegativita, $E$ je energie a~$N$ je počet elektronů. \cite{hsabwatoc} Podle Koopmansova teorému $E_{HOMO} = - IP$, $IP$ je ionizační potenciál a~$E_{LUMO} = -EA$, $EA$ je elektronová afinita.\cite{kratochvilexcerpta} $\eta$ je atomová tvrdost \footnote{$\eta = \frac{1}{\sigma}$, $\sigma$ je měkkost atomu}.\cite{pearson1986absolute} Tvrdá kyselina a~báze je charakterizována velkým rozdílem $IP$ a~$IA$, což se projeví jako vysoké hodnoty $\chi$ a~$\eta$. Při znalosti $E_{HOMO}$ a~$E_{LUMO}$ lze predikovat ochotu reakčního centra interagovat s~námi zvoleným reagentem a~zároveň odhadnout stabilitu vzniklého komplexu. Systémy s~velkým rozdílem $E_{HOMO}$ a~$E_{LUMO}$ jsou tvrdší, stabilnější a~méně reaktivní.\cite{hsabwatoc}
 
 
 
 
-\chapter{Výsledky a diskuze}
-Cílem výpočetní části bylo zkoumat struktury křemičitofosfátů metodou EHT a DFT. Pro metodu EHT byly vybrány menší struktury, metodou DFT byly zkoumány větší struktury. Ze získaných hodnot energie HOMO a LUMO orbitalů 
-\section{Výpočty metodou EHT a jejich grafický výstup ve formě obrázku C.A.C.A.O. s použitím předvolených parametrů pro všechny atomy} \label{kapitola_EHT}
-Pro účel vazebné analýzy byly všechny čtyři molekuly studovány prostřednictvím tzv. fragmentové analýzy. V jejich rámci byly provedeny kvantově chemické výpočty nejen pro kompletní molekuly, ale i pro podjednotky P=O a trojici bazálních ligandů. Výsledné MO pak byly vyjádřeny pomocí těchto fragmentových orbitalů (FMO). FMO byly vybírány z interakčních diagramů podle příspěvků do překryvové populace. Z těchto hodnot lze určit míru interakce. Všechny struktury molekul byly před výpočtem optimalizovány programem Gaussian \cite{g09} \footnote{B3LYP 6-31G*}.
+\chapter{Výsledky a~diskuze}
+Cílem výpočetní části bylo zkoumat struktury křemičitofosfátů metodou EHT a~DFT. Pro metodu EHT byly vybrány menší struktury, metodou DFT byly zkoumány větší struktury. Ze získaných hodnot energie HOMO a~LUMO orbitalů byla určena tvrdost/měkkost a odhadnuta reaktivita.
+\section{Výpočty metodou EHT a~jejich grafický výstup ve formě obrázku C.A.C.A.O. s~použitím předvolených parametrů pro všechny atomy} \label{kapitola_EHT}
+Pro účel vazebné analýzy byly všechny čtyři molekuly studovány prostřednictvím tzv. fragmentové analýzy. V~jejich rámci byly provedeny kvantově chemické výpočty nejen pro kompletní molekuly, ale i pro podjednotky P=O a~trojici bazálních ligandů. Výsledné MO pak byly vyjádřeny pomocí těchto fragmentových orbitalů (FMO). FMO byly vybírány z~interakčních diagramů podle příspěvků do překryvové populace. Z~těchto hodnot lze určit míru interakce. Všechny struktury molekul byly před výpočtem optimalizovány programem Gaussian \cite{g09} \footnote{B3LYP 6-31G*}.
 %H4SIO4
 % --------------------------------------------------------------------------
 \subsection{Molekula H$_4$SiO$_4$}
-Základní molekula pro reprezentaci čtyřkoordinovaného křemíku byla \ce{H4SiO4}. Z interakčního diagramu \ref{h4sio4_diagram_upraveney} byly vybrány FMO $\bra{20}{\hat{H}}\ket{24}$, $\bra{16}{\hat{H}}\ket{24}$, $\bra{11}{\hat{H}}\ket{21}$, $\bra{19}{\hat{H}}\ket{21}$, $\bra{15}{\hat{H}}\ket{22}$ a $\bra{18}{\hat{H}}\ket{22}$, pro které byla udělána analýza složení molekulových orbitalů. Molekula má symetrii S$_4$. 
+Základní molekula pro reprezentaci čtyřkoordinovaného křemíku byla \ce{H4SiO4}. Z~interakčního diagramu \ref{h4sio4_diagram_upraveny} byly vybrány FMO $\bra{20}{\hat{H}}\ket{24}$, $\bra{16}{\hat{H}}\ket{24}$, $\bra{11}{\hat{H}}\ket{21}$, $\bra{19}{\hat{H}}\ket{21}$, $\bra{15}{\hat{H}}\ket{22}$ a~$\bra{18}{\hat{H}}\ket{22}$, pro které byla udělána analýza složení molekulových orbitalů. Molekula má symetrii S$_4$. Fragmentové orbitaly 7, 22 a~26 se navzájem mísí za vzniku MO číslo 1, 20 a~24, znázorněných na obrázku \ref{obr_h4sio4_vysledky_I}. Fragmentové orbitaly  11, 19 a~21 se navzájem mísí za vzniku MO číslo 4, 16 a~21, znázorněných na obrázku \ref{obr_h4sio4_vysledky_II}. Fragmentové orbitaly  15, 18 a~22 se navzájem mísí za vzniku MO číslo 2, 19 a~22, znázorněných na obrázku \ref{obr_h4sio4_vysledky_III}.    
 
 \begin{figure}
 \begin{center}
@@ -411,14 +401,14 @@ Základní molekula pro reprezentaci čtyřkoordinovaného křemíku byla \ce{H4
 \end{minipage}
 \end{table}
   %  Pro fragmentové orbitaly $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ byly nalezeny příslušné molekulové orbitaly \ref{obr_h4sio4_MO_s1_1}, \ref{obr_h4sio4_MO_s1_20} a \ref{obr_h4sio4_MO_s1_24} .
-    Fragmentové orbitaly 7, 22 a 26 se navzájem mísí za vzniku MO číslo 1, 20 a 24, znázorněných na obrázku \ref{obr_h4sio4_vysledky_I}.
+    
  %-------------
 \begin{figure}
 \begin{center}
 \subfigure[MO 1]{\includegraphics[width=5cm]{h4sio4_obrazky/s1_1.eps} \label{obr_h4sio4_MO_s1_1}}
 \subfigure[MO 20]{\includegraphics[width=5cm]{h4sio4_obrazky/s1_20.eps}\label{obr_h4sio4_MO_s1_20}}
 \subfigure[MO 24]{\includegraphics[width=5cm]{h4sio4_obrazky/s1_24.eps}\label{obr_h4sio4_MO_s1_24}}
-\caption{Interakce $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ z tabulky \ref{tab_h4sio4_vysledky}.}
+\caption{Interakce $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$ z~tabulky \ref{tab_h4sio4_vysledky}.}
 
 \label{obr_h4sio4_vysledky_I}
 \end{center}
@@ -426,31 +416,33 @@ Základní molekula pro reprezentaci čtyřkoordinovaného křemíku byla \ce{H4
 
 
 %------------    
-Fragmentové orbitaly  11, 19 a 21 se navzájem mísí za vzniku MO číslo 4, 16 a 21, znázorněných na obrázku \ref{obr_h4sio4_vysledky_II}.   
+
 \begin{figure}
 \begin{center}
 \subfigure[MO 4]{\includegraphics[width=5cm]{h4sio4_obrazky/s2_4.eps} \label{obr_h4sio4_MO_s2_4}}
 \subfigure[MO 16]{\includegraphics[width=5cm]{h4sio4_obrazky/s2_16.eps}\label{obr_h4sio4_MO_s2_16}}
 \subfigure[MO 21]{\includegraphics[width=5cm]{h4sio4_obrazky/s2_21.eps}\label{obr_h4sio4_MO_s2_21}}
-\caption{Interakce $\bra{11}{\hat{H}}\ket{21}$, $\bra{19}{\hat{H}}\ket{21}$ z tabulky \ref{tab_h4sio4_vysledky}.}
+\caption{Interakce $\bra{11}{\hat{H}}\ket{21}$, $\bra{19}{\hat{H}}\ket{21}$ z~tabulky \ref{tab_h4sio4_vysledky}.}
 
 \label{obr_h4sio4_vysledky_II}\end{center}
 \end{figure}
 
 %------------    
-Fragmentové orbitaly  15, 18 a 22 se navzájem mísí za vzniku MO číslo 2, 19 a 22, znázorněných na obrázku \ref{obr_h4sio4_vysledky_III}.   
+ 
 \begin{figure}
 \begin{center}
 \subfigure[MO 2]{\includegraphics[width=5cm]{h4sio4_obrazky/s3__2.eps} \label{obr_h4sio4_MO_s3_2}}
 \subfigure[MO 19]{\includegraphics[width=5cm]{h4sio4_obrazky/s3__19.eps}\label{obr_h4sio4_MO_s3_19}}
 \subfigure[MO 22]{\includegraphics[width=5cm]{h4sio4_obrazky/s3__22.eps}\label{obr_h4sio4_MO_s2_21}}
-\caption{Interakce $\bra{15}{\hat{H}}\ket{22}$, $\bra{18}{\hat{H}}\ket{22}$ z tabulky \ref{tab_h4sio4_vysledky}.}
+\caption{Interakce $\bra{15}{\hat{H}}\ket{22}$, $\bra{18}{\hat{H}}\ket{22}$ z~tabulky \ref{tab_h4sio4_vysledky}.}
 \label{obr_h4sio4_vysledky_III}
 \end{center}
 \end{figure} 
 %-------------------------------------------------------------------------------------
 \subsection{Molekula Si(OH)$_3$CH$_3$}
 Molekula \ce{H3SiO3CH3} byla zvolena jako příklad přímé interakce křemík$-$uhlík ve sloučeninách, kde je křemík koordinován čtyřmi atomy. Tato molekula nevykazuje žádnou symetrii. Pro výběr FMO se opět vycházelo ze znalosti interakčního diagramu. 
+Fragmentové orbitaly  7, 22 a~26 se navzájem mísí za vzniku MO číslo 3, 11 a~26, znázorněných na obrázku \ref{obr_sioh3ch3_vysledky_I}. Fragmentové orbitaly  21 a~23 se navzájem mísí za vzniku MO číslo 2 a~25, znázorněných na obrázku\ref{obr_sioh3ch3_vysledky_III}. 
+Fragmentové orbitaly  7 a~25 se navzájem mísí za vzniku MO číslo 5 a~11, znázorněných na obrázku \ref{obr_sioh3ch3_vysledky_II}.    
 
 \begin{figure}
 \begin{center}
@@ -479,51 +471,48 @@ Molekula \ce{H3SiO3CH3} byla zvolena jako příklad přímé interakce křemík$
 \label{tab_sioh3ch3_vysledky}
 \end{table}
 
-Fragmentové orbitaly  7, 22 a 26 se navzájem mísí za vzniku MO číslo 3, 11 a 26, znázorněných na obrázku \ref{obr_sioh3ch3_vysledky_I}.   
 \begin{figure}
 \begin{center}
 \subfigure[MO 3]{\includegraphics[width=5cm]{sioh3ch3_obrazky/s1_3.eps} \label{obr_sioh3ch3_MO_s1_3}}
 \subfigure[MO 11]{\includegraphics[width=5cm]{sioh3ch3_obrazky/s1_11.eps}\label{obr_sioh3ch3_MO_s1_11}}
 \subfigure[MO 26]{\includegraphics[width=5cm]{sioh3ch3_obrazky/s1_26.eps}\label{obr_sioh3ch3_MO_s1_26}}
-\caption{Interakce $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$  z tabulky \ref{tab_sioh3ch3_vysledky}.}
+\caption{Interakce $\bra{22}{\hat{H}}\ket{26}$, $\bra{7}{\hat{H}}\ket{26}$  z~tabulky \ref{tab_sioh3ch3_vysledky}.}
 
 \label{obr_sioh3ch3_vysledky_I}\end{center}
 \end{figure} 
-
-Fragmentové orbitaly  7 a 25 se navzájem mísí za vzniku MO číslo 5 a 11, znázorněných na obrázku \ref{obr_sioh3ch3_vysledky_II}.   
+  
 \begin{figure}
 \begin{center}
 \subfigure[MO 5]{\includegraphics[width=5cm]{sioh3ch3_obrazky/s2_5.eps} \label{obr_sioh3ch3_MO_s2_5}}
 \subfigure[MO 11]{\includegraphics[width=5cm]{sioh3ch3_obrazky/s2_11.eps}\label{obr_sioh3ch3_MO_s2_11}}
-\caption{Interakce $\bra{7}{\hat{H}}\ket{25}$ z tabulky \ref{tab_sioh3ch3_vysledky}.}
+\caption{Interakce $\bra{7}{\hat{H}}\ket{25}$ z~tabulky \ref{tab_sioh3ch3_vysledky}.}
 
 \label{obr_sioh3ch3_vysledky_II}\end{center}
 \end{figure} 
 
  \clearpage
-   
-Fragmentové orbitaly  21 a 23 se navzájem mísí za vzniku MO číslo 2 a 25, znázorněných na obrázku \ref{obr_sioh3ch3_vysledky_III}.   
+ 
 \begin{figure}
 \begin{center}
 \subfigure[MO 5]{\includegraphics[width=5cm]{sioh3ch3_obrazky/s3_2.eps} \label{obr_sioh3ch3_MO_s3_2}}
 \subfigure[MO 11]{\includegraphics[width=5cm]{sioh3ch3_obrazky/s3_25.eps}\label{obr_sioh3ch3_MO_s3_25}}
-\caption{Interakce $\bra{21}{\hat{H}}\ket{23}$  z tabulky \ref{tab_sioh3ch3_vysledky}.}
+\caption{Interakce $\bra{21}{\hat{H}}\ket{23}$  z~tabulky \ref{tab_sioh3ch3_vysledky}.}
 
 \label{obr_sioh3ch3_vysledky_III}\end{center}
 \end{figure} 
    
-Fragmentové orbitaly  20 a 24 se navzájem mísí za vzniku MO číslo 4 a 24, znázorněných na obrázku \ref{obr_sioh3ch3_vysledky_IV}.   
+Fragmentové orbitaly  20 a~24 se navzájem mísí za vzniku MO číslo 4 a~24, znázorněných na obrázku \ref{obr_sioh3ch3_vysledky_IV}.   
 \begin{figure}
 \begin{center}
 \subfigure[MO 5]{\includegraphics[width=5cm]{sioh3ch3_obrazky/s4_4.eps} \label{obr_sioh3ch3_MO_s4_4}}
 \subfigure[MO 11]{\includegraphics[width=5cm]{sioh3ch3_obrazky/s4_24.eps}\label{obr_sioh3ch3_MO_s4_24}}
-\caption{Interakce $\bra{20}{\hat{H}}\ket{24}$  z tabulky \ref{tab_sioh3ch3_vysledky}.}
+\caption{Interakce $\bra{20}{\hat{H}}\ket{24}$  z~tabulky \ref{tab_sioh3ch3_vysledky}.}
 
 \label{obr_sioh3ch3_vysledky_IV}\end{center}
 \end{figure} 
  %-------------------------------------------------------------------------------------------- 
   \subsection{Molekula (H$_6$SiO$_6$)$^{2-}$}
-  Molekula \ce{(H6SiO6)^{2-}} představuje příklad křemíku koordinovaného šesti kyslíky. Molekula vykazovala vysokou symetrii S$_6$, pro výpočet byla z důvodu technických problémů s programem C.A.C.A.O. použita symetrie C$_i$. Tato molekula je hypervalentní a celkový náboj je $2-$.
+  Molekula \ce{(H6SiO6)^{2-}} představuje příklad křemíku koordinovaného šesti kyslíky. Molekula vykazovala vysokou symetrii S$_6$, pro výpočet byla z~důvodu technických problémů s~programem C.A.C.A.O. použita symetrie C$_i$. Tato molekula je hypervalentní a~celkový náboj je $2-$. Fragmentové orbitaly  24, 30 a~34 se navzájem mísí za vzniku MO číslo 1, 28 a~34 znázorněných na obrázku \ref{obr_h6sio6_vysledky_I}. Fragmentové orbitaly  21, 28 a~32 se navzájem mísí za vzniku MO číslo 3, 26 a~32 znázorněných na obrázku \ref{obr_h6sio6_vysledky_II}. Fragmentové orbitaly  22 a~33 se navzájem mísí za vzniku MO číslo 2 znázorněného na obrázku \ref{obr_h6sio6_vysledky_III}. 
   
   \begin{figure}
 \begin{center}
@@ -547,43 +536,42 @@ Fragmentové orbitaly  20 a 24 se navzájem mísí za vzniku MO číslo 4 a 24, 
 \end{tabular}
 \label{tab_h6sio6_vysledky}\end{center}
 \end{table}
-   
-Fragmentové orbitaly  24, 30 a 34 se navzájem mísí za vzniku MO číslo 1, 28 a 34 znázorněných na obrázku \ref{obr_h6sio6_vysledky_I}.   
+     
 \begin{figure}
 \begin{center}
 \subfigure[MO 5]{\includegraphics[width=5cm]{h6sio6_obrazky/s1_1.eps} 
 \label{obr_h6sio6_MO_s1_1}}
 \subfigure[MO 11]{\includegraphics[width=5cm]{h6sio6_obrazky/s1_28.eps}\label{obr_h6sio6_MO_s1_28}}
 \subfigure[MO 5]{\includegraphics[width=5cm]{h6sio6_obrazky/s1_34.eps} \label{obr_h6sio6_MO_s1_34}}
-\caption{Interakce $\bra{30}{\hat{H}}\ket{34}$, $\bra{24}{\hat{H}}\ket{34}$  z tabulky \ref{tab_h6sio6_vysledky}.}
+\caption{Interakce $\bra{30}{\hat{H}}\ket{34}$, $\bra{24}{\hat{H}}\ket{34}$  z~tabulky \ref{tab_h6sio6_vysledky}.}
 
 \label{obr_h6sio6_vysledky_I}\end{center}
 \end{figure} 
 
-Fragmentové orbitaly  21, 28 a 32 se navzájem mísí za vzniku MO číslo 3, 26 a 32 znázorněných na obrázku \ref{obr_h6sio6_vysledky_II}.   
+   
 \begin{figure}
 \begin{center}
 \subfigure[MO 3]{\includegraphics[width=5cm]{h6sio6_obrazky/s2_3.eps} 
 \label{obr_h6sio6_MO_s2_3}}
 \subfigure[MO 26]{\includegraphics[width=5cm]{h6sio6_obrazky/s2_26.eps}\label{obr_h6sio6_MO_s2_26}}
 \subfigure[MO 32]{\includegraphics[width=5cm]{h6sio6_obrazky/s2_32.eps} \label{obr_h6sio6_MO_s2_32}}
-\caption{Interakce $\bra{21}{\hat{H}}\ket{32}$, $\bra{28}{\hat{H}}\ket{32}$ z tabulky \ref{tab_h6sio6_vysledky}.}
+\caption{Interakce $\bra{21}{\hat{H}}\ket{32}$, $\bra{28}{\hat{H}}\ket{32}$ z~tabulky \ref{tab_h6sio6_vysledky}.}
 
 \label{obr_h6sio6_vysledky_II}\end{center}
 \end{figure} 
  
-  Fragmentové orbitaly  22 a 33 se navzájem mísí za vzniku MO číslo 2 znázorněného na obrázku \ref{obr_h6sio6_vysledky_III}.   
+    
 \begin{figure}
 \begin{center}
 \subfigure[MO 2]{\includegraphics[width=5cm]{h6sio6_obrazky/s3_2.eps} 
 \label{obr_h6sio6_MO_s3_2}}
-\caption{Interakce $\bra{22}{\hat{H}}\ket{33}$ z tabulky \ref{tab_h6sio6_vysledky}.}
+\caption{Interakce $\bra{22}{\hat{H}}\ket{33}$ z~tabulky \ref{tab_h6sio6_vysledky}.}
 
 \label{obr_h6sio6_vysledky_III}\end{center}
 \end{figure} 
 %----------------------------------------------------------------------------------------
  \subsection{Molekula H$_3$SiO$_4$(H$_2$PO$_3$)}
- Pro molekulu\ce{H3SiO4(H2PO3)} \ref{obr_h3sio4_h2po3} byla nutná oprava zvolených fragmentů. Molekula postrádá symetrii, která by usnadňovala výpočet. Jako fragment jedna byla zvolena část \ce{Si(OH)3} a fragment dva byl \ce{O(H2PO3)}. Tato úprava usnadnila výpočetní náročnost a bylo možné získat informace o FMO. 
+ Pro molekulu\ce{H3SiO4(H2PO3)} \ref{obr_h3sio4_h2po3} byla nutná oprava zvolených fragmentů. Molekula postrádá symetrii, která by usnadňovala výpočet. Jako fragment jedna byla zvolena část \ce{Si(OH)3} a~fragment dva byl \ce{O(H2PO3)}. Tato úprava usnadnila výpočetní náročnost a~bylo možné získat informace o~FMO. Fragmentové orbitaly  7, 15, 19, 22 a~29 se navzájem mísí za vzniku MO číslo 4, 14, 30, 35 a~41 znázorněných na obrázku \ref{obr_sio3p_vysledky_I}.   
 
 \begin{figure}
 \begin{center}
@@ -611,7 +599,7 @@ Fragmentové orbitaly  21, 28 a 32 se navzájem mísí za vzniku MO číslo 3, 2
 \label{tab_sio3_vysledky}\end{center}
 \end{table}
 
-Fragmentové orbitaly  7, 15, 19, 22 a 29 se navzájem mísí za vzniku MO číslo 4, 14, 30, 35 a 41 znázorněných na obrázku \ref{obr_sio3p_vysledky_I}.   
+ 
 \begin{figure}
 \begin{center}
 \subfigure[MO 4]{\includegraphics[width=5cm]{sio3p_obrazky/mo_4.eps} 
@@ -624,14 +612,14 @@ Fragmentové orbitaly  7, 15, 19, 22 a 29 se navzájem mísí za vzniku MO čís
 \label{obr_sio3_MO_35}}
 \subfigure[MO 41]{\includegraphics[width=5cm]{sio3p_obrazky/mo_41.eps} 
 \label{obr_sio3_MO_41}}
-\caption{Interakce $\bra{19}{\hat{H}}\ket{29}$, $\bra{15}{\hat{H}}\ket{29}$,$\bra{7}{\hat{H}}\ket{29}$, $\bra{22}{\hat{H}}\ket{29}$ z tabulky \ref{tab_sio3_vysledky}.}
+\caption{Interakce $\bra{19}{\hat{H}}\ket{29}$, $\bra{15}{\hat{H}}\ket{29}$,$\bra{7}{\hat{H}}\ket{29}$, $\bra{22}{\hat{H}}\ket{29}$ z~tabulky \ref{tab_sio3_vysledky}.}
 
 \label{obr_sio3p_vysledky_I}\end{center}
 \end{figure} 
   
 \section{DFT výpočet} \label{kapitola_DFT}
-Pro DFT výpočty byly zvoleny molekuly, kde byl křemík koordinován šesti kyslíky. Při konstrukci QM modelů molekul se zpočátku vyskytly potíže. Pro systém, kde byl křemík koordinován ve svém okolí šesti fosforečnany, docházelo k umělému vytvoření vodíkových vazeb a sytém se nepodařilo optimalizovat. Z tohoto důvodu bylo nutné použít jako výchozí molekulu křemík koordinovaný šesti fosforečnany, které byly zároveň spojeny jednotkami \ce{SiO4}, viz. obrázek \ref{obr_si_o_poh3_6_propojeno_si}. Další komplikací při optimalizaci geometrické struktury byl celkový náboj molekuly, který byl nakonec určen jako $2-$, viz. výpočet níže. \\
-Pro výpočet absolutního chemického stínění byla na křemík a jeho bezprostřední okolí použita báze IGLO$-$III. Ostatní atomy byly počítány s bazí 6-31G*. 
+Pro DFT výpočty byly zvoleny molekuly, kde byl křemík koordinován čtyřmi i šesti kyslíky. Při konstrukci QM modelů molekul se zpočátku vyskytly potíže. Pro systém, kde byl křemík koordinován ve svém okolí šesti fosforečnany, docházelo k~umělému vytvoření vodíkových vazeb a~sytém se nepodařilo optimalizovat. Z~tohoto důvodu bylo nutné použít jako výchozí molekulu křemík koordinovaný šesti fosforečnany, které byly zároveň spojeny jednotkami \ce{SiO4}, viz. obrázek \ref{obr_si_o_poh3_6_propojeno_si}. Další komplikací při optimalizaci geometrické struktury byl celkový náboj molekuly, který byl nakonec určen jako $2-$, viz. výpočet níže. \\
+Pro výpočet absolutního chemického stínění byla na křemík a~jeho bezprostřední okolí použita báze IGLO$-$III. Ostatní atomy byly počítány s~bazí 6-31G*. 
 \begin{displaymath}
 \ce{Si}^{4+} + \ce{(HPO4)^{2-}} + \ce{Si3^{4+}} + \ce{(OH)6^1-} = \ce{Si(HPO4)Si3(OH)6)^{2-}}
 \end{displaymath}
@@ -680,21 +668,21 @@ Pro výpočet absolutního chemického stínění byla na křemík a jeho bezpro
 \ce{(H5SiO5CH3)^{2-}}  & 3,883 & 11,550 &  -7,716 & 3,834 \\ \hline
 \ce{H3SiO4(H2PO3)} & -8,567 & 0,060 &  4,254 & 4,314 \\ \hline
 \ce{SiO4(H2PO3)4} & -8,088 & -0,829 & 4,459 & 3,629 \\ \hline
-\ce{(SiO6(H2PO3)6)^{2-}} & - \footnote{Strukturu se nepodařilo optimalizovat z důvodu nestability}& - & -& - \\ \hline
-\ce{Si(H2PO3)3OH} & - \footnote{Strukturu se nepodařilo optimalizovat z důvodu tvorby umělých vodíkových můstků} & - & - & - \\ \hline
-\ce{(Si(H2PO3)5OH)^{2-}} & - \footnote{Strukturu se nepodařilo optimalizovat z důvodu nestability} & - & - & - \\ \hline
-\ce{(Si(PO4)6(Si(OH)2)6)^{2-}} \footnote{Optimalizace s bazí IGLO-III} & -3,670 & 4,040 &  -0,185 & 3,855 \\ \hline
-\ce{(Si(PO4)6(Si(OH)2)6)^{2-}} \footnote{Optimalizace s bazí 6-31G*}& -3,346 & 4,574 &  -0,614 & 3,960 \\ \hline
-\ce{(Si^{VI}(PO4)6(Si^{IV}O4Et2)6)^{2-}} \footnote{VI a IV jsou hodnoty koordinace křemíku, zdroj \cite{C3NJ00721A}} & -2,609 & 5,109 & -1,250 & 3,859 \\ \hline
-\ce{(Si(PO4)4(C2CH3)2(Si(OH)2)6)^{4-}} \footnote{Fosfor je nahrazen uhlíkem v rámci jednoho kruhu}& 5,366 & 10,467 &  -7,916 & 2,550 \\ \hline
+\ce{(SiO6(H2PO3)6)^{2-}} & - \footnote{Strukturu se nepodařilo optimalizovat z~důvodu nestability}& - & -& - \\ \hline
+\ce{Si(H2PO3)3OH} & - \footnote{Strukturu se nepodařilo optimalizovat z~důvodu tvorby umělých vodíkových můstků} & - & - & - \\ \hline
+\ce{(Si(H2PO3)5OH)^{2-}} & - \footnote{Strukturu se nepodařilo optimalizovat z~důvodu nestability} & - & - & - \\ \hline
+\ce{(Si(PO4)6(Si(OH)2)6)^{2-}} \footnote{Optimalizace s~bazí IGLO-III} & -3,670 & 4,040 &  -0,185 & 3,855 \\ \hline
+\ce{(Si(PO4)6(Si(OH)2)6)^{2-}} \footnote{Optimalizace s~bazí 6-31G*}& -3,346 & 4,574 &  -0,614 & 3,960 \\ \hline
+\ce{(Si^{VI}(PO4)6(Si^{IV}O4Et2)6)^{2-}} \footnote{VI a~IV jsou hodnoty koordinace křemíku, zdroj \cite{C3NJ00721A}} & -2,609 & 5,109 & -1,250 & 3,859 \\ \hline
+\ce{(Si(PO4)4(C2CH3)2(Si(OH)2)6)^{4-}} \footnote{Fosfor je nahrazen uhlíkem v~rámci jednoho kruhu}& 5,366 & 10,467 &  -7,916 & 2,550 \\ \hline
 \end{tabular}
 \end{center}
 \label{tab_porovnani_molekul_dft}
 \end{minipage}
 \end{table}
 
-Z tabulky \ref{tab_porovnani_molekul_dft} vyplývá, že struktury se čtyř koordinovaným křemíkem jsou stabilnější než struktury s křemíkem v koordinaci šest. Jedno z kritérií stability výsledných molekul jsou hodnoty energie HOMO a LUMO orbitalů. Především hypotetické molekuly \ce{(H5SiO5CH3)^{2-}} a \ce{Si(PO4)4(C2CH3)2(Si(OH)2)6} (oba případy) vykazují kladnou hodnotu energie HOMO orbitalů. Výsledný parametr $\eta$ také poukazuje na stabilitu molekuly a to podle teorie HSAB. Pro molekuly s velkou hodnotou $\eta$ platí, že vykazují větší stabilitu. Hypotetické sloučeniny  \ce{(SiO6(H2PO3)6)^{2-}}, \ce{Si(H2PO3)3OH} a \ce{(Si(H2PO3)5OH)^{2-}} se z důvodu nestability nepodařilo vůbec optimalizovat. \\
-Pro potřeby výpočtu NMR parametrů byla krystalická struktura upravena a krajní ethyly byly nahrazeny vodíky. Absolutní chemické stínění bylo počítáno pro centrální šestikoordinovanný křemík. Hodnoty pro upravenou krystalovou strukturu měly k dobrou shodu s experimentálními hodnotami, které byly převzaty z článku \cite{C3NJ00721A}. Z toho lze usoudit, že úprava struktury neměla výraznější dopad na absolutní chemické stínění. 
+Z~tabulky \ref{tab_porovnani_molekul_dft} vyplývá, že struktury se čtyř koordinovaným křemíkem jsou stabilnější než struktury s~křemíkem v~koordinaci šest. Jedno z~kritérií stability výsledných molekul jsou hodnoty energie HOMO a~LUMO orbitalů. Především hypotetické molekuly \ce{(H5SiO5CH3)^{2-}} a~\ce{Si(PO4)4(C2CH3)2(Si(OH)2)6} (oba případy) vykazují kladnou hodnotu energie HOMO orbitalů. Výsledný parametr $\eta$ také poukazuje na stabilitu molekuly a~to podle teorie HSAB. Pro molekuly s~velkou hodnotou $\eta$ platí, že vykazují větší stabilitu. Hypotetické sloučeniny  \ce{(SiO6(H2PO3)6)^{2-}}, \ce{Si(H2PO3)3OH} a~\ce{(Si(H2PO3)5OH)^{2-}} se z~důvodu nestability nepodařilo vůbec optimalizovat. \\
+Pro potřeby výpočtu NMR parametrů byla krystalická struktura upravena a~krajní ethyly byly nahrazeny vodíky. Absolutní chemické stínění bylo počítáno pro centrální šestikoordinovanný křemík. Hodnoty pro upravenou krystalovou strukturu měly k~dobrou shodu s~experimentálními hodnotami, které byly převzaty z~článku \cite{C3NJ00721A}. Z~toho lze usoudit, že úprava struktury neměla výraznější dopad na absolutní chemické stínění. 
 
 \begin{table}[htbp]
 \begin{minipage}{\textwidth}
@@ -718,12 +706,12 @@ Pro potřeby výpočtu NMR parametrů byla krystalická struktura upravena a kra
 
   
   \chapter{Závěr}
-Cílem této bakalářské práce bylo určit tvrdost/měkkost vybraných křemičitofosfátů a různých modifikací. Z těchto parametrů lze dále usuzovat stabilitu vzniklých sloučenin a jejich ochotu reagovat s dalšími látkami. Další s problémů bylo vysvětlit neochotu křemíku přejít ze čtyřkoordinace na šestikoordinaci pokud měl na sebe přímo navázaný uhlík. Funkce uhlíku jako destabilizujícího prvku v šestikoordinovanných sloučeninách křemíku byl možné pozorovat u sloučeniny \ce{(H5SiO5CH3)^{2-}}, kde je energie HOMO i LUMO orbitalu kladná. Tento efekt bylo možné také pozorovat u složitějších struktur, kde byl fosfor nahrazen za uhlík. Pokud byly nahrazeny fosfory na více než jednom kruhu, docházelo k rozpadu sloučeniny. Zásadním problémem při optimalizaci molekul byla tvorba umělých vodíkových můstků. Z tohoto důvodu bylo nutné rozšířit molekulu, aby se situace více přiblížila reálnému polymeru. \\
-Krystalová struktura byla pro výpočet absolutního chemického stínění upravena, přesto byla dobrá shoda s experimentem. Do budoucna by bylo zajímavé rozebrat i další modifikace křemičitofosfátů a porovnat stabilitu vůči množství uhlíků vázaných na centrální křemík. 
+Cílem této bakalářské práce bylo určit tvrdost/měkkost vybraných křemičitofosfátů a~různých modifikací. Z~těchto parametrů lze dále usuzovat stabilitu vzniklých sloučenin a~jejich ochotu reagovat s~dalšími látkami. Další s~problémů bylo vysvětlit neochotu křemíku přejít ze čtyřkoordinace na šestikoordinaci pokud měl na sebe přímo navázaný uhlík. Funkce uhlíku jako destabilizujícího prvku v~šestikoordinovanných sloučeninách křemíku byl možné pozorovat u~sloučeniny \ce{(H5SiO5CH3)^{2-}}, kde je energie HOMO i LUMO orbitalu kladná. Tento efekt bylo možné také pozorovat u~složitějších struktur, kde byl fosfor nahrazen za uhlík. Pokud byly nahrazeny fosfory na více než jednom kruhu, docházelo k~rozpadu sloučeniny. Zásadním problémem při optimalizaci molekul byla tvorba umělých vodíkových můstků. Z~tohoto důvodu bylo nutné rozšířit molekulu, aby se situace více přiblížila reálnému polymeru. \\
+Krystalová struktura byla pro výpočet absolutního chemického stínění upravena, přesto byla dobrá shoda s~experimentem. Do budoucna by bylo zajímavé rozebrat i další modifikace křemičitofosfátů a~porovnat stabilitu vůči množství uhlíků vázaných na centrální křemík. 
   
   \chapter{Výpočetní detaily}
-  Molekuly z kapitoly \ref{kapitola_EHT} byly optimalizovány programem Gaussian \cite{g09}. Všechny optimalizace probíhaly s hybridním funkcionálem B3LYP a bazí 6-31G*. Struktury byly nejprve navrženy programem Avogadro \cite{Avogadro}, zobrazení výstupu z Gaussianu bylo prováděno programem MOLDEN \cite{Molden}. Programem MOLDEN byly i tvořeny obrázky struktur. Optimalizovaná struktura byla použita jako vstup pro program C.A.C.A.O. \cite{cacao}. Z interakčního diagramu a analýzou FMO byly vybrány MO, které byly zobrázovány grafickým prostředím C.A.C.A.O. Stejným program byl i použit pro tvorbu interakčních diagramů. \\
-  Molekuly z kapitoly \ref{kapitola_DFT} byly také optimalizovány programem Gaussian, zároveň byl použit stejný funkcionál i báze. Použití stejné báze umožnilo vzájemné porovnání molekul. Pro výpočet NMR parametrů byla struktura optimalizována s bazí IGLO-III, která byla implementována z webové stránky  . Na centrální molekulu křemíku a nejbližší okolí byla použitá báze IGLO$-$III, na vzdálené okolí báze 6-31G*. Báze IGLO$-$III pro atom křemíku a kyslíku byla stažena z webové stránky EMSL \cite{EMSL}. Vstupní soubory pro optimalizaci programem Gaussian jsou uvedeny jako příloha A. Při optimalizaci rentgenové struktury byla molekula nejprve zobrazena programem Mercury \cite{Mercury}, následně byl proveden výpočet optimalizace programem Gaussian.
+  Molekuly z~kapitoly \ref{kapitola_EHT} byly optimalizovány programem Gaussian \cite{g09}. Všechny optimalizace probíhaly s~hybridním funkcionálem B3LYP a~bazí 6-31G*. Struktury byly nejprve navrženy programem Avogadro \cite{Avogadro}, zobrazení výstupu z~Gaussianu bylo prováděno programem MOLDEN \cite{Molden}. Programem MOLDEN byly i tvořeny obrázky struktur. Optimalizovaná struktura byla použita jako vstup pro program C.A.C.A.O. \cite{cacao}. Z~interakčního diagramu a~analýzou FMO byly vybrány MO, které byly zobrázovány grafickým prostředím C.A.C.A.O. Stejným program byl i použit pro tvorbu interakčních diagramů. \\
+  Molekuly z~kapitoly \ref{kapitola_DFT} byly také optimalizovány programem Gaussian, zároveň byl použit stejný funkcionál i báze. Použití stejné báze umožnilo vzájemné porovnání molekul. Pro výpočet NMR parametrů byla struktura optimalizována s~bazí IGLO-III, která byla implementována z~webové stránky  . Na centrální molekulu křemíku a~nejbližší okolí byla použitá báze IGLO$-$III, na vzdálené okolí báze 6-31G*. Báze IGLO$-$III pro atom křemíku a~kyslíku byla stažena z~webové stránky EMSL \cite{EMSL}. Vstupní soubory pro optimalizaci programem Gaussian jsou uvedeny jako příloha A. Při optimalizaci rentgenové struktury byla molekula nejprve zobrazena programem Mercury \cite{Mercury}, následně byl proveden výpočet optimalizace programem Gaussian.
   
 {\csname captions\languagename\endcsname %% Temporarily override
 %% the BibLaTeX localization with the original babel definitions.
@@ -1130,6 +1118,5 @@ H         -0.96917       -0.44414       -3.81529
 H         -0.22820       -1.29405       -2.48049
 H          0.02480        0.42438       -2.67040
  \end{lstlisting}
- 
  
 \end{document}
